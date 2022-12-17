@@ -23,8 +23,8 @@
 # Introduzione
 
 Piattaforma web per il reintegro della barriera corallina. 
-Fornisce la possibilità di sostenere economicamente un ente che si occupa della protezione ambientale con la possibilità di ricevere in cambio un voucher. 
-Fornisce uno strumento di monitoraggio real-time dello stato di salute delle acque. 
+- [Fornisce la possibilità di sostenere economicamente un ente che si occupa della protezione ambientale con la possibilità di ricevere in cambio un voucher.]
+- [Fornisce uno strumento di monitoraggio real-time dello stato di salute delle acque.]
 
 # Installazione
 
