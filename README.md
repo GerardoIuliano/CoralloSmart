@@ -40,7 +40,7 @@ Fornisce uno strumento di monitoraggio real-time dello stato di salute delle acq
 | [MySql](https://www.mysql.com/it/)                          | ![License](https://img.shields.io/aur/license/mysql)           |
 | [Maven](https://maven.apache.org/)                          | ![License](https://img.shields.io/aur/license/android-studio)  |
 | [Tomcat](http://tomcat.apache.org/)                         | ![License](https://img.shields.io/aur/license/android-studio)  |
-| [Bootstrap](https://getbootstrap.com/)                      | ![License](https://img.shields.io/apm/l/vim-mode?style=plastic)|
+| [Bootstrap](https://getbootstrap.com/)                      | ![License](https://img.shields.io/)|
 
 ### Libraries
 
