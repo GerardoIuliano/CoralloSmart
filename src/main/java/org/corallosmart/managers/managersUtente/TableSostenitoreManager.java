@@ -23,8 +23,8 @@ public class TableSostenitoreManager extends TableManager implements Sostenitore
     }
 
     @Override
-    public void create(String username, String password, String nome, String cognome, String codiceFiscale, String email, String telefono) throws SQLException {
-        runner.update(""/* INSERT INTO UTENTE (username, password, nome, cognome, codiceFiscale, email, telefono) VALUES(?,?,?,?,?,?,?) */,
-                username, password, nome, cognome, codiceFiscale, email, telefono);
+    public Sostenitore get() throws SQLException {
+        Sostenitore sostenitore = runner.query("SELECT nome,cognome FROM Utente WHERE nome = ?",SOS_MAPPER,"Mario");
+        return sostenitore;
     }
 }

@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class FrontController extends HttpServlet {
   private static final Router ROUTER = new Router(new HashMap<HttpMethod, HashMap<Object, Object>>());
   private static final PageActionFactory PAF = new PageActionFactory();
-  @Resource(name = "jdbc/NomeDB")
+  @Resource(name = "jdbc/cs")
   private DataSource dataSource;
 
   /**
@@ -73,7 +73,7 @@ public class FrontController extends HttpServlet {
     ActionStrategy actionStrategy = (ActionStrategy) ROUTER.handleRoute(method, req.getPathInfo());
     String result = actionStrategy.execute(req, res);
 
-    if (result != "ajax") {
+    if (!result.equals("ajax")) {
       if (result.startsWith("redirect:")) {
         result = result.substring(9);
         res.sendRedirect(result);

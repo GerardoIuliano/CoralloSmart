@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/CoralloSmart">
-
+    <Resource driverClassName="com.mysql.cj.jdbc.Driver"
+              serverTimezone="UTC"
+              maxIdle="9" maxTotal="18" maxWaitMillis="10000"
+              name="jdbc/cs"
+              username="root"
+              password="root"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://localhost:3306/cs?serverTimezone=UTC"
+              />
 </Context>

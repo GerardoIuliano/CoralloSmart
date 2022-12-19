@@ -11,7 +11,7 @@
         <title>${title}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Sito Prenotazioni Spiaggie di Marina di Sorrento">
+        <meta name="description" content="Sito per la salvaguardia dei fondali">
         <link rel="icon" type="image/png" href="images/logoCoralloSmart.png">
         <link rel="apple-touch-icon" href="images/logoCoralloSmart.png">
         <meta name="apple-mobile-web-app-capable" content="yes">

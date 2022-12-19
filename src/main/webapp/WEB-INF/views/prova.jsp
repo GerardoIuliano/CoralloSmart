@@ -1,16 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gerar
-  Date: 14/12/2022
-  Time: 22:18
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Prova</title>
 </head>
 <body>
-<h1>Prova Ok</h1>
+<c:choose>
+    <c:when test="${sostenitore != null}">
+        <h1>Sostenitore</h1>
+    </c:when>
+    <c:otherwise>
+        <h1>Otherwise</h1>
+    </c:otherwise>
+</c:choose>
 </body>
 </html>
