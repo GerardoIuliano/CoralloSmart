@@ -14,7 +14,7 @@
                         <div class="container">
                             <div class="row justify-content-lg-center">
                                 <div class="col-xl-9 col-lg-9 col-md-9 center">
-                                    <Button class=" btn-block genric-btn warning radius btn-lg" type="button" href="prova" style="font-size: 20px; margin: 8px"> Sostienici </Button>
+                                    <a href="prova" class="btn-block genric-btn warning radius btn-lg">Sostienici!</a>
                                 </div>
                             </div>
                         </div>
