@@ -17,7 +17,10 @@ import java.util.HashMap;
 public class FrontController extends HttpServlet {
   private static final Router ROUTER = new Router(new HashMap<HttpMethod, HashMap<Object, Object>>());
   private static final PageActionFactory PAF = new PageActionFactory();
-  @Resource(name = "jdbc/cs")
+  //Local
+  //@Resource(name = "jdbc/cs")
+  //Remote
+  @Resource(name = "jdbc/sql7585596")
   private DataSource dataSource;
 
   /**

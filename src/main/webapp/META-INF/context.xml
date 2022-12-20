@@ -3,10 +3,22 @@
     <Resource driverClassName="com.mysql.cj.jdbc.Driver"
               serverTimezone="UTC"
               maxIdle="9" maxTotal="18" maxWaitMillis="10000"
+              name="jdbc/sql7585596"
+              username="sql7585596"
+              password="mDeUq3pxmy"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://sql7.freesqldatabase.com:3306/sql7585596"
+              />
+
+    <!--
+     <Resource driverClassName="com.mysql.cj.jdbc.Driver"
+              serverTimezone="UTC"
+              maxIdle="9" maxTotal="18" maxWaitMillis="10000"
               name="jdbc/cs"
               username="root"
               password="root"
               type="javax.sql.DataSource"
               url="jdbc:mysql://localhost:3306/cs?serverTimezone=UTC"
               />
+     -->
 </Context>

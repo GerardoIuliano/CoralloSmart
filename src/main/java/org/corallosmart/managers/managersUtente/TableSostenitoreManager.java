@@ -24,7 +24,7 @@ public class TableSostenitoreManager extends TableManager implements Sostenitore
 
     @Override
     public Sostenitore get() throws SQLException {
-        Sostenitore sostenitore = runner.query("SELECT nome,cognome FROM Utente WHERE nome = ?",SOS_MAPPER,"Mario");
+        Sostenitore sostenitore = runner.query("SELECT nome,cognome FROM Utente WHERE nome = ?",SOS_MAPPER,"Gianluca");
         return sostenitore;
     }
 }
