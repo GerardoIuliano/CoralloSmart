@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sostenitore {
+public class Utente{
     private int id;
     private String username;
     private String password;
@@ -17,5 +17,5 @@ public class Sostenitore {
     private String codiceFiscale;
     private String email;
     private String telefono;
-    private boolean isAdmin;
+    private boolean tipo;
 }
