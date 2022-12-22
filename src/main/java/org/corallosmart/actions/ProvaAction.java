@@ -15,6 +15,7 @@ public class ProvaAction implements ActionStrategy {
             TableSostenitoreManager manager = new TableSostenitoreManager(this.getSource(request));
             Sostenitore sostenitore = manager.get();
             request.getSession().setAttribute("sostenitore",sostenitore);
+
             return view("prova");
         } catch (Exception e) {
             e.printStackTrace();
