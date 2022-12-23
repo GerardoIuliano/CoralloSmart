@@ -1,6 +1,7 @@
 <div align="center">
 <img src="src/main/webapp/images/logoCoralloSmart.png" width="200" height="200" alt="Logo">
 
+[![Build Status](https://app.travis-ci.com/GerardoIuliano/CoralloSmart.svg?branch=main)](https://app.travis-ci.com/GerardoIuliano/CoralloSmart)
 
 </div>
 <div align = "center">
