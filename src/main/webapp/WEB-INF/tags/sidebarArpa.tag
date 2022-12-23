@@ -1,19 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/SorrentoMarina/">
-    <div class="sidebar-brand-text mx-3">Torna alla home</div>
-  </a>
+  <div class="sidebar-brand d-flex align-items-center justify-content-center" href="/CoralloSmart/" style="height: 120px">
+
+        <img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
+                        alt="">
+  </div>
 
   <!-- Divider -->
   <hr class="sidebar-divider my-0">
 
-  <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="dashboardEnte">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span></a>
+    <a class="nav-link" >
+      <i class="fas fa-fw"></i>
+      <span>AREA PRIVATA</span></a>
   </li>
 
   <!-- Divider -->
@@ -21,7 +24,7 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Responsabile Ente
+    Responsabile Arpa
   </div>
 
   <li class="nav-item">
@@ -39,7 +42,24 @@
   <li class="nav-item">
     <a class="nav-link" href="tuttiAnnunci">
       <i class="fas fa-fw fa-ad"></i>
-      <span>Annunci</span></a>
+      <span>Gestione</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Monitora</span></a>
+  </li>
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Monitora</span></a>
   </li>
 
   <!-- Divider -->

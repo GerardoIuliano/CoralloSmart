@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@tag description="Define layout" pageEncoding="UTF-8"%>
 <%@attribute name="title" required="true" type="java.lang.String"%>
-<%@attribute name="admin" required="true" type="java.lang.Boolean"%>
+<%@attribute name="admin" required="false" type="java.lang.Boolean"%>
 <%@attribute name="script" required="false" type="java.lang.String"%>
 <%@attribute name="style" required="false" type="java.lang.String"%>
 

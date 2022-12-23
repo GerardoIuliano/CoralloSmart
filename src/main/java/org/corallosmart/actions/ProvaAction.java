@@ -15,6 +15,7 @@ public class ProvaAction implements ActionStrategy {
             TableUtenteManager manager = new TableUtenteManager(this.getSource(request));
             Utente utente = manager.get();
             request.getSession().setAttribute("sostenitore",utente);
+
             return view("prova");
         } catch (Exception e) {
             e.printStackTrace();
