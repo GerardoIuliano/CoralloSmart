@@ -1,7 +1,6 @@
 package org.corallosmart.actions.actionsUtente;
 
-import jdk.jfr.Description;
-import org.corallosmart.actions.actionsUtils.ChainableAction;
+import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersUtente.TableUtenteManager;
 import org.corallosmart.managers.managersUtente.UtenteManager;
 import org.corallosmart.models.modelsUtente.ResponsabileARPA;
@@ -17,7 +16,7 @@ import java.util.Optional;
 classe che controlla se l'utente è registrato e
 verifica se si tratta di un sostenitore o responsabile ARPA
 */
-public class CheckLoginAction extends ChainableAction {
+public class CheckLoginAction implements ActionStrategy {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response){
@@ -47,7 +46,7 @@ public class CheckLoginAction extends ChainableAction {
         }
 
         request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
-        setNext(new LoginAction());
-        return super.execute(request, response);
+        //TODO capire se va bene questo modo per rimanere sulla login
+        return view("login");
     }
 }
