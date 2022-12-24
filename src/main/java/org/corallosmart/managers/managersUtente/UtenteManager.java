@@ -9,5 +9,4 @@ public interface UtenteManager {
     Utente get()throws SQLException;
 
     Optional<Utente> findUtente(String username, String password) throws SQLException;
-
 }
