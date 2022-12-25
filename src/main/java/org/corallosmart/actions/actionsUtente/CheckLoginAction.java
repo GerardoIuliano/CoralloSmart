@@ -20,12 +20,14 @@ public class CheckLoginAction implements ActionStrategy {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response){
-        try {
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
+
+        return view("500");
+        /*try {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
             UtenteManager utenteManager = new TableUtenteManager(this.getSource(request));
-
 
             Optional<Utente> optUtente = utenteManager.findUtente(username, password);
             if(optUtente.isPresent()){
@@ -47,6 +49,6 @@ public class CheckLoginAction implements ActionStrategy {
 
         request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
         //TODO capire se va bene questo modo per rimanere sulla login
-        return view("login");
+        return view("login");*/
     }
 }
