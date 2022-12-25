@@ -20,14 +20,15 @@ public class CheckLoginAction implements ActionStrategy {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response){
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
         try {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-
             UtenteManager utenteManager = new TableUtenteManager(this.getSource(request));
-
-
             Optional<Utente> optUtente = utenteManager.findUtente(username, password);
+
             if(optUtente.isPresent()){
                 Utente utente = optUtente.get();
                 //TODO controllare se false corrisponde ad un sostenitore
@@ -42,11 +43,12 @@ public class CheckLoginAction implements ActionStrategy {
                 return redirect("/CoralloSmart/");
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             return view("500");
         }
 
         request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
         //TODO capire se va bene questo modo per rimanere sulla login
-        return view("login");
+        return view("404");
     }
 }
