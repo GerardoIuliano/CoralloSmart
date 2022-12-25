@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface UtenteManager {
     Utente get()throws SQLException;
 
-    Optional<Utente> findUtente(String username, String password) throws SQLException;
+    Optional<Utente> findUtente(String email, String password) throws SQLException;
 }
