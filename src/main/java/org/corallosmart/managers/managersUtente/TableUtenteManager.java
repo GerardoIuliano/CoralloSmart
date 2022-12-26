@@ -35,4 +35,9 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
         Utente utente = runner.query("SELECT * FROM sql7585596.Utente WHERE email = ? AND password = ?",SOS_MAPPER, email, password);
         return Optional.ofNullable(utente);
     }
+
+    @Override
+    public void addUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
+        Utente utente = runner.query("INSERT INTO sql7585596.Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)",SOS_MAPPER, nome, cognome, codiceFiscale, username, email, telefono, password);
+    }
 }
