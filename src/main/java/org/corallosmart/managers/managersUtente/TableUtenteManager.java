@@ -37,7 +37,7 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
     }
 
     @Override
-    public void addUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
+    public void createUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
         Utente utente = runner.query("INSERT INTO sql7585596.Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)",SOS_MAPPER, nome, cognome, codiceFiscale, username, email, telefono, password);
     }
 }
