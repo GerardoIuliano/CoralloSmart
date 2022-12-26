@@ -22,7 +22,7 @@ public class CheckLoginAction implements ActionStrategy {
     public String execute(HttpServletRequest request, HttpServletResponse response){
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-        String username = request.getParameter("username");
+        String username = request.getParameter("email");
         String password = request.getParameter("password");
 
         try {
@@ -33,10 +33,10 @@ public class CheckLoginAction implements ActionStrategy {
                 Utente utente = optUtente.get();
                 //TODO controllare se false corrisponde ad un sostenitore
                 if(!utente.isTipo()){
-                    Sostenitore sostenitore = (Sostenitore) utente;
+                    Sostenitore sostenitore = new Sostenitore(utente);
                     request.getSession().setAttribute("sostenitore", sostenitore);
                 } else {
-                    ResponsabileARPA responsabileARPA = (ResponsabileARPA) utente;
+                    ResponsabileARPA responsabileARPA = new ResponsabileARPA(utente);
                     request.getSession().setAttribute("responsabileARPA", responsabileARPA);
                 }
                 //TODO controllare se l'url è corretto
