@@ -9,13 +9,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Utente{
-    private int id;
-    private String username;
-    private String password;
-    private String nome;
-    private String cognome;
-    private String codiceFiscale;
-    private String email;
-    private String telefono;
-    private boolean tipo;
+    protected int id;
+    protected String username;
+    protected String password;
+    protected String nome;
+    protected String cognome;
+    protected String codiceFiscale;
+    protected String email;
+    protected String telefono;
+    protected boolean tipo;
 }
