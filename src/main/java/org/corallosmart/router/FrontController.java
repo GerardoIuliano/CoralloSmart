@@ -37,6 +37,7 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/pippo", PAF.create("ProvaAction"));
     ROUTER.get("/login", PAF.create("LoginAction"));
     ROUTER.post("/checkLogin", PAF.create("CheckLoginAction"));
+    ROUTER.post("/checkRegistration", PAF.create("CheckRegistrationAction"));
 
   }
 
