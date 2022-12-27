@@ -31,7 +31,6 @@ public class CheckLoginAction implements ActionStrategy {
 
             if(optUtente.isPresent()){
                 Utente utente = optUtente.get();
-                //TODO controllare se false corrisponde ad un sostenitore
                 if(!utente.isTipo()){
                     Sostenitore sostenitore = new Sostenitore(utente);
                     request.getSession().setAttribute("sostenitore", sostenitore);
@@ -39,7 +38,6 @@ public class CheckLoginAction implements ActionStrategy {
                     ResponsabileARPA responsabileARPA = new ResponsabileARPA(utente);
                     request.getSession().setAttribute("responsabileARPA", responsabileARPA);
                 }
-                //TODO controllare se l'url è corretto
                 return redirect("/CoralloSmart/");
             }
         } catch (SQLException e) {
@@ -47,8 +45,8 @@ public class CheckLoginAction implements ActionStrategy {
             return view("500");
         }
 
+        //TODO far funzionare messaggio
         request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
-        //TODO capire se va bene questo modo per rimanere sulla login
-        return view("404");
+        return view("login");
     }
 }
