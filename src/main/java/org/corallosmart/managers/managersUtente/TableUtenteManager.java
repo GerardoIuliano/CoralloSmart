@@ -31,7 +31,6 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
     @Override
     public Optional<Utente> findUtente(String email, String password) throws SQLException {
         //TODO togliere la query per i test
-        //Utente utente = runner.query("SELECT * FROM Utente WHERE email = ? AND password = ?",SOS_MAPPER, email);
         Utente utente = runner.query("SELECT * FROM sql7585596.Utente WHERE email = ? AND password = ?",SOS_MAPPER, email, password);
         return Optional.ofNullable(utente);
     }
