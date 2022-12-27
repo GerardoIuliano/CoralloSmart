@@ -2,6 +2,7 @@
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<link rel="stylesheet" href="src/main/webapp/css/style.css">
 <cs:layout title="Sostienici" admin="false">
     <cs:header/>
 
@@ -9,32 +10,21 @@
         <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
     </div>
 
-    <form class="form-inline" action="">
-        <div class="form-group mb-2">
-            <label for="staticEmail2" class="sr-only">Email</label>
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Importo €">
+    <div class="progress">
+        <div class="progress-done">
+
         </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2" class="sr-only">Password</label>
-            <input type="number" class="form-control" id="inputPassword2" placeholder="40,00">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Conferma</button>
-    </form>
 
-    <div class="container">
-        <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" style="width:33%">
+    </div>
 
-            </div>
-            <div class="progress-bar progress-bar-warning" role="progressbar" style="width:33%">
-
-            </div>
-            <div class="progress-bar progress-bar-danger" role="progressbar" style="width:34%">
-
-            </div>
+    <div class="inputContainer">
+        <div>
+            <h3>Importo €</h3>
+            <input class="input" type="number"/>
         </div>
     </div>
 
+    <script src="src/main/webapp/js/progress.js"></script>
 
 
 
