@@ -10,12 +10,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Utente{
     protected int id;
-    protected String username;
+
+    protected String email;
     protected String password;
+    protected String username;
     protected String nome;
     protected String cognome;
     protected String codiceFiscale;
-    protected String email;
     protected String telefono;
     protected boolean tipo;
 }
