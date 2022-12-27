@@ -22,12 +22,12 @@ public class CheckLoginAction implements ActionStrategy {
     public String execute(HttpServletRequest request, HttpServletResponse response){
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-        String username = request.getParameter("email");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         try {
             UtenteManager utenteManager = new TableUtenteManager(this.getSource(request));
-            Optional<Utente> optUtente = utenteManager.findUtente(username, password);
+            Optional<Utente> optUtente = utenteManager.findUtente(email, password);
 
             if(optUtente.isPresent()){
                 Utente utente = optUtente.get();
