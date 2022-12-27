@@ -10,34 +10,23 @@
         <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
     </div>
 
-    <div class="progress">
-        <div class="progress-done">
+   <form action="" name="sostieniciform" id="sostieniciform" method="get">
+        <div class="progress">
+         <div class="progress-done">
 
         </div>
 
-    </div>
-
-    <div class="inputContainer">
-        <div>
-            <h3>Importo €</h3>
-            <input class="input" type="number"/>
         </div>
-    </div>
+
+        <div class="inputContainer">
+            <div>
+              <h3>Importo €</h3>
+                 <input class="input" type="number"/>
+            </div>
+        </div>
+   </form>
 
     <script src="src/main/webapp/js/progress.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <cs:footer/>
