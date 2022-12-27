@@ -25,7 +25,7 @@ public class CheckRegistrationAction implements ActionStrategy {
 
             if (optUtente.isPresent()) {
                 //TODO trovare un modo di avvisare l'utente che l'email è già in uso
-            }
+            } return view ("index");
         }catch(SQLException e){
             e.printStackTrace();
             return view("500");
