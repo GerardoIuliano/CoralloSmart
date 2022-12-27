@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet {
   //Local
   //@Resource(name = "jdbc/cs")
   //Remote
-  @Resource(name = "jdbc/sql7585596")
+  @Resource(name = "jdbc/corallosmart")
   private DataSource dataSource;
 
   /**
