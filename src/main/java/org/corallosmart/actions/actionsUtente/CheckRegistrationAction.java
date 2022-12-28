@@ -34,6 +34,7 @@ public class CheckRegistrationAction implements ActionStrategy {
                 return view("registrazione");
             }else{
                 Sostenitore sostenitore = new Sostenitore(email, password, username, nome, cognome, codiceFiscale, telefono);
+                utenteManager.createUtente(sostenitore);
                 request.setAttribute("messaggio", "Registrazione avvenuta con successo! è possibile effetuare il login");
                 return view("login");
             }
