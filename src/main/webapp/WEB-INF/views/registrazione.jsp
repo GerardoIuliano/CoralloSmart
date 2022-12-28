@@ -8,7 +8,7 @@
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<cs:layout title="Login" admin="false">
+<cs:layout title="Registration" admin="false">
 <div>
   <section>
     <!-- Logo -->
@@ -67,21 +67,21 @@
             <div class="form-outline mb-3">
               <input type="text" name="cognome" id="cognome" class="form-control form-control-lg"
                      placeholder="Enter cognome" />
-              <label class="form-label" for="cognome">name</label>
+              <label class="form-label" for="cognome">cognome</label>
             </div>
 
             <!-- codiceFiscale input -->
             <div class="form-outline mb-3">
               <input type="text" name="codiceFiscale" id="codiceFiscale" class="form-control form-control-lg"
                      placeholder="Enter codice fiscale" />
-              <label class="form-label" for="codiceFiscale">name</label>
+              <label class="form-label" for="codiceFiscale">codice fiscale</label>
             </div>
 
             <!-- telefono input -->
             <div class="form-outline mb-3">
               <input type="text" name="telefono" id="telefono" class="form-control form-control-lg"
                      placeholder="Enter telefono" />
-              <label class="form-label" for="telefono">name</label>
+              <label class="form-label" for="telefono">telefono</label>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
