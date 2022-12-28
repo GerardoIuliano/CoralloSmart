@@ -32,6 +32,9 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form action="checkRegistration" name="registrationForm" id="registrationForm" method="post">
 
+            <!-- messaggio -->
+            <p class="font-italic text-muted mb-1">${messaggio}</p>
+
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" name="email" id="email" class="form-control form-control-lg"
