@@ -30,11 +30,11 @@ public class CheckRegistrationAction implements ActionStrategy {
             Optional<Utente> optUtente = utenteManager.findUtenteByEmail(email);
 
             if (optUtente.isPresent()) {
-                //TODO usare $messaggio sulla jsp per avvisare l'utente
+                request.setAttribute("messaggio", "Email già in uso!");
                 return view("registrazione");
             }else{
                 Sostenitore sostenitore = new Sostenitore(email, password, username, nome, cognome, codiceFiscale, telefono);
-                //TODO avvisare che la registrazione è andata a buon fine
+                request.setAttribute("messaggio", "Registrazione avvenuta con successo! è possibile effetuare il login");
                 return view("login");
             }
         }catch(Exception e){
