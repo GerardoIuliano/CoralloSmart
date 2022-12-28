@@ -35,6 +35,12 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
     }
 
     @Override
+    public Optional<Utente> findUtenteByEmail(String email) throws SQLException {
+        Utente utente = runner.query("SELECT * FROM Utente WHERE email = ?",SOS_MAPPER, email);
+        return Optional.ofNullable(utente);
+    }
+
+    @Override
     public void createUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
         Utente utente = runner.query("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)",SOS_MAPPER, nome, cognome, codiceFiscale, username, email, telefono, password);
     }
