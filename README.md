@@ -36,7 +36,7 @@ Piattaforma web per il reintegro della barriera corallina.
   - Set Application Context void
 
 # Contributors
-<a href="https://github.com/CoralloSmart/graphs/contributors">
+<a href="https://github.com/GerardoIuliano/CoralloSmart/graphs/contributors">
   <img
   src="https://contrib.rocks/image?repo=GerardoIuliano/CoralloSmart"
   />
