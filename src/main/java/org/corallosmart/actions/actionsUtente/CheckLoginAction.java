@@ -45,7 +45,6 @@ public class CheckLoginAction implements ActionStrategy {
             return view("500");
         }
 
-        //TODO far funzionare messaggio
         request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
         return view("login");
     }
