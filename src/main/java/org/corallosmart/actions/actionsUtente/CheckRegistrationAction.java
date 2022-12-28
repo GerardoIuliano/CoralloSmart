@@ -27,8 +27,7 @@ public class CheckRegistrationAction implements ActionStrategy {
 
 
             UtenteManager utenteManager = new TableUtenteManager(this.getSource(request));
-            //TODO sostituire findUtente con metodo che cerca utenti solo per email
-            Optional<Utente> optUtente = utenteManager.findUtente(email, password);
+            Optional<Utente> optUtente = utenteManager.findUtenteByEmail(email);
 
             if (optUtente.isPresent()) {
                 //TODO usare $messaggio sulla jsp per avvisare l'utente
