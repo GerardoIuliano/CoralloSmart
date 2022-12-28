@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet {
   //Local
   //@Resource(name = "jdbc/cs")
   //Remote
-  @Resource(name = "jdbc/sql7585596")
+  @Resource(name = "jdbc/corallosmart")
   private DataSource dataSource;
 
   /**
@@ -37,11 +37,9 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/pippo", PAF.create("ProvaAction"));
     ROUTER.get("/login", PAF.create("LoginAction"));
     ROUTER.post("/checkLogin", PAF.create("CheckLoginAction"));
-    ROUTER.get("/sostienici", PAF.create("SostieniciAction"));
-
-
+    ROUTER.get("/registrazione", PAF.create("RegistrationAction"));
+    ROUTER.post("/checkRegistration", PAF.create("CheckRegistrationAction"));
   }
-
 
   /**
    * metodo doGet

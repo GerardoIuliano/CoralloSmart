@@ -2,8 +2,9 @@ package org.corallosmart.actions.actionsUtils;
 
 import org.corallosmart.actions.ProvaAction;
 import org.corallosmart.actions.actionsUtente.CheckLoginAction;
+import org.corallosmart.actions.actionsUtente.CheckRegistrationAction;
 import org.corallosmart.actions.actionsUtente.LoginAction;
-import org.corallosmart.actions.actionsUtente.SostieniciAction;
+import org.corallosmart.actions.actionsUtente.RegistrationAction;
 
 /**
  * @author theBoys
@@ -28,11 +29,12 @@ public class PageActionFactory implements ActionFactory {
         return new LoginAction();
       case "CheckLoginAction":
           return new CheckLoginAction();
-      case "SostieniciAction":
-        return new SostieniciAction();
+      case"RegistrationAction":
+        return new RegistrationAction();
+      case"CheckRegistrationAction":
+        return new CheckRegistrationAction();
       default:
         return new WelcomeAction();
-
     }
   }
 }

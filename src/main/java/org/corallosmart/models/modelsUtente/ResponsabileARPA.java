@@ -1,6 +1,16 @@
 package org.corallosmart.models.modelsUtente;
 
 public class ResponsabileARPA extends Utente{
+    public ResponsabileARPA(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.codiceFiscale = codiceFiscale;
+        this.telefono = telefono;
+        this.tipo = true;
+    }
     public ResponsabileARPA(Utente utente) {
         this.id = utente.id;
         this.username = utente.username;

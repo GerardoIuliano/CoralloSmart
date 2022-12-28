@@ -30,14 +30,23 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
 
     @Override
     public Optional<Utente> findUtente(String email, String password) throws SQLException {
-        //TODO togliere la query per i test
-        //Utente utente = runner.query("SELECT * FROM Utente WHERE email = ? AND password = ?",SOS_MAPPER, email);
-        Utente utente = runner.query("SELECT * FROM sql7585596.Utente WHERE email = ? AND password = ?",SOS_MAPPER, email, password);
+        Utente utente = runner.query("SELECT * FROM Utente WHERE email = ? AND password = ?",SOS_MAPPER, email, password);
+        return Optional.ofNullable(utente);
+    }
+
+    @Override
+    public Optional<Utente> findUtenteByEmail(String email) throws SQLException {
+        Utente utente = runner.query("SELECT * FROM Utente WHERE email = ?",SOS_MAPPER, email);
         return Optional.ofNullable(utente);
     }
 
     @Override
     public void createUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
-        Utente utente = runner.query("INSERT INTO sql7585596.Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)",SOS_MAPPER, nome, cognome, codiceFiscale, username, email, telefono, password);
+        runner.update("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)", nome, cognome, codiceFiscale, username, email, telefono, password);
+    }
+
+    @Override
+    public void createUtente(Utente utente) throws SQLException {
+        runner.update("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", utente.getNome(), utente.getCognome(), utente.getCodiceFiscale(), utente.getUsername(), utente.getEmail(), utente.getTelefono(), 0, utente.getPassword());
     }
 }
