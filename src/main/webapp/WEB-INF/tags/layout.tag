@@ -28,10 +28,13 @@
         <link rel="stylesheet" href="<c:url value="/assets/css/slick.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/nice-select.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/style.css"/>">
+        <link rel="stylesheet" href="<c:url value="/assets/css/progress.css"/>">
+
         <!-- JS here -->
 
         <!-- All JS Custom Plugins Link Here here -->
         <script src="<c:url value="/assets/js/vendor/modernizr-3.5.0.min.js"/>"></script>
+        <script src="<c:url value="/assets/js/progress.js"/>"></script>
 
         <!-- Jquery, Popper, Bootstrap -->
         <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>

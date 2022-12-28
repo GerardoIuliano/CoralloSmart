@@ -2,7 +2,7 @@
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="src/main/webapp/css/style.css">
+
 <cs:layout title="Sostienici" admin="false">
     <cs:header/>
 
@@ -26,7 +26,7 @@
         </div>
    </form>
 
-    <script src="src/main/webapp/js/progress.js"></script>
+
 
 
     <cs:footer/>
