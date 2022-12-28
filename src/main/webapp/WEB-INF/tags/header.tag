@@ -52,11 +52,10 @@
                     <li><a href=".">Home</a></li>
                     <li><a href="info">Info</a></li>
                     <c:choose>
-                      <c:when test="${utente != null}">
+                      <c:when test="${sostenitore != null}">
                         <li><a href="#">Account</a>
                           <ul class="submenu">
-                            <li><p>Benvenuto ${utente.username}</p></li>
-                            <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                            <li><p>Benvenuto ${sostenitore.username}</p></li>
                             <li><a id="profilo" href="profilo">Il mio profilo</a></li>
                             <li><a name="logout" href="logout">logout</a></li>
                           </ul>
