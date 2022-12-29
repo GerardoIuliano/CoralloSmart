@@ -38,49 +38,49 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" name="email" id="email" class="form-control form-control-lg"
-                     placeholder="Enter a valid email address" />
+                     placeholder="Enter a valid email address" required/>
               <label class="form-label" for="email">Email address</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" name="password" id="password" class="form-control form-control-lg"
-                     placeholder="Enter password" />
+                     placeholder="Enter password" required/>
               <label class="form-label" for="password">Password</label>
             </div>
 
             <!-- Username input -->
             <div class="form-outline mb-3">
               <input type="text" name="username" id="username" class="form-control form-control-lg"
-                     placeholder="Enter username" />
+                     placeholder="Enter username" required/>
               <label class="form-label" for="username">username</label>
             </div>
 
             <!-- name input -->
             <div class="form-outline mb-3">
               <input type="text" name="name" id="name" class="form-control form-control-lg"
-                     placeholder="Enter name" />
+                     placeholder="Enter name" required/>
               <label class="form-label" for="name">name</label>
             </div>
 
             <!-- cognome input -->
             <div class="form-outline mb-3">
               <input type="text" name="cognome" id="cognome" class="form-control form-control-lg"
-                     placeholder="Enter cognome" />
+                     placeholder="Enter cognome" required/>
               <label class="form-label" for="cognome">cognome</label>
             </div>
 
             <!-- codiceFiscale input -->
             <div class="form-outline mb-3">
               <input type="text" name="codiceFiscale" id="codiceFiscale" class="form-control form-control-lg"
-                     placeholder="Enter codice fiscale" />
+                     placeholder="Enter codice fiscale" required/>
               <label class="form-label" for="codiceFiscale">codice fiscale</label>
             </div>
 
             <!-- telefono input -->
             <div class="form-outline mb-3">
               <input type="text" name="telefono" id="telefono" class="form-control form-control-lg"
-                     placeholder="Enter telefono" />
+                     placeholder="Enter telefono" required/>
               <label class="form-label" for="telefono">telefono</label>
             </div>
 
