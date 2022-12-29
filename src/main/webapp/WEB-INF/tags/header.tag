@@ -68,7 +68,7 @@
                           <ul class="submenu">
                             <li><p>Benvenuto ${adminLido.username}</p></li>
                             <li><a href="dashboard">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                            <!--<li><a id="profilo" href="profilo">Il mio profilo</a></li>-->
                             <li><a name="logout" href="logout">logout</a></li>
                           </ul>
                         </li>
@@ -78,7 +78,7 @@
                           <ul class="submenu">
                             <li><p>Benvenuto ${adminEnte.username}</p></li>
                             <li><a href="dashboardEnte">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                            <!--<li><a id="profilo" href="profilo">Il mio profilo</a></li>-->
                             <li><a name="logout" href="logout">logout</a></li>
                           </ul>
                         </li>
