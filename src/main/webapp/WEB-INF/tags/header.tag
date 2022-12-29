@@ -62,6 +62,7 @@
                           </ul>
                         </li>
                       </c:when>
+                      <!--TODO rimuovere adminLido e adminEnte-->
                       <c:when test="${adminLido != null}">
                         <li><a href="#">Account</a>
                           <ul class="submenu">
