@@ -40,6 +40,8 @@
         <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
         <script src="/assets/js/popper.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <!-- Jquery Mobile Menu -->
         <script src="/assets/js/jquery.slicknav.min.js"></script>
 
@@ -66,6 +68,7 @@
         <!-- Jquery Plugins, main Jquery -->
         <script src="<c:url value="/assets/js/plugins.js"/>"></script>
         <script src="<c:url value="/assets/js/main.js"/>"></script>
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
                 <link rel="stylesheet" href="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/css/sb-admin-2.min.css"/>">
                 <link rel="stylesheet" href="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/fontawesome-free/css/all.min.css"/>">
                 <script type="text/javascript" src="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/jquery/jquery.min.js"/>" defer="true"></script>
