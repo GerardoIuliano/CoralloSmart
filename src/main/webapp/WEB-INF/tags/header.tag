@@ -62,26 +62,6 @@
                           </ul>
                         </li>
                       </c:when>
-                      <c:when test="${adminLido != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${adminLido.username}</p></li>
-                            <li><a href="dashboard">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
-                      </c:when>
-                      <c:when test="${adminEnte != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${adminEnte.username}</p></li>
-                            <li><a href="dashboardEnte">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
-                      </c:when>
                       <c:otherwise>
                         <li><a href="login">Login</a></li>
                         <li><a href="registrazione">Registrati</a></li>

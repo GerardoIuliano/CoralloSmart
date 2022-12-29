@@ -38,14 +38,14 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
-                     placeholder="Enter a valid email address" />
+                     placeholder="Enter a valid email address" required/>
               <label class="form-label" for="form3Example3">Email address</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
-                     placeholder="Enter password" />
+                     placeholder="Enter password" required/>
               <label class="form-label" for="form3Example4">Password</label>
             </div>
             <div class="text-center text-lg-start mt-4 pt-2">
