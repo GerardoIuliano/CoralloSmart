@@ -33,10 +33,10 @@ public class CheckLoginAction implements ActionStrategy {
                 Utente utente = optUtente.get();
                 if(!utente.isTipo()){
                     Sostenitore sostenitore = new Sostenitore(utente);
-                    request.getSession().setAttribute("sostenitore", sostenitore);
+                    request.getSession().setAttribute("utente", sostenitore);
                 } else {
                     ResponsabileARPA responsabileARPA = new ResponsabileARPA(utente);
-                    request.getSession().setAttribute("responsabileARPA", responsabileARPA);
+                    request.getSession().setAttribute("utente", responsabileARPA);
                 }
                 return redirect("/CoralloSmart/");
             }
