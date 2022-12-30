@@ -32,6 +32,10 @@ public class PageActionFactory implements ActionFactory {
         return new CheckRegistrationAction();
       case"LogoutAction":
         return new LogoutAction();
+      case"CheckoutAction":
+        return new CheckoutAction();
+      case"SostieniciAction":
+        return new SostieniciAction();
       default:
         return new WelcomeAction();
     }
