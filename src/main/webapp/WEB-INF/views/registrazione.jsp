@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <cs:layout title="Registration" admin="false">
+  <script src="<c:url value="/js/formControl.js"/>"></script>
 <div>
   <section>
     <!-- Logo -->
@@ -33,11 +34,11 @@
           <form action="checkRegistration" name="registrationForm" id="registrationForm" method="post">
 
             <!-- messaggio -->
-            <p class="font-italic text-muted mb-1">${messaggio}</p>
+            <p name="message" class="font-italic text-muted mb-1">${messaggio}</p>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" name="email" id="email" class="form-control form-control-lg"
+              <input type="email" name="email" id="email" oninput="validaEmail()" class="form-control form-control-lg"
                      placeholder="Enter a valid email address" required/>
               <label class="form-label" for="email">Email address</label>
             </div>
@@ -89,7 +90,7 @@
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Login</a>
               !-->
               <!--submit-->
-              <button type="submit" class="btn btn-primary btn-lg"
+              <button name="submit" type="button" onclick="chekRegistrationForm()" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration</button>
 
               <p class="small fw-bold mt-2 pt-1 mb-0">Already signed in? <a href="login"

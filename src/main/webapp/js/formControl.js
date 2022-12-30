@@ -9,7 +9,7 @@ var emailOk = false;
 var cognomeOk = false;
 
 function validaUsername() {
-    var input = document.forms['registrazioneForm']['username'];
+    var input = document.forms['registrationForm']['username'];
     if (input.value.length >= 6 && input.value.match(/^[0-9a-zA-Z]+$/)) {
         input.style.border = borderOk;
         usernameOk = true;
@@ -21,8 +21,8 @@ function validaUsername() {
 }
 
 function validaPassword() {
-    var inputpw = document.forms['registrazioneForm']['password'];
-    var inputpwconf = document.forms['registrazioneForm']['passwordConferma'];
+    var inputpw = document.forms['registrationForm']['password'];
+    var inputpwconf = document.forms['registrationForm']['passwordConferma'];
     var password = inputpw.value;
     if (password.length >= 8 && password.toUpperCase() != password
         && password.toLowerCase() != password && /[0-9]/.test(password)) {
@@ -44,7 +44,7 @@ function validaPassword() {
 }
 
 function validaNome() {
-    var input = document.forms['registrazioneForm']['nome'];
+    var input = document.forms['registrationForm']['nome'];
     if (input.value.trim().length > 0 && input.value.match(/^[ a-zA-Z\u00C0-\u00ff]+$/)) {    //escludiamo caratteri accentati, numeri e caratteri speciali
         input.style.border = borderOk;
         nomeOk = true;
@@ -56,7 +56,7 @@ function validaNome() {
 }
 
 function validaCognome() {
-    var input = document.forms['registrazioneForm']['cognome'];
+    var input = document.forms['registrationForm']['cognome'];
     if (input.value.trim().length > 0 && input.value.match(/^[ a-zA-Z\u00C0-\u00ff]+$/)) {
         input.style.border = borderOk;
         cognomeOk = true;
@@ -68,7 +68,7 @@ function validaCognome() {
 }
 
 function validaEmail() {
-    var input = document.forms['registrazioneForm']['email'];
+    var input = document.forms['registrationForm']['email'];
     if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/)) {
         input.style.border = borderOk;
         emailOk = true;
@@ -76,16 +76,31 @@ function validaEmail() {
         input.style.border = borderNo;
         emailOk = false;
     }
-    cambiaStatoRegistrami();
 }
 
-function cambiaStatoRegistrami() {
-    if (usernameOk && passwordOk && nomeOk && emailOk && cognomeOk) {
-        document.getElementById('registrami').disabled = false;
-        document.getElementById('registramimessaggio').innerHTML = '';
+//TODO capire perché il messaggio non viene visualizzato
+function chekRegistrationForm() {
+    if (emailOk) {
+        var submitBtn = document.forms['registrationForm']['submit'];
+        submitBtn.type = "submit";
+
+        var message = document.forms['registrationForm']['message'];
+        message.value = '';
     } else {
-        document.getElementById('registrami').disabled = true;
-        document.getElementById('registramimessaggio').innerHTML = '*Verifica che tutti i campi siano correttamente compilati*';
+        var submitBtn = document.forms['registrationForm']['submit'];
+        submitBtn.type = "button";
+
+        var message = document.forms['registrationForm']['message'];
+        message.value = '*Verifica che tutti i campi siano correttamente compilati*';
+    }
+}
+
+function test(){
+    var input = document.forms['registrationForm']['submit'];
+    if(true){
+        document.forms['registrationForm']['message'].value = 'è stato premuto';
+    }else{
+        input.type = "submit";
     }
 }
 
