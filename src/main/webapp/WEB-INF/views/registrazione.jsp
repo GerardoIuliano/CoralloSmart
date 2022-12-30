@@ -38,49 +38,56 @@
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" name="email" id="email" oninput="validaEmail()" class="form-control form-control-lg"
+              <input type="email" name="email" id="email" oninput="validaEmail('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter a valid email address" required/>
               <label class="form-label" for="email">Email address</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" name="password" id="password" class="form-control form-control-lg"
+              <input type="password" name="password" id="password" oninput="validaPassword('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter password" required/>
               <label class="form-label" for="password">Password</label>
             </div>
 
+            <!-- PasswordConferma input -->
+            <div class="form-outline mb-3">
+              <input type="password" name="passwordConferma" id="passwordConferma" oninput="validaPassword('registrationForm')" class="form-control form-control-lg"
+                     placeholder="Enter password again" required/>
+              <label class="form-label" for="passwordConferma">Repeat Password</label>
+            </div>
+
             <!-- Username input -->
             <div class="form-outline mb-3">
-              <input type="text" name="username" id="username" class="form-control form-control-lg"
+              <input type="text" name="username" id="username" oninput="validaUsername('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter username" required/>
               <label class="form-label" for="username">username</label>
             </div>
 
             <!-- name input -->
             <div class="form-outline mb-3">
-              <input type="text" name="name" id="name" class="form-control form-control-lg"
+              <input type="text" name="name" id="name" oninput="validaNome('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter name" required/>
               <label class="form-label" for="name">name</label>
             </div>
 
             <!-- cognome input -->
             <div class="form-outline mb-3">
-              <input type="text" name="cognome" id="cognome" class="form-control form-control-lg"
+              <input type="text" name="cognome" id="cognome" oninput="validaCognome('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter cognome" required/>
               <label class="form-label" for="cognome">cognome</label>
             </div>
 
             <!-- codiceFiscale input -->
             <div class="form-outline mb-3">
-              <input type="text" name="codiceFiscale" id="codiceFiscale" class="form-control form-control-lg"
+              <input type="text" name="codiceFiscale" id="codiceFiscale" oninput="validaCodiceFiscale('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter codice fiscale" required/>
               <label class="form-label" for="codiceFiscale">codice fiscale</label>
             </div>
 
             <!-- telefono input -->
             <div class="form-outline mb-3">
-              <input type="text" name="telefono" id="telefono" class="form-control form-control-lg"
+              <input type="text" name="telefono" id="telefono" oninput="validaTelefono('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter telefono" required/>
               <label class="form-label" for="telefono">telefono</label>
             </div>
@@ -90,7 +97,7 @@
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Login</a>
               !-->
               <!--submit-->
-              <button name="submit" type="button" onclick="chekRegistrationForm()" class="btn btn-primary btn-lg"
+              <button name="submit" type="button" onclick="chekRegistrationForm('registrationForm')" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration</button>
 
               <p class="small fw-bold mt-2 pt-1 mb-0">Already signed in? <a href="login"

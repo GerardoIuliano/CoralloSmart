@@ -7,9 +7,11 @@ var passwordOk = false;
 var nomeOk = false;
 var emailOk = false;
 var cognomeOk = false;
+var codiceFiscaleOk = false;
+var telefonoOk = false;
 
-function validaUsername() {
-    var input = document.forms['registrationForm']['username'];
+function validaUsername(form) {
+    var input = document.forms[form]['username'];
     if (input.value.length >= 6 && input.value.match(/^[0-9a-zA-Z]+$/)) {
         input.style.border = borderOk;
         usernameOk = true;
@@ -17,12 +19,11 @@ function validaUsername() {
         input.style.border = borderNo;
         usernameOk = false;
     }
-    cambiaStatoRegistrami();
 }
 
-function validaPassword() {
-    var inputpw = document.forms['registrationForm']['password'];
-    var inputpwconf = document.forms['registrationForm']['passwordConferma'];
+function validaPassword(form) {
+    var inputpw = document.forms[form]['password'];
+    var inputpwconf = document.forms[form]['passwordConferma'];
     var password = inputpw.value;
     if (password.length >= 8 && password.toUpperCase() != password
         && password.toLowerCase() != password && /[0-9]/.test(password)) {
@@ -40,11 +41,10 @@ function validaPassword() {
         inputpwconf.style.border = borderNo;
         passwordOk = false;
     }
-    cambiaStatoRegistrami();
 }
 
-function validaNome() {
-    var input = document.forms['registrationForm']['nome'];
+function validaNome(form) {
+    var input = document.forms[form]['name'];
     if (input.value.trim().length > 0 && input.value.match(/^[ a-zA-Z\u00C0-\u00ff]+$/)) {    //escludiamo caratteri accentati, numeri e caratteri speciali
         input.style.border = borderOk;
         nomeOk = true;
@@ -52,11 +52,10 @@ function validaNome() {
         input.style.border = borderNo;
         nomeOk = false;
     }
-    cambiaStatoRegistrami();
 }
 
-function validaCognome() {
-    var input = document.forms['registrationForm']['cognome'];
+function validaCognome(form) {
+    var input = document.forms[form]['cognome'];
     if (input.value.trim().length > 0 && input.value.match(/^[ a-zA-Z\u00C0-\u00ff]+$/)) {
         input.style.border = borderOk;
         cognomeOk = true;
@@ -64,11 +63,10 @@ function validaCognome() {
         input.style.border = borderNo;
         cognomeOk = false;
     }
-    cambiaStatoRegistrami();
 }
 
-function validaEmail() {
-    var input = document.forms['registrationForm']['email'];
+function validaEmail(form) {
+    var input = document.forms[form]['email'];
     if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/)) {
         input.style.border = borderOk;
         emailOk = true;
@@ -78,19 +76,41 @@ function validaEmail() {
     }
 }
 
+function validaCodiceFiscale(form) {
+    var input = document.forms[form]['codiceFiscale'];
+    if (input.value.match(/^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$/i)) {
+        input.style.border = borderOk;
+        codiceFiscaleOk = true;
+    } else {
+        input.style.border = borderNo;
+        codiceFiscaleOk = false;
+    }
+}
+
+function validaTelefono(form) {
+    var input = document.forms[form]['telefono'];
+    if (input.value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/)) {
+        input.style.border = borderOk;
+        telefonoOk = true;
+    } else {
+        input.style.border = borderNo;
+        telefonoOk = false;
+    }
+}
+
 //TODO capire perché il messaggio non viene visualizzato
-function chekRegistrationForm() {
-    if (emailOk) {
-        var submitBtn = document.forms['registrationForm']['submit'];
+function chekRegistrationForm(form) {
+    if (emailOk & passwordOk & usernameOk & nomeOk & cognomeOk & codiceFiscaleOk & telefonoOk) {
+        var submitBtn = document.forms[form]['submit'];
         submitBtn.type = "submit";
 
-        var message = document.forms['registrationForm']['message'];
+        var message = document.forms[form]['message'];
         message.value = '';
     } else {
-        var submitBtn = document.forms['registrationForm']['submit'];
+        var submitBtn = document.forms[form]['submit'];
         submitBtn.type = "button";
 
-        var message = document.forms['registrationForm']['message'];
+        var message = document.forms[form]['message'];
         message.value = '*Verifica che tutti i campi siano correttamente compilati*';
     }
 }
