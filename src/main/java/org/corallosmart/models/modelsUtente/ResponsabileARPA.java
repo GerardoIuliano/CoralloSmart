@@ -20,6 +20,6 @@ public class ResponsabileARPA extends Utente{
         this.codiceFiscale = utente.codiceFiscale;
         this.email = utente.email;
         this.telefono = utente.telefono;
-        this.tipo = utente.tipo;
+        this.tipo = true;
     }
 }
