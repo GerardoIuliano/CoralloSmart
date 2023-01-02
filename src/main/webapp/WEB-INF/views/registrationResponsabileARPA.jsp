@@ -98,7 +98,7 @@
               !-->
               <!--submit-->
               <button name="submit" type="button" onclick="chekRegistrationForm('registrationForm')" class="btn btn-primary btn-lg"
-                      style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration</button>
+                      style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration Responsabile ARPA</button>
 
             </div>
           </form>
