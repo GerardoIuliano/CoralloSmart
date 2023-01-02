@@ -46,6 +46,7 @@ public class FrontController extends HttpServlet {
     ROUTER.post("/checkRegistrationResponsabileARPA", PAF.create("CheckRegistrationResponsabileARPAAction"));
     ROUTER.get("/info", PAF.create("InfoAction"));
     ROUTER.get("/mioProfilo", PAF.create("MioProfiloAction"));
+    ROUTER.get("/modificaProfilo", PAF.create("ModificaProfiloAction"));
   }
 
   /**

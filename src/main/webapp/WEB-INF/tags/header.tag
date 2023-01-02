@@ -69,6 +69,7 @@
                                       <ul class="submenu">
                                         <li><p>Benvenuto ${utente.username}</p></li>
                                         <li><a href="registrationResponsabileARPA">Registra un responsabile ARPA</a></li>
+                                        <li><a href="modificaProfilo">Modifica Profilo</a></li>
                                         <li><a name="logout" href="logout">logout</a></li>
                                       </ul>
                                     </li>
