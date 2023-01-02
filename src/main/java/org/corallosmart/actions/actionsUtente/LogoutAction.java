@@ -6,6 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LogoutAction implements ActionStrategy {
+    //TODO funziona il logout ma quando si torna indietro con la pagina
+    // si torna alla schermata da "loggati" ma non lo si è veramente quindi
+    // non si possono fare la operazioni come tale e quindi
+    // dovrebbe andare bene
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
