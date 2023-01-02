@@ -47,7 +47,7 @@
             <div class="form-outline mb-3">
               <input type="password" name="password" id="password" oninput="validaPassword('registrationForm')" class="form-control form-control-lg"
                      placeholder="Enter password" required/>
-              <label class="form-label" for="password">Password</label>
+              <label class="form-label" for="password">Password (must contain: one lowercase, uppercase, number and not less then 8 characters)</label>
             </div>
 
             <!-- PasswordConferma input -->
