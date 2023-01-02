@@ -14,11 +14,11 @@ public class SostieniciAction implements ActionStrategy {
 
         try{
             Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
-            if (sos==null)
-                return view("login");
-            else {
+           // if (sos==null)
+             //   return view("login");
+            //else{
                 return view("sostienici");
-            }
+            //}
         } catch (Exception e) {
             e.printStackTrace();
             return view("500");

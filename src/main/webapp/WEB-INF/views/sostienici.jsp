@@ -10,7 +10,7 @@
         <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
     </div>
 
-   <form action="" name="sostieniciform" id="sostieniciform" method="get">
+   <form action="checkout" name="sostieniciform" id="sostieniciform" method="get">
         <div class="progress">
          <div class="progress-done">
 
@@ -24,6 +24,9 @@
                  <input class="input" type="number"/>
             </div>
         </div>
+       <button type="submit" class="btn btn-primary btn-lg"
+               style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Conferma</button>
+
    </form>
 
 

@@ -41,13 +41,13 @@
                                                         <tr>
                                                             <td>
                                                                 <ul>
-                                                                    <li>One Job Posting Credit</li>
+                                                                    <li>ciao</li>
                                                                     <li>Job Distribution*</li>
                                                                     <li>Social Media Distribution</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
-                                                                <b>$147.00</b>
+                                                                <b>${}</b>
                                                             </td>
                                                         </tr>
                                                     </table>

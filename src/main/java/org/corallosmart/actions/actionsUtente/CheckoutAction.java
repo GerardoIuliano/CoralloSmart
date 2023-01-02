@@ -13,12 +13,12 @@ public class CheckoutAction implements ActionStrategy {
 
 
         try{
-            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
-            if (sos==null)
-                return view("login");
-            else {
+            //Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
+            //if (sos==null)
+              //  return view("login");
+            //else {
                 return view("checkout");
-            }
+            //}
         } catch (Exception e) {
             e.printStackTrace();
             return view("500");

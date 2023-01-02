@@ -4,20 +4,20 @@ let finalvalue=0;
 let max=100;
 function changeWidth(){
     if (finalvalue>=1 && finalvalue<=39) {
-        progress.style.width = '${20}%';
-        progress.innerText = '${}';
+        progress.style.width = '20%';
+        progress.innerText = '';
     }
     else if(finalvalue>=40 && finalvalue<=69){
-        progress.style.width = '${34}%';
-        progress.innerText = '${Giro in Barca}';
+        progress.style.width = '34%';
+        progress.innerText = 'Giro in Barca';
     }
     else if (finalvalue>=70 && finalvalue<=99) {
-        progress.style.width = '${67}%';
-        progress.innerText = '${Giro in Barca + Immersione}';
+        progress.style.width = '67%';
+        progress.innerText = 'Giro in Barca + Immersione';
     }
     else if (finalvalue>=100){
-        progress.style.width = '${100}%';
-        progress.innerText = '${Giro in Barca + Immersione+ Pranzo}';
+        progress.style.width = '100%';
+        progress.innerText = 'Giro in Barca + Immersione+ Pranzo';
 
     }
 
