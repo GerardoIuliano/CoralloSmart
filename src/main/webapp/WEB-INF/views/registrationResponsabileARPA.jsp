@@ -9,7 +9,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <cs:layout title="Registrazione ResponsabileARPA" admin="false">
-  <script src="<c:url value="/js/formControl.js"/>"></script>
 <div>
   <section>
     <!-- Logo -->
