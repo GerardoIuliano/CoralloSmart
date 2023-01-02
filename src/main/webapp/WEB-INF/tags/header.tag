@@ -53,14 +53,27 @@
                     <li><a href="info">Info</a></li>
                     <c:choose>
                       <c:when test="${utente != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${utente.username}</p></li>
-                            <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
+                                <c:choose>
+                                 <c:when test="${utente.isTipo() == false}">
+                                <li><a href="#">Account</a>
+                                  <ul class="submenu">
+                                    <li><p>Benvenuto ${utente.username}</p></li>
+                                    <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                                    <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                                    <li><a name="logout" href="logout">logout</a></li>
+                                  </ul>
+                                </li>
+                                 </c:when>
+                                  <c:when test="${utente.isTipo() == true}">
+                                    <li><a href="#">Account</a>
+                                      <ul class="submenu">
+                                        <li><p>Benvenuto ${utente.username}</p></li>
+                                        <li><a href="registrationResponsabileARPA">Registra un responsabile ARPA</a></li>
+                                        <li><a name="logout" href="logout">logout</a></li>
+                                      </ul>
+                                    </li>
+                                  </c:when>
+                                </c:choose>
                       </c:when>
                       <c:otherwise>
                         <li><a href="login">Login</a></li>
