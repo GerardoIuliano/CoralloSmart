@@ -44,6 +44,8 @@ public class PageActionFactory implements ActionFactory {
         return new InfoAction();
       case "MioProfiloAction":
         return new MioProfiloAction();
+      case"ModificaProfiloAction":
+        return new ModificaProfiloAction();
       default:
         return new WelcomeAction();
     }
