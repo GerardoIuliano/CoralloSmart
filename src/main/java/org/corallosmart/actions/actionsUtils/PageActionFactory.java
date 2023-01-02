@@ -36,6 +36,10 @@ public class PageActionFactory implements ActionFactory {
         return new RegistrationResponsabileARPAAction();
       case"CheckRegistrationResponsabileARPAAction":
         return new CheckRegistrationResponsabileARPAAction();
+      case "InfoAction":
+        return new InfoAction();
+      case "MioProfiloAction":
+        return new MioProfiloAction();
       default:
         return new WelcomeAction();
     }
