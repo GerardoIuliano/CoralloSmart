@@ -35,8 +35,8 @@ public class CheckRegistrationResponsabileARPAAction implements ActionStrategy {
             }else{
                 ResponsabileARPA responsabileARPA = new ResponsabileARPA(email, password, username, nome, cognome, codiceFiscale, telefono);
                 utenteManager.createUtente(responsabileARPA);
-                request.setAttribute("messaggio", "Registrazione avvenuta con successo! è possibile effetuare il login");
-                return view("login");
+                request.setAttribute("messaggio", "Registrazione avvenuta con successo!");
+                return view("registrationResponsabileARPA");
             }
         }catch(Exception e){
             e.printStackTrace();
