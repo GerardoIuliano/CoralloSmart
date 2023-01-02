@@ -31,7 +31,7 @@
 
         <!--form-->
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form action="checkRegistration" name="registrationForm" id="registrationForm" method="post">
+          <form action="checkRegistrationResponsabileARPA" name="registrationForm" id="registrationForm" method="post">
 
             <!-- messaggio -->
             <p name="message" class="font-italic text-muted mb-1">${messaggio}</p>
@@ -100,8 +100,6 @@
               <button name="submit" type="button" onclick="chekRegistrationForm('registrationForm')" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration</button>
 
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already signed in? <a href="login"
-                                                                                class="link-danger">login</a></p>
             </div>
           </form>
         </div>
