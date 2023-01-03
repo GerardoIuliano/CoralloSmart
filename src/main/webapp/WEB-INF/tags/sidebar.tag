@@ -32,9 +32,16 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="mostraModificaLido">
+        <a class="nav-link" href="modificaProfilo">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Modifica Profilo</span></a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="registrationResponsabileARPA">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Registra un responsabile ARPA</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
