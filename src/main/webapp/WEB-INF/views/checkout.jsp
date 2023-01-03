@@ -1,9 +1,29 @@
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<cs:layout title="checkout" admin="false">
-    <cs:header/>
-
+    <title>Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
+            else $('head > link').filter(':first').replaceWith(defaultCSS);
+        }
+        $( document ).ready(function() {
+            var iframe_height = parseInt($('html').height());
+            window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
@@ -14,7 +34,7 @@
                     </h2>
 
                     <div class="shopping_cart">
-                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                        <form class="form-horizontal" role="form" action="operazioneCompletata" method="post" id="payment-form">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -56,7 +76,7 @@
                                                         <h3><span style="color:green;"><%
                                                             String importo="";
                                                             importo=request.getParameter("importo");
-                                                        %><%=importo%> €</span></h3>
+                                                        %><%=importo%>.00 €</span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,15 +280,15 @@
                                                             <div class="col-xs-3">
                                                                 <select class="form-control" data-stripe="exp-year"
                                                                         id="card-exp-year">
-                                                                    <option value="2023">2016</option>
-                                                                    <option value="2024">2017</option>
-                                                                    <option value="2025">2018</option>
-                                                                    <option value="2026">2019</option>
-                                                                    <option value="2027">2020</option>
-                                                                    <option value="2028">2021</option>
-                                                                    <option value="2029">2022</option>
-                                                                    <option value="2030">2023</option>
-                                                                    <option value="2031">2024</option>
+                                                                    <option value="2023">2023</option>
+                                                                    <option value="2024">2024</option>
+                                                                    <option value="2025">2025</option>
+                                                                    <option value="2026">2026</option>
+                                                                    <option value="2027">2027</option>
+                                                                    <option value="2028">2028</option>
+                                                                    <option value="2029">2029</option>
+                                                                    <option value="2030">2030</option>
+                                                                    <option value="2031">2031</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -299,11 +319,16 @@
                                     </div>
                                 </div>
                             </div>
+                        </form>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
     </div>
-        <cs:footer/>
-</cs:layout>
+</div>
+</body>
+    <script type="text/javascript">
+    </script>
+
+</html>
