@@ -2,9 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/SorrentoMarina/">
-        <div class="sidebar-brand-text mx-3">Torna alla home</div>
-    </a>
+    <div class="sidebar-brand d-flex align-items-center justify-content-center" href="/CoralloSmart/" style="height: 120px">
+
+        <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
+                             alt=""></a>
+    </div>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
