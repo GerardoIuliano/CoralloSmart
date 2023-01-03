@@ -11,5 +11,5 @@ import lombok.Setter;
 public class Voucher {
     private int id;
     private String descrizione;
-    private String categoria;
+    private double importo;
 }
