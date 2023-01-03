@@ -19,7 +19,7 @@
           <div class="voucher-box column">
             <h3 class="id-voucher"> VOUCHER CON ID: ${vou.id} </h3>
             <div class="voucher-info row">
-              <form  class="info column" method="post" action="modificaVoucher">
+              <form  class="info column" method="post" action="modificaVoucher" id="modifica">
                 <label for="descrizione">DESCRIZIONE</label>
                 <input type="text" id="descrizione" name="descrizione" value="${vou.descrizione}">
                 <div class="sub-info row">
@@ -27,7 +27,7 @@
                     <label for="importo">IMPORTO PER SBLOCCARLO</label>
                     <input type="text" id="importo" class="input-field inactive" name="importo" value="${vou.importo}">
                   </div>
-                  <button type="submit" class="btn btn-primary">Modifica</button>
+                  <button type="submit" class="btn btn-primary" name="id" value="${vou.id}">Modifica</button>
                 </div>
               </form>
               <form class="delete column" method="get" action="eliminaVoucher">
@@ -35,36 +35,6 @@
               </form>
             </div>
           </div>
-      <%--
-          <div class="product-info-line">
-            <div class="box row">
-              <form method="post" action="modificaVoucher" id="modifica" class="product-data-row row">
-                <div class="voice size-l">
-                  <label for="id">VOUCHER CON ID:</label>
-                  <input type="text" id="id" class="input-field inactive" name="id" value="${vou.id}" readonly>
-                </div>
-                <div class="voice size-l">
-                  <label for="descrizione">DESCRIZIONE</label>
-                  <input type="text" id="descrizione" class="input-field inactive" name="descrizione" value="${vou.descrizione}">
-                </div>
-                <div class="voice size-l">
-                  <label for="importo">IMPORTO PER SBLOCCARLO</label>
-                  <input type="text" id="importo" class="input-field inactive" name="importo" value="${vou.importo}">
-                </div>
-                <div>
-                  <button type="submit" class="active-edit-button">Modifica</button>
-                </div>
-              </form>
-
-              <form method="get" action="eliminaVoucher" id="data-product-id_prodotto" class="delete row">
-                <div class="voice last">
-                  <button type="submit" class="active-accent-button" name="id" value="${vou.id}">Elimina</button>
-                </div>
-              </form>
-
-            </div>
-          </div>
-          --%>
         </c:forEach>
       </div>
     </div>
