@@ -69,5 +69,6 @@
             </div>
         </div>
     </div>
+    <script src="<c:url value="/assets/js/progress.js"/>"></script>
     <!-- Footer End-->
 </footer>
