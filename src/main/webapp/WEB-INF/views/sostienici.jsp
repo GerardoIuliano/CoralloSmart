@@ -12,7 +12,7 @@
 
    <form action="checkout" name="sostieniciform" id="sostieniciform" method="get">
        <div id="lifepog">
-           <input oninput="numerator(event)" type="number" class="currentlife" name="importo" max="100" min="0" value="0">
+           <input oninput="numerator(event)" type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
            <div id="lifeslash" contenteditable="false">
                <p></p>
            </div>
@@ -23,7 +23,7 @@
            <progress value="0" max="100" class="barlife"> </progress>
        </div>
 
-       <button type="submit" class="btn btn-primary btn-lg"
+       <button type="button" class="btn btn-primary btn-lg" name="confermaInput" onclick="validateInput()"
                style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Conferma</button>
 
 
