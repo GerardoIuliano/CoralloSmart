@@ -67,7 +67,7 @@
                                     <li><a href="#">Account</a>
                                       <ul class="submenu">
                                         <li><p>Benvenuto ${utente.username}</p></li>
-                                        <li><a href="mioProfilo">Il mio profilo</a></li>
+                                        <li><a href="mioProfiloARPA">Il mio profilo</a></li>
                                         <li><a name="logout" href="logout">logout</a></li>
                                       </ul>
                                     </li>
