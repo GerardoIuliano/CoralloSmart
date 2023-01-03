@@ -11,4 +11,6 @@ public interface UtenteManager {
     Optional<Utente> findUtente(String email, String password) throws SQLException;
     Optional<Utente> findUtenteByEmail(String email) throws SQLException;
     void createUtente(Utente utente) throws SQLException;
+    void updateUtente(Utente utente) throws SQLException;
+    Optional<Utente> retrieveById(int id) throws SQLException;
 }
