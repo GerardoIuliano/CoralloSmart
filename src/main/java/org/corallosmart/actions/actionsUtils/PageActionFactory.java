@@ -41,6 +41,8 @@ public class PageActionFactory implements ActionFactory {
         return new RegistrationResponsabileARPAAction();
       case"CheckRegistrationResponsabileARPAAction":
         return new CheckRegistrationResponsabileARPAAction();
+      case"OperazioneCompòetataAction":
+        return new OperazioneCompletataAction();
       case "InfoAction":
         return new InfoAction();
       case "MioProfiloAction":
@@ -55,6 +57,18 @@ public class PageActionFactory implements ActionFactory {
         return new ModificaVoucherAction();
       case "EliminaVoucherAction":
         return new EliminaVoucherAction();
+      case "MioProfiloARPAAction":
+        return new MioProfiloARPAAction();
+      case "MonitoraggioAction":
+        return new MonitoraggioAction();
+      case "StatoDispositiviAction":
+        return new StatoDispositiviAction();
+      case "VisualizzaIncassiAction":
+        return new VisualizzaIncassiAction();
+      case"ModificaProfiloAction":
+        return new ModificaProfiloAction();
+      case"CheckModificaProfiloAction":
+        return new CheckModificaProfiloAction();
       default:
         return new WelcomeAction();
     }
