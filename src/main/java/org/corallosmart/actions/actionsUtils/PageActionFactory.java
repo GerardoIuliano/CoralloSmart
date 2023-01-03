@@ -35,8 +35,8 @@ public class PageActionFactory implements ActionFactory {
         return new LogoutAction();
       case"CheckoutAction":
         return new CheckoutAction();
-      case"SostieniciAction":
-        return new SostieniciAction();
+      case"CheckSostieniciAction":
+        return new CheckSostieniciAction();
       case"RegistrationResponsabileARPAAction":
         return new RegistrationResponsabileARPAAction();
       case"CheckRegistrationResponsabileARPAAction":
