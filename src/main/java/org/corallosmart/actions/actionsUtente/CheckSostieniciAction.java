@@ -22,13 +22,14 @@ public class CheckSostieniciAction implements ActionStrategy {
         try{
             Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
             if(sos != null && sos.isTipo() == false){
-                HashMap<String, Double> map=new HashMap<>();
+                HashMap<Double, String> map=new HashMap<>();
 
                 VoucherManager voucherManager= new TableVoucherManager(this.getSource(request));
 
                 List<Voucher> listaVoucher= voucherManager.cercaVoucher();
                 for (Voucher v: listaVoucher) {
-                    map.put(v.getDescrizione(),v.getImporto());
+                    map.put(v.getImporto(), v.getDescrizione());
+                    System.out.println("\nContenuto HashMap:" + map.get(v.getImporto()));
                 }
 
                 HttpSession session= request.getSession();
@@ -39,7 +40,7 @@ public class CheckSostieniciAction implements ActionStrategy {
                 return view("login");
             }
             } catch (Exception e) {
-            e.printStackTrace();
+                e.printStackTrace();
             return view("500");
         }
     }
