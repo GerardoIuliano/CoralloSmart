@@ -41,12 +41,12 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
     }
 
     @Override
-    public void createUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException {
-        runner.update("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, 0, ?)", nome, cognome, codiceFiscale, username, email, telefono, password);
+    public void createUtente(Utente utente) throws SQLException {
+        runner.update("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", utente.getNome(), utente.getCognome(), utente.getCodiceFiscale(), utente.getUsername(), utente.getEmail(), utente.getTelefono(), utente.isTipo(), utente.getPassword());
     }
 
     @Override
-    public void createUtente(Utente utente) throws SQLException {
-        runner.update("INSERT INTO Utente(nome, cognome, codiceFiscale, username, email, telefono, tipo, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", utente.getNome(), utente.getCognome(), utente.getCodiceFiscale(), utente.getUsername(), utente.getEmail(), utente.getTelefono(), 0, utente.getPassword());
+    public void updateUtente(Utente utente) throws SQLException {
+        runner.update("UPDATE utente SET nome=?, cognome=?, codiceFiscale=?, username=?, email=?, telefono=?, tipo=?, password=? WHERE id=?", utente.getNome(), utente.getCognome(), utente.getCodiceFiscale(), utente.getUsername(), utente.getEmail(), utente.getTelefono(), utente.isTipo(), utente.getPassword(), utente.getId());
     }
 }

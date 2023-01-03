@@ -10,6 +10,6 @@ public interface UtenteManager {
 
     Optional<Utente> findUtente(String email, String password) throws SQLException;
     Optional<Utente> findUtenteByEmail(String email) throws SQLException;
-    void createUtente(String email, String password, String username, String nome, String cognome, String codiceFiscale, String telefono) throws SQLException;
     void createUtente(Utente utente) throws SQLException;
+    void updateUtente(Utente utente) throws SQLException;
 }

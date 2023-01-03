@@ -27,9 +27,20 @@ Piattaforma web per il reintegro della barriera corallina.
 - Fornisce la possibilità di sostenere economicamente un ente che si occupa della protezione ambientale con la possibilità di ricevere in cambio un voucher.
 - Fornisce uno strumento di monitoraggio real-time dello stato di salute delle acque.
 
-# Installazione
+# Installazione su Intellij IDEA
+- git clone ...
+- File -> Project Structure -> Facets -> new Web -> add path in Web Source Directories to \src\main\webapp
+- File -> Project Structure -> Artifacts -> new Web Application: Exploded
+- Create Run Configuration
+  - Add artifact to Deployment
+  - Set Application Context void
 
 # Contributors
+<a href="https://github.com/GerardoIuliano/CoralloSmart/graphs/contributors">
+  <img
+  src="https://contrib.rocks/image?repo=GerardoIuliano/CoralloSmart"
+  />
+</a>
 
 
 # Component Off-the-Shelf

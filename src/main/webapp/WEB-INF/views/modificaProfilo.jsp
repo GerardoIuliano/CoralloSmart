@@ -30,7 +30,7 @@
 
         <!--form-->
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form action="checkRegistration" name="registrationForm" id="registrationForm" method="post">
+          <form action="checkModificaProfilo" name="registrationForm" id="registrationForm" method="post">
 
             <!-- messaggio -->
             <p name="message" class="font-italic text-muted mb-1">${messaggio}</p>
@@ -38,57 +38,57 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" name="email" id="email" oninput="validaEmail('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter a valid email address" required/>
-              <label class="form-label" for="email">Email address</label>
+                     placeholder="Enter a valid email address" />
+              <label class="form-label" for="email">Email address: ${utente.getEmail()}</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" name="password" id="password" oninput="validaPassword('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter password" required/>
-              <label class="form-label" for="password">Password (must contain: one lowercase, uppercase, number and not less than 8 characters)</label>
+                     placeholder="Enter password" />
+              <label class="form-label" for="password">Password: (must contain: one lowercase, uppercase, number and not less than 8 characters)</label>
             </div>
 
             <!-- PasswordConferma input -->
             <div class="form-outline mb-3">
               <input type="password" name="passwordConferma" id="passwordConferma" oninput="validaPassword('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter password again" required/>
+                     placeholder="Enter password again" />
               <label class="form-label" for="passwordConferma">Repeat Password</label>
             </div>
 
             <!-- Username input -->
             <div class="form-outline mb-3">
               <input type="text" name="username" id="username" oninput="validaUsername('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter username" required/>
-              <label class="form-label" for="username">username</label>
+                     placeholder="Enter username" />
+              <label class="form-label" for="username">username: ${utente.getUsername()}</label>
             </div>
 
             <!-- name input -->
             <div class="form-outline mb-3">
               <input type="text" name="name" id="name" oninput="validaNome('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter name" required/>
-              <label class="form-label" for="name">name</label>
+                     placeholder="Enter name" />
+              <label class="form-label" for="name">name: ${utente.getNome()}</label>
             </div>
 
             <!-- cognome input -->
             <div class="form-outline mb-3">
               <input type="text" name="cognome" id="cognome" oninput="validaCognome('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter cognome" required/>
-              <label class="form-label" for="cognome">cognome</label>
+                     placeholder="Enter cognome" />
+              <label class="form-label" for="cognome">cognome: ${utente.getCognome()}</label>
             </div>
 
             <!-- codiceFiscale input -->
             <div class="form-outline mb-3">
               <input type="text" name="codiceFiscale" id="codiceFiscale" oninput="validaCodiceFiscale('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter codice fiscale" required/>
-              <label class="form-label" for="codiceFiscale">codice fiscale</label>
+                     placeholder="Enter codice fiscale" />
+              <label class="form-label" for="codiceFiscale">codice fiscale: ${utente.getCodiceFiscale()}</label>
             </div>
 
             <!-- telefono input -->
             <div class="form-outline mb-3">
               <input type="text" name="telefono" id="telefono" oninput="validaTelefono('registrationForm')" class="form-control form-control-lg"
-                     placeholder="Enter telefono" required/>
-              <label class="form-label" for="telefono">telefono</label>
+                     placeholder="Enter telefono" />
+              <label class="form-label" for="telefono">telefono: ${utente.getTelefono()}</label>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
@@ -97,10 +97,7 @@
               !-->
               <!--submit-->
               <button name="submit" type="button" onclick="chekRegistrationForm('registrationForm')" class="btn btn-primary btn-lg"
-                      style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Registration</button>
-
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already signed in? <a href="login"
-                                                                                class="link-danger">login</a></p>
+                      style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Update</button>
             </div>
           </form>
         </div>

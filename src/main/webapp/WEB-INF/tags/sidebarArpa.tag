@@ -28,21 +28,21 @@
   </div>
 
   <li class="nav-item">
-    <a class="nav-link" href="profilo">
+    <a class="nav-link" href="mioProfilo">
       <i class="fas fa-fw fa-user"></i>
-      <span>Profilo</span></a>
+      <span>Il Mio Profilo</span></a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" href="tutteRecensioni">
       <i class="fas fa-fw fa-comments"></i>
-      <span>Recensioni</span></a>
+      <span>Modifica Profilo</span></a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" href="tuttiAnnunci">
       <i class="fas fa-fw fa-ad"></i>
-      <span>Gestione</span></a>
+      <span>Crea Responsabile ARPA</span></a>
   </li>
 
   <!-- Divider -->
@@ -52,14 +52,38 @@
   <li class="nav-item active">
     <a class="nav-link" href="">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Monitora</span></a>
+      <span>Visualizza Incassi</span></a>
   </li>
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
     <a class="nav-link" href="">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Monitora</span></a>
+      <span>Stato Dispositivi</span></a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Monitoraggio</span></a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Aggiungi Voucher</span></a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Stato Dispositivi</span></a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Gestione Voucher</span></a>
   </li>
 
   <!-- Divider -->

@@ -11,9 +11,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="dashboard">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+        <a class="nav-link" >
+            <i class="fas fa-fw"></i>
+            <span>AREA PRIVATA</span></a>
     </li>
 
     <!-- Divider -->
@@ -21,39 +21,27 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Responsabile Lido
+        Utente
     </div>
 
     <li class="nav-item">
         <a class="nav-link" href="profilo">
             <i class="fas fa-fw fa-user"></i>
-            <span>Profilo</span></a>
+            <span>Il Mio Profilo</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="mostraModificaLido">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Modifica Lido</span></a>
+            <span>Modifica Profilo</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="mostraDisponibilita">
             <i class="fas fa-fw fa-umbrella-beach"></i>
-            <span>Disponibilit&agrave; attuale</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="recensioniRespLido">
-            <i class="fas fa-fw fa-comments"></i>
-            <span>Recensioni Lido</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="annunciRespLido">
-            <i class="fas fa-fw fa-ad"></i>
-            <span>Annunci Lido</span></a>
+            <span>Contributi e Voucher</span></a>
     </li>
 
     <!-- Divider -->

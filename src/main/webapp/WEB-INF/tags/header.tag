@@ -52,34 +52,29 @@
                     <li><a href=".">Home</a></li>
                     <li><a href="info">Info</a></li>
                     <c:choose>
-                      <c:when test="${sostenitore != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${sostenitore.username}</p></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
-                      </c:when>
-                      <c:when test="${adminLido != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${adminLido.username}</p></li>
-                            <li><a href="dashboard">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
-                      </c:when>
-                      <c:when test="${adminEnte != null}">
-                        <li><a href="#">Account</a>
-                          <ul class="submenu">
-                            <li><p>Benvenuto ${adminEnte.username}</p></li>
-                            <li><a href="dashboardEnte">Sezione Admin</a></li>
-                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
-                            <li><a name="logout" href="logout">logout</a></li>
-                          </ul>
-                        </li>
+                      <c:when test="${utente != null}">
+                                <c:choose>
+                                 <c:when test="${utente.isTipo() == false}">
+                                <li><a href="#">Account</a>
+                                  <ul class="submenu">
+                                    <li><p>Benvenuto ${utente.username}</p></li>
+                                    <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                                    <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                                    <li><a name="logout" href="logout">logout</a></li>
+                                  </ul>
+                                </li>
+                                 </c:when>
+                                  <c:when test="${utente.isTipo() == true}">
+                                    <li><a href="#">Account</a>
+                                      <ul class="submenu">
+                                        <li><p>Benvenuto ${utente.username}</p></li>
+                                        <li><a href="registrationResponsabileARPA">Registra un responsabile ARPA</a></li>
+                                        <li><a href="modificaProfilo">Modifica Profilo</a></li>
+                                        <li><a name="logout" href="logout">logout</a></li>
+                                      </ul>
+                                    </li>
+                                  </c:when>
+                                </c:choose>
                       </c:when>
                       <c:otherwise>
                         <li><a href="login">Login</a></li>
