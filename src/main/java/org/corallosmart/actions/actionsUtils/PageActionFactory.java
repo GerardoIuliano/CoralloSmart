@@ -2,6 +2,7 @@ package org.corallosmart.actions.actionsUtils;
 
 import org.corallosmart.actions.ProvaAction;
 import org.corallosmart.actions.actionsUtente.*;
+import org.corallosmart.actions.actionsVoucher.*;
 
 /**
  * @author theBoys
@@ -46,6 +47,16 @@ public class PageActionFactory implements ActionFactory {
         return new InfoAction();
       case "MioProfiloAction":
         return new MioProfiloAction();
+      case "AggiungiVoucherAction":
+        return new AggiungiVoucherAction();
+      case "ClickAggiungiVoucherAction":
+        return new ClickAggiungiVoucherAction();
+      case "GestioneVoucherAction":
+        return new GestioneVoucherAction();
+      case "ModificaVoucherAction":
+        return new ModificaVoucherAction();
+      case "EliminaVoucherAction":
+        return new EliminaVoucherAction();
       case "MioProfiloARPAAction":
         return new MioProfiloARPAAction();
       case "MonitoraggioAction":

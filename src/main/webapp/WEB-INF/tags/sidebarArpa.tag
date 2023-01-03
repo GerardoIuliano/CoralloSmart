@@ -71,13 +71,19 @@
   </li>
 
   <li class="nav-item active">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="aggiungiVoucher">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Aggiungi Voucher</span></a>
   </li>
 
   <li class="nav-item active">
     <a class="nav-link" href="">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Stato Dispositivi</span></a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="gestioneVoucher">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Gestione Voucher</span></a>
   </li>
