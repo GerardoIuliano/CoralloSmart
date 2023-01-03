@@ -33,16 +33,18 @@
       <span>Il Mio Profilo</span></a>
   </li>
 
+  <!-- Nav Item - Modifica Profilo -->
   <li class="nav-item">
-    <a class="nav-link" href="tutteRecensioni">
-      <i class="fas fa-fw fa-comments"></i>
+    <a class="nav-link" href="modificaProfilo">
+      <i class="fas fa-fw fa-chart-area"></i>
       <span>Modifica Profilo</span></a>
   </li>
 
+  <!-- Nav Item - Crea responsabile ARPA -->
   <li class="nav-item">
-    <a class="nav-link" href="tuttiAnnunci">
+    <a class="nav-link" href="registrationResponsabileARPA">
       <i class="fas fa-fw fa-ad"></i>
-      <span>Crea Responsabile ARPA</span></a>
+      <span>Registra un responsabile ARPA</span></a>
   </li>
 
   <!-- Divider -->
