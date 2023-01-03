@@ -23,8 +23,6 @@ public class ModificaVoucherAction implements ActionStrategy {
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
-
-            request.setAttribute("errore", "Inserire valore numerico");
             return redirect("/CoralloSmart/gestioneVoucher");
         }
 
