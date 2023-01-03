@@ -6,8 +6,8 @@
   <!-- Sidebar - Brand -->
   <div class="sidebar-brand d-flex align-items-center justify-content-center" href="/CoralloSmart/" style="height: 120px">
 
-        <img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
-                        alt="">
+        <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
+                alt=""></a>
   </div>
 
   <!-- Divider -->
@@ -28,7 +28,7 @@
   </div>
 
   <li class="nav-item">
-    <a class="nav-link" href="mioProfilo">
+    <a class="nav-link" href="mioProfiloARPA">
       <i class="fas fa-fw fa-user"></i>
       <span>Il Mio Profilo</span></a>
   </li>
@@ -50,20 +50,20 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="visualizzaIncassi">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Visualizza Incassi</span></a>
   </li>
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="statoDispositivi">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Stato Dispositivi</span></a>
   </li>
 
   <li class="nav-item active">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="monitoraggio">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Monitoraggio</span></a>
   </li>
@@ -72,12 +72,6 @@
     <a class="nav-link" href="">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Aggiungi Voucher</span></a>
-  </li>
-
-  <li class="nav-item active">
-    <a class="nav-link" href="">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Stato Dispositivi</span></a>
   </li>
 
   <li class="nav-item active">

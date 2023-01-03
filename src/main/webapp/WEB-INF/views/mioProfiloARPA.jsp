@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: attil
-  Date: 1/2/2023
-  Time: 5:09 PM
+  Date: 1/3/2023
+  Time: 2:20 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -12,7 +12,7 @@
 <cs:layout title="Area Personale"/>
 
 <div id="wrapper">
-  <cs:sidebar/>
+  <cs:sidebarArpa/>
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column " style="padding: 20px">
     <!-- Main Content -->
@@ -92,5 +92,3 @@
   </div>
 </div>
 <!-- End of Page Wrapper -->
-
-

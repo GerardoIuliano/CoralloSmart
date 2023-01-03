@@ -46,6 +46,14 @@ public class PageActionFactory implements ActionFactory {
         return new InfoAction();
       case "MioProfiloAction":
         return new MioProfiloAction();
+      case "MioProfiloARPAAction":
+        return new MioProfiloARPAAction();
+      case "MonitoraggioAction":
+        return new MonitoraggioAction();
+      case "StatoDispositiviAction":
+        return new StatoDispositiviAction();
+      case "VisualizzaIncassiAction":
+        return new VisualizzaIncassiAction();
       case"ModificaProfiloAction":
         return new ModificaProfiloAction();
       case"CheckModificaProfiloAction":
