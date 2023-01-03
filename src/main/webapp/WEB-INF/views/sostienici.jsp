@@ -7,9 +7,8 @@
     <cs:header/>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
+        <h1 class="h3 mb-0 text-gray-800">Sostienici${map.isEmpty()}</h1>
     </div>
-
    <form action="checkout" name="sostieniciform" id="sostieniciform" method="get">
        <div id="lifepog">
            <input oninput="numerator(event)" type="number" class="currentlife" name="importo" max="10000" min="0" value="0">

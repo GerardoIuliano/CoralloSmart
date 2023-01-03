@@ -11,14 +11,14 @@ public class SostieniciAction implements ActionStrategy {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-
+        //TODO da eliminare
         try{
-            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
-           // if (sos==null)
-             //   return view("login");
-            //else{
+            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
+            if (sos==null) {
+                return view("login");
+            }else{
                 return view("sostienici");
-            //}
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return view("500");

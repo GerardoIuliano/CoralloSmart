@@ -17,44 +17,31 @@ import java.util.Optional;
 public class CheckSostieniciAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
-        Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
-        HashMap<String, Double> map=new HashMap<>();
+
         try{
+            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
+            if(sos != null && sos.isTipo() == false){
+                HashMap<String, Double> map=new HashMap<>();
 
-            VoucherManager voucherManager=new TableVoucherManager(this.getSource(request));
-            
-            List<Voucher> listaVoucher=voucherManager.cercaVoucher();
-            for (Voucher v: listaVoucher) {
-                map.put(v.getDescrizione(),v.getImporto());
-            }
-            HttpSession session= request.getSession();
-            if(session.isNew()){
+                VoucherManager voucherManager= new TableVoucherManager(this.getSource(request));
 
+                List<Voucher> listaVoucher= voucherManager.cercaVoucher();
+                for (Voucher v: listaVoucher) {
+                    map.put(v.getDescrizione(),v.getImporto());
+                }
+
+                HttpSession session= request.getSession();
                 session.setAttribute("map", map);
-            } else{
-                map=(HashMap<String,Double>) session.getAttribute("map");
+
+                return view("sostienici");
+            }else{
+                return view("login");
             }
-
-
-
-
-
-
-
-
-
-            // if (sos==null)
-            //   return view("login");
-            //else{
-            return view("sostienici");
-            //}
-        } catch (Exception e) {
+            } catch (Exception e) {
             e.printStackTrace();
             return view("500");
         }
-
     }
-    }
+}
 
