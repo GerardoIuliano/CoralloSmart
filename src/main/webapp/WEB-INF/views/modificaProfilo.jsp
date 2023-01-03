@@ -13,7 +13,16 @@
 
 
   <div id="wrapper">
-    <cs:sidebarArpa/>
+  <c:choose>
+  <c:when test="${utente != null}">
+    <c:when test="${utente.isTipo() == false}">
+      <cs:sidebarArpa/>
+    </c:when>
+    <c:when test="${utente.isTipo() == true}">
+      <cs:sidebar/>
+    </c:when>
+  </c:when>
+  </c:choose>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column " style="padding: 20px">
       <!-- Main Content -->
