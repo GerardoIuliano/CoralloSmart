@@ -35,6 +35,8 @@
             <!-- messaggio -->
             <p name="message" class="font-italic text-muted mb-1">${messaggio}</p>
 
+            <input type="hidden" id="idUtente" name="idUtente" value=${utente.getId()}>
+
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" name="email" id="email" oninput="validaEmail('registrationForm')" class="form-control form-control-lg"
@@ -96,7 +98,7 @@
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Login</a>
               !-->
               <!--submit-->
-              <button name="submit" type="button" onclick="chekRegistrationForm('registrationForm')" class="btn btn-primary btn-lg"
+              <button name="submit" type="button" onclick="chekUpdateForm('registrationForm')" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Update</button>
             </div>
           </form>
