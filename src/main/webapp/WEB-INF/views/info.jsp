@@ -12,7 +12,7 @@
 <cs:layout title="Area Personale"/>
 
 <div id="wrapper">
-    <cs:sidebarArpa/>
+    <cs:sidebar/>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column " style="padding: 20px">
         <!-- Main Content -->

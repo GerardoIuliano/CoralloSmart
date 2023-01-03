@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -27,7 +28,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="profilo">
+        <a class="nav-link" href="mioProfilo">
             <i class="fas fa-fw fa-user"></i>
             <span>Il Mio Profilo</span></a>
     </li>
@@ -41,7 +42,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="mostraDisponibilita">
+        <a class="nav-link" href="contributiEvoucher">
             <i class="fas fa-fw fa-umbrella-beach"></i>
             <span>Contributi e Voucher</span></a>
     </li>

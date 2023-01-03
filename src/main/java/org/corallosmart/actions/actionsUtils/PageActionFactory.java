@@ -58,6 +58,8 @@ public class PageActionFactory implements ActionFactory {
         return new ModificaProfiloAction();
       case"CheckModificaProfiloAction":
         return new CheckModificaProfiloAction();
+      case"ContributiEVoucherAction":
+        return new ContributiEVoucherAction();
       default:
         return new WelcomeAction();
     }

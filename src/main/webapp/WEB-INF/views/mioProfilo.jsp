@@ -27,7 +27,7 @@
                   <p class="mb-0">Username</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Username</p>
+                  <p class="text-muted mb-0">${utente.getUsername()}</p>
                 </div>
               </div>
               <hr>
@@ -36,7 +36,7 @@
                   <p class="mb-0">Nome</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Nome</p>
+                  <p class="text-muted mb-0">${utente.getNome()}</p>
                 </div>
               </div>
               <hr>
@@ -45,7 +45,7 @@
                   <p class="mb-0">Cognome</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Cognome</p>
+                  <p class="text-muted mb-0">${utente.getCognome()}</p>
                 </div>
               </div>
               <hr>
@@ -54,7 +54,7 @@
                   <p class="mb-0">Codice Fiscale</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">ATL123DFG345M</p>
+                  <p class="text-muted mb-0">${utente.getCodiceFiscale()}</p>
                 </div>
               </div>
               <hr>
@@ -63,7 +63,7 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">example@example.com</p>
+                  <p class="text-muted mb-0">${utente.getEmail()}</p>
                 </div>
               </div>
               <hr>
@@ -72,18 +72,10 @@
                   <p class="mb-0">Numero di Telefono</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">(097) 234-5678</p>
+                  <p class="text-muted mb-0">${utente.getTelefono()}</p>
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Address</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                </div>
-              </div>
+            </div>
             </div>
           </div>
         </div>
