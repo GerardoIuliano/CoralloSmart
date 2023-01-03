@@ -115,6 +115,22 @@ function chekRegistrationForm(form) {
     }
 }
 
+function chekUpdateForm(form) {
+    if (emailOk || passwordOk || usernameOk || nomeOk || cognomeOk || codiceFiscaleOk || telefonoOk) {
+        var submitBtn = document.forms[form]['submit'];
+        submitBtn.type = "submit";
+
+        var message = document.forms[form]['message'];
+        message.value = '';
+    } else {
+        var submitBtn = document.forms[form]['submit'];
+        submitBtn.type = "button";
+
+        var message = document.forms[form]['message'];
+        message.value = '*Verifica che tutti i campi siano correttamente compilati*';
+    }
+}
+
 function test(){
     var input = document.forms['registrationForm']['submit'];
     if(true){

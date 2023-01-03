@@ -42,6 +42,14 @@ public class PageActionFactory implements ActionFactory {
         return new CheckRegistrationResponsabileARPAAction();
       case"OperazioneCompòetataAction":
         return new OperazioneCompletataAction();
+      case "InfoAction":
+        return new InfoAction();
+      case "MioProfiloAction":
+        return new MioProfiloAction();
+      case"ModificaProfiloAction":
+        return new ModificaProfiloAction();
+      case"CheckModificaProfiloAction":
+        return new CheckModificaProfiloAction();
       default:
         return new WelcomeAction();
     }
