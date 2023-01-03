@@ -41,7 +41,7 @@ public class PageActionFactory implements ActionFactory {
         return new RegistrationResponsabileARPAAction();
       case"CheckRegistrationResponsabileARPAAction":
         return new CheckRegistrationResponsabileARPAAction();
-      case"OperazioneCompòetataAction":
+      case"OperazioneCompletataAction":
         return new OperazioneCompletataAction();
       case "InfoAction":
         return new InfoAction();
