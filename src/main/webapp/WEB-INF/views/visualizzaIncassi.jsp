@@ -5,9 +5,10 @@
   Time: 12:42 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
+
 
 <cs:layout title="Area Personale"/>
 
@@ -29,45 +30,23 @@
           </tr>
           </thead>
           <tbody>
+          <c:forEach items="${contributi}" var="contributo">
           <tr>
             <td>
-              <p class="fw-normal mb-1">1546442</p>
+              <p class="fw-normal mb-1">${contributo.getId()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">15/09/22</p>
+              <p class="fw-normal mb-1">${contributo.getData().getDate()}/${contributo.getData().getMonth()}/${contributo.getData().getYear()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">1500€</p>
+              <p class="fw-normal mb-1">${contributo.getImporto()}</p>
             </td>
           </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">1546442</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/09/22</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">1500€</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">1546442</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/09/22</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">1500€</p>
-            </td>
-          </tr>
+          </c:forEach>
           </tbody>
         </table>
 
-        <h4>Totale Contributi Incassati: 8000€</h4>
+        <h4>Totale Contributi Incassati: ${totale}</h4>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
   Time: 1:41 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 
@@ -19,6 +19,22 @@
     <div class=section-top-border">
       <h3>Monitoraggio</h3>
       <div>
+        <div class = "order-filter">
+        <form action = "ricercaData" method = "post" id = "search-date">
+
+          <label for = "fromDate">Ricerca per data</label><br>
+          <label for = "fromDate">Da</label>
+          <input type = "date" name = "fromDate" id = "fromDate" required>
+
+          <div id = "in-toDate">
+            <label for = "toDate">&nbsp;A</label>
+            <input type = "date" name = "toDate" id = "toDate" required>
+          </div>
+
+          <button type = "submit">Cerca</button>
+        </form>
+        </div>
+
         <table class="table align-middle mb-0 bg-white">
           <thead class="bg-light">
           <tr>
@@ -33,89 +49,35 @@
           </tr>
           </thead>
           <tbody>
+          <c:forEach items="${rilevamenti}" var="rilevamento">
           <tr>
             <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
+              <p class="fw-normal mb-1">${rilevamento.getDataRicezione().getDate()}/${rilevamento.getDataRicezione().getMonth()}/${rilevamento.getDataRicezione().getYear()}</p>
             </td>
             <td>
               <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
+                ${rilevamento.getLatitudine()}, ${rilevamento.getLongitudine()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">7.3</p>
+              <p class="fw-normal mb-1">${rilevamento.getDissolvedOxygen()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">410</p>
+              <p class="fw-normal mb-1">${rilevamento.getOxidationReductionPotential()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">7.8</p>
+              <p class="fw-normal mb-1">${rilevamento.getPHTurbidity()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">4</p>
+              <p class="fw-normal mb-1">${rilevamento.getTurbidity()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">39000</p>
+              <p class="fw-normal mb-1">${rilevamento.getTotalDissolvedSolids()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">-1</p>
+              <p class="fw-normal mb-1">${rilevamento.getTemperatura()}</p>
             </td>
           </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">7.3</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">410</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">7.8</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">4</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">39000</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">-1</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">7.3</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">410</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">7.8</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">4</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">39000</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">-1</p>
-            </td>
-          </tr>
+          </c:forEach>
           </tbody>
         </table>
       </div>

@@ -28,9 +28,9 @@
         <link rel="stylesheet" href="<c:url value="/assets/css/slick.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/nice-select.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/style.css"/>">
-
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="<c:url value="/assets/css/progress.css"/>">
+        <link rel="stylesheet" href="/css/date.css">
         <!-- JS here -->
 
         <!-- All JS Custom Plugins Link Here here -->
