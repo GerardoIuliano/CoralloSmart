@@ -15,4 +15,7 @@ public class Contributo {
     private int id;
     private Date data;
     private double importo;
+    private int idUtente;
+    private int idEmail;
+    private int idVoucher2;
 }
