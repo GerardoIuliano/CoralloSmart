@@ -34,11 +34,12 @@ public class CheckLoginAction implements ActionStrategy {
                 if(!utente.isTipo()){
                     Sostenitore sostenitore = new Sostenitore(utente);
                     request.getSession().setAttribute("utente", sostenitore);
+                    return redirect("/CoralloSmart/");
                 } else {
                     ResponsabileARPA responsabileARPA = new ResponsabileARPA(utente);
                     request.getSession().setAttribute("utente", responsabileARPA);
+                    return view("indexARPA");
                 }
-                return redirect("/CoralloSmart/");
             }
         } catch (SQLException e) {
             e.printStackTrace();
