@@ -31,9 +31,6 @@
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
       <div class="header-bottom  header-sticky">
         <div class="container">
           <div class="row align-items-center">
@@ -50,14 +47,13 @@
                 <nav>
                   <ul id="navigation">
                     <li><a href=".">Home</a></li>
-                    <li><a href="info">Info</a></li>
                     <c:choose>
                       <c:when test="${utente != null}">
                                 <c:choose>
                                  <c:when test="${utente.isTipo() == false}">
-                                <li><a href="#">Account</a>
+                                <li><a href="mioProfilo"> <i class="fas fa-fw fa-user fa-2x"></i> </a>
                                   <ul class="submenu">
-                                    <li><p>Benvenuto ${utente.username}</p></li>
+                                    <li><p>Benvenuto ${utente.getUsername()}</p></li>
                                     <li><a href="mioProfilo">Il mio profilo</a></li>
                                     <li><a name="logout" href="logout">logout</a></li>
                                   </ul>
