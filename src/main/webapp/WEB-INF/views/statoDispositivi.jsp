@@ -34,98 +34,97 @@
           </tr>
           </thead>
           <tbody>
+          <c:forEach items="${dispositivi}" var="dispositivo">
           <tr>
             <td>
-              <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
+              <p class="fw-normal mb-1">${dispositivo.getLatitudine()}, ${dispositivo.getLongitudine()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">Alto</p>
+              <p class="fw-normal mb-1">${dispositivo.getQualita()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
+              <p class="fw-normal mb-1">${dispositivo.getDataImmersione().getDate()}/${dispositivo.getDataImmersione().getMonth()}/${dispositivo.getDataImmersione().getYear()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
+              <c:choose>
+                 <c:when test="${dispositivo.getDOSensor() == 0}">
+                 <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getDOSensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getDOSensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+              </c:choose>
+               </td>
+               <td>
+                 <c:choose>
+                 <c:when test="${dispositivo.getORPSensor() == 0}">
+                   <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getORPSensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getORPSensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+                 </c:choose>
+               </td>
+               <td>
+                 <c:choose>
+                 <c:when test="${dispositivo.getPHSensor() == 0}">
+                   <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getPHSensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getPHSensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+                 </c:choose>
+               </td>
+               <td>
+                 <c:choose>
+                 <c:when test="${dispositivo.getTurbiditySensor() == 0}">
+                   <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTurbiditySensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTurbiditySensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+                 </c:choose>
+               </td>
+               <td>
+                 <c:choose>
+                 <c:when test="${dispositivo.getTDSSensor() == 0}">
+                   <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTDSSensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTDSSensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+                 </c:choose>
+               </td>
+               <td>
+                 <c:choose>
+                 <c:when test="${dispositivo.getTempSensor() == 0}">
+                   <p class="fw-normal mb-1">Non installato</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTempSensor() == 1}">
+                   <p class="fw-normal mb-1">Connesso</p>
+                 </c:when>
+                 <c:when test="${dispositivo.getTempSensor() == 2}">
+                   <p class="fw-normal mb-1">Non connesso</p>
+                 </c:when>
+                 </c:choose>
+               </td>
           </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Alto</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">
-                40.637333, 14.635842</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Alto</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/06/2022</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Non Connesso</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Connesso</p>
-            </td>
-          </tr>
+          </c:forEach>
           </tbody>
         </table>
       </div>
