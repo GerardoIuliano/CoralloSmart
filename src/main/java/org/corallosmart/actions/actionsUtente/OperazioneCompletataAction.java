@@ -15,12 +15,12 @@ public class OperazioneCompletataAction implements ActionStrategy {
 
 
         try{
-            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("sostenitore");
-            // if (sos==null)
-            //   return view("login");
-            //else{
-            return view("operazioneCompletata");
-            //}
+            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
+            if(sos != null && sos.isTipo() == false) {
+                return view("operazioneCompletata");
+            }else{
+                return view("login");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return view("500");
