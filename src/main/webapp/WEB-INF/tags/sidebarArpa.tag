@@ -8,7 +8,7 @@
   <!-- Sidebar - Brand -->
   <div class="sidebar-brand d-flex align-items-center justify-content-center" href="/CoralloSmart/" style="height: 120px">
 
-        <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
+        <a href="goToIndexARPA"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
                 alt=""></a>
   </div>
 

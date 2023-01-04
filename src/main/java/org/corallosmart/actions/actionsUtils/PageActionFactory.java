@@ -71,6 +71,8 @@ public class PageActionFactory implements ActionFactory {
         return new CheckModificaProfiloAction();
       case"ContributiEVoucherAction":
         return new ContributiEVoucherAction();
+      case"GoToIndexARPAAction":
+        return new GoToIndexARPAAction();
       default:
         return new WelcomeAction();
     }
