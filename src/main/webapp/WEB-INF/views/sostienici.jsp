@@ -1,3 +1,4 @@
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -7,11 +8,18 @@
     <cs:header/>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Sostienici${map.isEmpty()}</h1>
+        <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
+        <h1 name="voucher">
+            <c:forEach var="key" items="${map.keySet()}">
+                <c:out value="${key}"/>
+                <c:out value="${map.get(key)}"/>
+            </c:forEach>
+        </h1>
     </div>
+
    <form action="checkout" name="sostieniciform" id="sostieniciform" method="get">
        <div id="lifepog">
-           <input oninput="numerator(event)" type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
+           <input oninput='numerator(event), stampaHashMap(${map})' type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
            <div id="lifeslash" contenteditable="false">
                <p></p>
            </div>
