@@ -39,7 +39,13 @@
                     </h2>
 
                     <div class="shopping_cart">
+
+
+                        <!--form-->
                         <form class="form-horizontal" role="form" action="operazioneCompletata" method="post" id="payment-form">
+
+
+
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
