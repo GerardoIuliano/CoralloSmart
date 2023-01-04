@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 
@@ -30,13 +31,14 @@
           </tr>
           </thead>
           <tbody>
+
           <c:forEach items="${contributi}" var="contributo">
           <tr>
             <td>
               <p class="fw-normal mb-1">${contributo.getId()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">${contributo.getData().getDate()}/${contributo.getData().getMonth()}/${contributo.getData().getYear()}</p>
+              <p class="fw-normal mb-1">${sdf.format(contributo.getData())}</p>
             </td>
             <td>
               <p class="fw-normal mb-1">${contributo.getImporto()}</p>

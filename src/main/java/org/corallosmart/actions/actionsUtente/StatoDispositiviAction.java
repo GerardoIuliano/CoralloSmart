@@ -8,6 +8,7 @@ import org.corallosmart.models.modelsDispositivo.Dispositivo;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,9 +21,12 @@ public class StatoDispositiviAction implements ActionStrategy {
             DispositivoManager dm = new TableDispositivoManager(this.getSource(request));
             List<Dispositivo> dispositivi = dm.listaDispositivi();
 
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
             HttpSession session = request.getSession();
             session.setAttribute("dispositivi", dispositivi);
-            
+            session.setAttribute("sdf", sdf);
+
             return view("statoDispositivi");
         } catch (Exception e) {
             e.printStackTrace();

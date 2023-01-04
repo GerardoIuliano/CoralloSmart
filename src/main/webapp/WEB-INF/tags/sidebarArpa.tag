@@ -37,7 +37,7 @@
 
   <!-- Nav Item - Modifica Profilo -->
   <li class="nav-item">
-    <a class="nav-link" href="modificaProfilo">
+    <a class="nav-link" href="modificaProfiloARPA">
       <i class="fas fa-edit"></i>
       <span>Modifica Profilo</span></a>
   </li>

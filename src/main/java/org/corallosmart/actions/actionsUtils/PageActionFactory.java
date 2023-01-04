@@ -67,6 +67,8 @@ public class PageActionFactory implements ActionFactory {
         return new VisualizzaIncassiAction();
       case"ModificaProfiloAction":
         return new ModificaProfiloAction();
+      case"ModificaProfiloARPAAction":
+        return new ModificaProfiloARPAAction();
       case"CheckModificaProfiloAction":
         return new CheckModificaProfiloAction();
       case"ContributiEVoucherAction":

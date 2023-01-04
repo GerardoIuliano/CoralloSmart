@@ -1,19 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: gerar
-  Date: 20/12/2022
-  Time: 21:38
+  User: attil
+  Date: 1/5/2023
+  Time: 12:08 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <cs:layout title="Registration" admin="false">
-
-
-
   <div id="wrapper">
-    <cs:sidebar/>
+    <cs:sidebarArpa/>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column " style="padding: 20px">
       <!-- Main Content -->

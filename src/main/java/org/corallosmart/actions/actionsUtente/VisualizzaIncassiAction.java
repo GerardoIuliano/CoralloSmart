@@ -8,6 +8,7 @@ import org.corallosmart.models.modelsContributo.Contributo;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,9 +27,12 @@ public class VisualizzaIncassiAction implements ActionStrategy {
                     totale += c.getImporto();
             }
 
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
             HttpSession session = request.getSession();
             session.setAttribute("contributi", contributi);
             session.setAttribute("totale", totale);
+            session.setAttribute("sdf", sdf);
 
             return view("visualizzaIncassi");
         } catch (Exception e) {
