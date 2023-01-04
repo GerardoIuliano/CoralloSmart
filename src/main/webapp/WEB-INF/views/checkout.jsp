@@ -239,7 +239,7 @@
                                         <fieldset>
                                             <legend>Quale metodo di pagamneto scegli?</legend>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label" for="card-holder-name">Name on
+                                                <label class="col-sm-3 control-label" for="name-on-card">Name on
                                                     Card</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" stripe-data="name"
@@ -259,7 +259,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" for="expiry-month">Expiration
+                                                    <label class="col-sm-3 control-label" for="card-exp-month">Expiration
                                                         Date</label>
                                                     <div class="col-sm-9">
                                                         <div class="row">
@@ -300,7 +300,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" for="cvv">Card CVC</label>
+                                                    <label class="col-sm-3 control-label" for="card-cvc">Card CVC</label>
                                                     <div class="col-sm-3">
                                                         <input type="text" class="form-control" stripe-data="cvc"
                                                                id="card-cvc" placeholder="Security Code">
@@ -310,7 +310,9 @@
                                                     <div class="col-sm-offset-3 col-sm-9">
                                                     </div>
                                                 </div>
+                                            </div>
                                         </fieldset>
+
                                         <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Paga
                                             Ora
                                         </button>
