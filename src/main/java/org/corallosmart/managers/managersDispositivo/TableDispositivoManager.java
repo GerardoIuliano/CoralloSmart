@@ -28,4 +28,10 @@ public class TableDispositivoManager extends TableManager implements Dispositivo
         Dispositivo lista= runner.query("SELECT * FROM Dispositivo WHERE id = ?",SOS_MAPPER, id);
         return (List<Dispositivo>) lista;
     }
+
+    public List<Dispositivo> listaDispositivi() throws SQLException
+    {
+        List<Dispositivo> lista = runner.query("SELECT * FROM Dispositivo", SOS_LIST_MAPPER);
+        return lista;
+    }
 }

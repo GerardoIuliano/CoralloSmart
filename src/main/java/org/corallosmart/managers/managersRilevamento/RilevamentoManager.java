@@ -15,5 +15,5 @@ public interface RilevamentoManager {
 
     public List<Rilevamento> cercaRilevamentoData(Date data) throws SQLException;
 
-
+    public List<Rilevamento> listaRilevamenti() throws SQLException;
 }

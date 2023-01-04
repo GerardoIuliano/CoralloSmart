@@ -42,4 +42,10 @@ public class TableRilevamentoManager extends TableManager implements Rilevamento
         List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento where data<=? AND data <=?",SOS_LIST_MAPPER, data);
                 return lista;
     }
+
+    @Override
+    public List<Rilevamento> listaRilevamenti() throws SQLException {
+        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento",SOS_LIST_MAPPER);
+        return lista;
+    }
 }

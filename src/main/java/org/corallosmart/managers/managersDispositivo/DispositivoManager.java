@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface DispositivoManager {
     public List<Dispositivo> cercaDispositivo(int id) throws SQLException;
+    public List<Dispositivo> listaDispositivi() throws SQLException;
 }
