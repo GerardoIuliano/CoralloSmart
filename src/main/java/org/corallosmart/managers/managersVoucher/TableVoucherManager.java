@@ -39,7 +39,7 @@ public class TableVoucherManager extends TableManager implements VoucherManager{
 
     @Override
     public void eliminaVoucher(int id) throws SQLException {
-        runner.update("DELETE FROM voucher WHERE id=?",id);
+        runner.update("DELETE Voucher FROM voucher WHERE id=?",id);
     }
 }
 

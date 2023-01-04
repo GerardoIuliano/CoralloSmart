@@ -22,4 +22,15 @@ public class TableEmailManager extends TableManager implements EmailManager{
     public TableEmailManager(DataSource dataSource) {
         super(dataSource);
     }
+
+    @Override
+    public void createEmail(String oggetto, String corpo) throws SQLException {
+        runner.update("INSERT INTO Email(oggetto, corpo) VALUES(?, ?)", oggetto, corpo);
+    }
+
+    @Override
+    public List<Email> cercaEmail(Email email) throws SQLException {
+        Email lista= runner.query("SELECT * FROM Email WHERE oggetto= ?, corpo=?, idUtente2=?, idVoucher=? ",SOS_MAPPER, email);
+        return (List<Email>) lista;
+    }
 }

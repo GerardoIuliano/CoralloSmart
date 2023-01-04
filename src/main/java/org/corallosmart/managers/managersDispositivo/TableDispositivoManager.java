@@ -22,4 +22,10 @@ public class TableDispositivoManager extends TableManager implements Dispositivo
     public TableDispositivoManager(DataSource dataSource) {
         super(dataSource);
     }
+
+    @Override
+    public List<Dispositivo> cercaDispositivo(int id) throws SQLException {
+        Dispositivo lista= runner.query("SELECT * FROM Dispositivo WHERE id = ?",SOS_MAPPER, id);
+        return (List<Dispositivo>) lista;
+    }
 }
