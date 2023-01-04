@@ -6,6 +6,7 @@ import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
 import org.corallosmart.models.modelsUtente.Sostenitore;
 import org.corallosmart.models.modelsVoucher.Voucher;
+//import org.json.simple.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,18 +30,19 @@ public class CheckSostieniciAction implements ActionStrategy {
                 List<Voucher> listaVoucher= voucherManager.cercaVoucher();
                 for (Voucher v: listaVoucher) {
                     map.put(v.getImporto(), v.getDescrizione());
-                    System.out.println("\nContenuto HashMap:" + map.get(v.getImporto()));
+                    //System.out.println("\nContenuto HashMap:" + map.get(v.getImporto()));
                 }
 
                 HttpSession session= request.getSession();
+                //JSONObject jsonMap = new JSONObject(map);
                 session.setAttribute("map", map);
 
                 return view("sostienici");
             }else{
                 return view("login");
             }
-            } catch (Exception e) {
-                e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
             return view("500");
         }
     }
