@@ -12,4 +12,6 @@ public class Email {
     private int id;
     private String oggetto;
     private String corpo;
+    private int idUtente2;
+    private int idVoucher;
 }

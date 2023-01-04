@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
+
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -36,55 +38,46 @@
   <!-- Nav Item - Modifica Profilo -->
   <li class="nav-item">
     <a class="nav-link" href="modificaProfilo">
-      <i class="fas fa-fw fa-chart-area"></i>
+      <i class="fas fa-edit"></i>
       <span>Modifica Profilo</span></a>
   </li>
 
   <!-- Nav Item - Crea responsabile ARPA -->
   <li class="nav-item">
     <a class="nav-link" href="registrationResponsabileARPA">
-      <i class="fas fa-fw fa-ad"></i>
+      <i class="fa fa-user-plus"></i>
       <span>Registra un responsabile ARPA</span></a>
   </li>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0">
-
   <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="visualizzaIncassi">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <i class="fas fa-donate"></i>
       <span>Visualizza Incassi</span></a>
   </li>
 
   <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="statoDispositivi">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <i class="fas fa-fw fa-chart-area"></i>
       <span>Stato Dispositivi</span></a>
   </li>
 
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="monitoraggio">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <i class="fab fa-watchman-monitoring"></i>
       <span>Monitoraggio</span></a>
   </li>
 
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="aggiungiVoucher">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <i class="fa-solid fa-plus"></i>
       <span>Aggiungi Voucher</span></a>
   </li>
 
-  <li class="nav-item active">
-    <a class="nav-link" href="">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Stato Dispositivi</span></a>
-  </li>
-
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="gestioneVoucher">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <i class="fa fa-tasks"></i>
       <span>Gestione Voucher</span></a>
   </li>
 

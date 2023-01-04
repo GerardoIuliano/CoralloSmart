@@ -41,7 +41,7 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/registrazione", PAF.create("RegistrationAction"));
     ROUTER.post("/checkRegistration", PAF.create("CheckRegistrationAction"));
     ROUTER.get("/logout", PAF.create("LogoutAction"));
-    ROUTER.get("/sostienici", PAF.create("SostieniciAction"));
+    ROUTER.get("/sostienici", PAF.create("CheckSostieniciAction"));
     ROUTER.get("/checkout", PAF.create("CheckoutAction"));
     ROUTER.get("/registrationResponsabileARPA", PAF.create("RegistrationResponsabileARPAAction"));
     ROUTER.post("/checkRegistrationResponsabileARPA", PAF.create("CheckRegistrationResponsabileARPAAction"));
@@ -60,6 +60,7 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/modificaProfilo", PAF.create("ModificaProfiloAction"));
     ROUTER.get("/contributiEvoucher", PAF.create("ContributiEVoucherAction"));
     ROUTER.post("/checkModificaProfilo", PAF.create("CheckModificaProfiloAction"));
+
   }
 
   /**

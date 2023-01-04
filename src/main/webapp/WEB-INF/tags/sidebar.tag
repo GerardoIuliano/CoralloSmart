@@ -36,14 +36,14 @@
     <!-- Nav Item - Modifica Profilo -->
     <li class="nav-item">
         <a class="nav-link" href="modificaProfilo">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-edit"></i>
             <span>Modifica Profilo</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="contributiEvoucher">
-            <i class="fas fa-fw fa-umbrella-beach"></i>
+            <i class="fas fa-gift"></i>
             <span>Contributi e Voucher</span></a>
     </li>
 
