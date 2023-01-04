@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 
@@ -43,7 +44,7 @@
               <p class="fw-normal mb-1">${dispositivo.getQualita()}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">${dispositivo.getDataImmersione().getDate()}/${dispositivo.getDataImmersione().getMonth()}/${dispositivo.getDataImmersione().getYear()}</p>
+              <p class="fw-normal mb-1">${sdf.format(dispositivo.getDataImmersione())}</p>
             </td>
             <td>
               <c:choose>
