@@ -38,8 +38,8 @@ public class TableRilevamentoManager extends TableManager implements Rilevamento
     ;}
 
     @Override
-    public List<Rilevamento> cercaRilevamentoData(Date data) throws SQLException {
-        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento where data<=? AND data <=?",SOS_LIST_MAPPER, data);
+    public List<Rilevamento> cercaRilevamentoData(Date fromDate, Date toDate) throws SQLException {
+        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento where dataRicezione>=? AND dataRicezione <=?",SOS_LIST_MAPPER, fromDate, toDate);
                 return lista;
     }
 
