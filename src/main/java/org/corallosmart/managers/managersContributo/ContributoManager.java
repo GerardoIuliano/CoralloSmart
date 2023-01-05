@@ -10,6 +10,6 @@ public interface ContributoManager {
 
     void createContributo(Date data, Double importo) throws SQLException;
     List<Contributo> cercaContributo(int id) throws SQLException;
-    public List cercaContributiVoucher() throws SQLException;
+    public List cercaContributiVoucher(int id) throws SQLException;
     public List<Contributo> listaContributi() throws SQLException;
 }

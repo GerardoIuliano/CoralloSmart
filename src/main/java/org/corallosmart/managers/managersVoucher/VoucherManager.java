@@ -9,7 +9,7 @@ public interface VoucherManager {
     void createVoucher(String descrizione, String importo) throws SQLException;
 
     List<Voucher> cercaVoucher() throws SQLException;
-
+    Voucher cercaVoucherId(int id) throws SQLException;
     void modificaVoucher(String descrizione, double importo, int id) throws SQLException;
 
     void eliminaVoucher(int id) throws SQLException;
