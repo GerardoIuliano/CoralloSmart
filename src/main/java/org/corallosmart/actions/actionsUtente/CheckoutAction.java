@@ -1,5 +1,6 @@
 package org.corallosmart.actions.actionsUtente;
 
+import com.google.gson.Gson;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersUtente.TableUtenteManager;
 import org.corallosmart.managers.managersUtente.UtenteManager;
@@ -11,6 +12,8 @@ import org.corallosmart.models.modelsVoucher.Voucher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 public class CheckoutAction implements ActionStrategy {
@@ -22,7 +25,7 @@ public class CheckoutAction implements ActionStrategy {
         try{
             Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
             if(sos != null && sos.isTipo() == false) {
-                int importo = Integer.parseInt(request.getParameter("importo"));
+                double importo = Double.parseDouble(request.getParameter("importo"));
                 request.getSession().setAttribute("importo", importo);
 
                 VoucherManager voucherManager = new TableVoucherManager(this.getSource(request));
@@ -35,6 +38,11 @@ public class CheckoutAction implements ActionStrategy {
                 }else{
                     request.getSession().setAttribute("isVoucher", false);
                 }
+
+
+
+
+
 
                 return view("checkout");
             }else{

@@ -40,7 +40,7 @@ public class TableVoucherManager extends TableManager implements VoucherManager{
         if(voucher != null && !voucher.isEmpty()){
             return Optional.ofNullable(voucher.get(0));
         }else{
-            return null;
+            return Optional.ofNullable(null);
         }
     }
 

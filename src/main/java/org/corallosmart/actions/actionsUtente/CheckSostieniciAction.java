@@ -1,5 +1,6 @@
 package org.corallosmart.actions.actionsUtente;
 
+import com.google.gson.Gson;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
@@ -29,6 +30,16 @@ public class CheckSostieniciAction implements ActionStrategy {
                 HttpSession session= request.getSession();
                 //JSONObject jsonMap = new JSONObject(map);
                 session.setAttribute("listaVoucher", listaVoucher);
+
+
+
+
+                List<Voucher> list = (List<Voucher>) request.getSession().getAttribute("listaVoucher");
+                String listaGson = new Gson().toJson(list);
+                request.getSession().setAttribute("listaGson", listaGson);
+
+
+
 
                 return view("sostienici");
             }else{
