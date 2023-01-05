@@ -1,10 +1,8 @@
 package org.corallosmart.actions.actionsUtente;
 
-import org.corallosmart.actions.actionsUtils.ActionFactory;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
-import org.corallosmart.models.modelsUtente.Sostenitore;
 import org.corallosmart.models.modelsUtente.Utente;
 import org.corallosmart.models.modelsVoucher.Voucher;
 //import org.json.simple.JSONObject;
@@ -14,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 public class CheckSostieniciAction implements ActionStrategy {
     @Override
@@ -25,19 +22,13 @@ public class CheckSostieniciAction implements ActionStrategy {
             Utente utente=(Utente) request.getSession().getAttribute("utente");
 
             if(utente != null && utente.isTipo() == false){
-                HashMap<Double, String> map=new HashMap<>();
-
                 VoucherManager voucherManager= new TableVoucherManager(this.getSource(request));
 
                 List<Voucher> listaVoucher= voucherManager.cercaVoucher();
-                for (Voucher v: listaVoucher) {
-                    map.put(v.getImporto(), v.getDescrizione());
-                    //System.out.println("\nContenuto HashMap:" + map.get(v.getImporto()));
-                }
 
                 HttpSession session= request.getSession();
                 //JSONObject jsonMap = new JSONObject(map);
-                session.setAttribute("map", map);
+                session.setAttribute("listaVoucher", listaVoucher);
 
                 return view("sostienici");
             }else{
