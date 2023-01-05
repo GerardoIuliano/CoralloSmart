@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public class CheckModificaProfiloAction implements ActionStrategy {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response){
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
         try {
@@ -32,40 +32,48 @@ public class CheckModificaProfiloAction implements ActionStrategy {
                 String codiceFiscale = request.getParameter("codiceFiscale");
                 String telefono = request.getParameter("telefono");
 
-                if(email != null && !email.isEmpty()){
+                if (email != null && !email.isEmpty()) {
                     utente.setEmail(email);
                 }
-                if(password != null && !password.isEmpty()){
+                if (password != null && !password.isEmpty()) {
                     utente.setPassword(password);
                 }
-                if(username != null && !username.isEmpty()){
+                if (username != null && !username.isEmpty()) {
                     utente.setUsername(username);
                 }
-                if(nome != null && !nome.isEmpty()){
+                if (nome != null && !nome.isEmpty()) {
                     utente.setNome(nome);
                 }
-                if(cognome != null && !cognome.isEmpty()){
+                if (cognome != null && !cognome.isEmpty()) {
                     utente.setCognome(cognome);
                 }
-                if(codiceFiscale != null && !codiceFiscale.isEmpty()){
+                if (codiceFiscale != null && !codiceFiscale.isEmpty()) {
                     utente.setCodiceFiscale(codiceFiscale);
                 }
-                if(telefono != null && !telefono.isEmpty()){
+                if (telefono != null && !telefono.isEmpty()) {
                     utente.setTelefono(telefono);
                 }
                 utenteManager.updateUtente(utente);
                 request.getSession().setAttribute("utente", utente);
-            }else{
+            } else {
                 System.out.println("\nUtente non trovato in CheckModificaProfiloAction");
                 return view("500");
             }
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("\nException in CheckModificaProfiloAction");
             return view("500");
         }
 
-        return view("modificaProfilo");
+        Utente utente = (Utente) request.getSession().getAttribute("utente");
+        if (utente.isTipo()) {
+            return view("modificaProfiloARPA");
+
+        }
+        else
+        {
+            return view("modificaProfilo");
+        }
     }
 }

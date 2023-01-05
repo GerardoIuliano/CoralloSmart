@@ -24,5 +24,5 @@ public class CheckoutAction implements ActionStrategy {
             return view("500");
         }
     }
-    }
+}
 
