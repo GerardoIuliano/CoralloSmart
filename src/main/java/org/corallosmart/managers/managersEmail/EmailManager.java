@@ -8,8 +8,9 @@ import java.util.List;
 public interface EmailManager {
 
     void createEmail(String oggetto, String corpo) throws SQLException;
+    void createEmail(Email email) throws SQLException;
 
 
-    List<Email> cercaEmail(Email email) throws SQLException;
+    Email cercaEmail(Email email) throws SQLException;
 
 }

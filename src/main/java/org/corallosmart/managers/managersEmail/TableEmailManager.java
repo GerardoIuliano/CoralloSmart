@@ -29,8 +29,17 @@ public class TableEmailManager extends TableManager implements EmailManager{
     }
 
     @Override
-    public List<Email> cercaEmail(Email email) throws SQLException {
-        Email lista= runner.query("SELECT * FROM Email WHERE oggetto= ?, corpo=?, idUtente2=?, idVoucher=? ",SOS_MAPPER, email);
-        return (List<Email>) lista;
+    public void createEmail(Email email) throws SQLException {
+        runner.update("INSERT INTO Email(oggetto, corpo, idUtente2, idVoucher) VALUES(?, ?, ?, ?)", email.getOggetto(), email.getCorpo(), email.getIdUtente2(), email.getIdVoucher());
+    }
+
+    @Override
+    public Email cercaEmail(Email email) throws SQLException {
+        List<Email> lista= runner.query("SELECT * FROM Email WHERE oggetto=? AND corpo=? AND idUtente2=? AND idVoucher=?",SOS_LIST_MAPPER, email);
+        if(lista != null && !lista.isEmpty()){
+            return lista.get(0);
+        }else{
+            return null;
+        }
     }
 }

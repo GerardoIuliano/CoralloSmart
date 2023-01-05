@@ -4,11 +4,13 @@ import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.corallosmart.managers.managersUtils.TableManager;
+import org.corallosmart.models.modelsUtente.Utente;
 import org.corallosmart.models.modelsVoucher.Voucher;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class TableVoucherManager extends TableManager implements VoucherManager{
     private static final ResultSetHandler<Voucher> VOU_MAPPER =
@@ -30,6 +32,16 @@ public class TableVoucherManager extends TableManager implements VoucherManager{
     public List<Voucher> cercaVoucher() throws SQLException {
         List<Voucher> lista = runner.query("SELECT * FROM Voucher",VOU_LIST_MAPPER);
         return lista;
+    }
+
+    @Override
+    public Optional<Voucher> cercaVoucherImporto(double importo) throws SQLException {
+        List<Voucher> voucher = runner.query("SELECT * FROM Voucher WHERE importo <= ? ORDER BY importo DESC",VOU_LIST_MAPPER, importo);
+        if(voucher != null && !voucher.isEmpty()){
+            return Optional.ofNullable(voucher.get(0));
+        }else{
+            return null;
+        }
     }
 
     public Voucher cercaVoucherId(int id) throws SQLException {

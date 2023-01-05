@@ -9,21 +9,17 @@
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Sostienici</h1>
-        <h1 name="voucher">
-            <c:forEach var="key" items="${map.keySet()}">
-                <h2 class="key">${key}</h2>
-                <h2>${map.get(key)}</h2>
-                <script type="text/javascript">
-                    riempiKeyReferences("key");
-                </script>
-            </c:forEach>
-        </h1>
     </div>
 
    <form action="checkout" name="sostieniciform" id="sostieniciform" method="get">
 
-       <!--hidden input-->
-       <input type="hidden" id="keyVoucher" name="keyVoucher" class="keyVoucher" value="">
+       <!--Vouchers-->
+       <h1 name="voucher">
+           <c:forEach var="voucher" items="${listaVoucher}">
+               <c:out value="${voucher.getImporto()}"/>
+               <c:out value="${voucher.getDescrizione()}"/>
+           </c:forEach>
+       </h1>
 
        <div id="lifepog">
            <input oninput='numerator(event)' type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
@@ -37,7 +33,7 @@
            <progress value="0" max="100" class="barlife"> </progress>
        </div>
 
-       <button type="button" class="btn btn-primary btn-lg" name="confermaInput" onclick="setKeyVoucher(), validateInput()"
+       <button type="button" class="btn btn-primary btn-lg" name="confermaInput" onclick="validateInput()"
                style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Conferma</button>
 
 

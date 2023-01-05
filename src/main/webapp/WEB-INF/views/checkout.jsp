@@ -84,10 +84,7 @@
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Contributo da versare</h3>
-                                                        <h3><span style="color:green;"><%
-                                                            String importo="";
-                                                            importo=request.getParameter("importo");
-                                                        %><%=importo%>.00 €</span></h3>
+                                                        <h3><span style="color:green;">importo: ${importo}.00 €</span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -107,115 +104,6 @@
                                                                                         onclick="$(this).fadeOut(); $('#payInfo').fadeIn();">Continua
                                             con i dati di fatturazione»</a></div>
                                     </h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Contatti
-                                            e dati di fatturazione</a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <b>Aiutaci a mantenere il tuo account sicuro e protetto, verifica i tuoi dati di fatturazione.</b>
-                                        <br/><br/>
-                                        <table class="table table-striped" style="font-weight: bold;">
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_email">Email:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_email" name="email"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_first_name">Nome:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_first_name" name="first_name"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_last_name">Cognome:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_last_name" name="last_name"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_address_line_1">Indirizzo:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_address_line_1"
-                                                           name="address_line_1" required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_address_line_2">Unità /Appartamento  #:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_address_line_2"
-                                                           name="address_line_2" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_city">Città:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_city" name="city"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_state">Regione:</label></td>
-                                                <td>
-                                                    <select class="form-control" id="id_state" name="state">
-                                                        <option value="AB">Abruzzo</option>
-                                                        <option value="BA">Basilicata</option>
-                                                        <option value="CAL">Calabria</option>
-                                                        <option value="CAM">Campania</option>
-                                                        <option value="ER">Emilia Romagna</option>
-                                                        <option value="FVN">Friuli Venezia Giulia</option>
-                                                        <option value="LA">Lazio</option>
-                                                        <option value="LI">Liguria</option>
-                                                        <option value="LO">Lombardia</option>
-                                                        <option value="MA">Marche</option>
-                                                        <option value="MO">Molise</option>
-                                                        <option value="PI">Piemonte</option>
-                                                        <option value="PU">Puglia</option>
-                                                        <option value="SA">Sardegna</option>
-                                                        <option value="SI">Sicilia</option>
-                                                        <option value="TO">Toscana</option>
-                                                        <option value="TAA">Trentino Alto Adige</option>
-                                                        <option value="UM">Umbria</option>
-                                                        <option value="VDA">Valle d'Aost</option>
-                                                        <option value="VE">Veneto</option>
-
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_postalcode">ZIP Code:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_postalcode" name="postalcode"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_phone">Telefono:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_phone" name="phone" type="text"/>
-                                                </td>
-                                            </tr>
-
-                                        </table>
-                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -248,16 +136,33 @@
                                                 <label class="col-sm-3 control-label" for="name-on-card">Name on
                                                     Card</label>
                                                 <div class="col-sm-9">
+
+
+
+                                                    <!--Name on Card-->
                                                     <input type="text" class="form-control" stripe-data="name"
-                                                           id="name-on-card" placeholder="Card Holder's Name">
+                                                           id="name-on-card" placeholder="Card Holder's Name" required name="name-on-card">
+
+
+
+
+
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label" for="card-number">Card
                                                     Number</label>
                                                 <div class="col-sm-9">
+
+
+
+                                                    <!--Card Number-->
                                                     <input type="text" class="form-control" stripe-data="number"
-                                                           id="card-number" placeholder="Debit/Credit Card Number">
+                                                           id="card-number" placeholder="Debit/Credit Card Number" required name="card-number">
+
+
+
+
                                                     <br/>
                                                     <div><img class="pull-right"
                                                               src="https://s3.amazonaws.com/hiresnetwork/imgs/cc.png"
@@ -270,9 +175,14 @@
                                                     <div class="col-sm-9">
                                                         <div class="row">
                                                             <div class="col-xs-3">
+
+
+
+
+                                                                <!--Expiration Date-->
                                                                 <select class="form-control col-sm-2"
                                                                         data-stripe="exp-month" id="card-exp-month"
-                                                                        style="margin-left:5px;">
+                                                                        style="margin-left:5px;" required name="expMonth">
                                                                     <option>Month</option>
                                                                     <option value="01">Jan (01)</option>
                                                                     <option value="02">Feb (02)</option>
@@ -287,10 +197,21 @@
                                                                     <option value="11">Nov (11)</option>
                                                                     <option value="12">Dec (12)</option>
                                                                 </select>
+
+
+
+
+
+
                                                             </div>
                                                             <div class="col-xs-3">
+
+
+
+
+                                                                <!--Expiration Date-->
                                                                 <select class="form-control" data-stripe="exp-year"
-                                                                        id="card-exp-year">
+                                                                        id="card-exp-year" required name="expYear">
                                                                     <option value="2023">2023</option>
                                                                     <option value="2024">2024</option>
                                                                     <option value="2025">2025</option>
@@ -301,6 +222,11 @@
                                                                     <option value="2030">2030</option>
                                                                     <option value="2031">2031</option>
                                                                 </select>
+
+
+
+
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -308,8 +234,24 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label" for="card-cvc">Card CVC</label>
                                                     <div class="col-sm-3">
+
+
+
+
+
+
+
+                                                        <!--Card CVC-->
                                                         <input type="text" class="form-control" stripe-data="cvc"
-                                                               id="card-cvc" placeholder="Security Code">
+                                                               id="card-cvc" placeholder="Security Code" required name="card-cvc">
+
+
+
+
+
+
+
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

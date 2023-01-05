@@ -24,8 +24,8 @@ public class TableContributoManager extends TableManager implements ContributoMa
     }
 
     @Override
-    public void createContributo(Date data, Double importo) throws SQLException {
-        runner.update("INSERT INTO Contributo(data, importo) VALUES(?, ?)", data, importo);
+    public void createContributo(Contributo contributo) throws SQLException {
+        runner.update("INSERT INTO Contributo(data, importo, idUtente, idEmail, idVoucher2) VALUES(?, ?, ?, ?, ?)", contributo.getData(), contributo.getImporto(), contributo.getIdUtente(), contributo.getIdEmail(), contributo.getIdVoucher2());
     }
 
     @Override
