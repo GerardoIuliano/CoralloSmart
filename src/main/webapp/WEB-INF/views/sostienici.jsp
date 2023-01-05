@@ -19,10 +19,11 @@
                <c:out value="${voucher.getImporto()}"/>
                <c:out value="${voucher.getDescrizione()}"/>
            </c:forEach>
+           <p id="voucherSelezionato"></p>
        </h1>
 
        <div id="lifepog">
-           <input oninput='numerator(event)' type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
+           <input oninput='numerator(event, ${listaGson})' type="number" class="currentlife" name="importo" max="10000" min="0" value="0">
            <div id="lifeslash" contenteditable="false">
                <p></p>
            </div>

@@ -10,6 +10,7 @@ import org.corallosmart.managers.managersUtente.UtenteManager;
 import org.corallosmart.models.modelsContributo.Contributo;
 import org.corallosmart.models.modelsEmail.Email;
 import org.corallosmart.models.modelsUtente.Sostenitore;
+import org.corallosmart.models.modelsUtente.Utente;
 import org.corallosmart.models.modelsVoucher.Voucher;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,13 +29,12 @@ public class OperazioneCompletataAction implements ActionStrategy {
         try{
             Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
             if(sos != null && sos.isTipo() == false) {
-
-
                 double importo = (Double) request.getSession().getAttribute("importo");
 
-                Sostenitore sostenitore = (Sostenitore) request.getSession().getAttribute("utente");
-                int idUtente = sostenitore.getId();
+                Utente utente = (Utente) request.getSession().getAttribute("utente");
+                int idUtente = utente.getId();
 
+                //TODO
                 Voucher voucher = (Voucher) request.getSession().getAttribute("voucher");
                 int idVoucher = voucher.getId();
 

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
-<cs:header></cs:header>
+
 
 <html lang="it">
 <head>
@@ -29,6 +29,16 @@
     </script>
 </head>
 <body>
+<section>
+    <!-- Logo -->
+    <div class="col-xl-2 col-lg-2 col-md-1">
+        <div style="padding: 15px">
+            <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="120px" height="120px"
+                                 alt=""></a>
+        </div>
+    </div>
+</section>
+
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
@@ -60,16 +70,10 @@
                                                 <div class="col-md-9">
                                                     <table class="table table-striped">
                                                         <tr>
-                                                            <td colspan="2">
-                                                                <a class="btn btn-warning btn-sm pull-right"
-                                                                   href="http://www.startajobboard.com/"
-                                                                   title="Remove Item">X</a>
-                                                                <b>
-                                                                    VOUCHER OTTENIBILE</b></td>
-                                                        </tr>
-                                                        <tr>
                                                             <td>
                                                                 <ul>
+                                                                    <!--TODO-->
+                                                                    <li>VOUCHER:</li>
                                                                     <li>nome</li>
                                                                     <li>voucher</li>
 
@@ -84,7 +88,7 @@
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Contributo da versare</h3>
-                                                        <h3><span style="color:green;">importo: ${importo}.00 €</span></h3>
+                                                        <h3><span style="color:green;">importo: ${importo} €</span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,5 +289,4 @@
 </body>
     <script type="text/javascript">
     </script>
-<cs:footer></cs:footer>
 </html>
