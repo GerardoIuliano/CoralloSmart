@@ -5,6 +5,7 @@ import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
 import org.corallosmart.models.modelsUtente.Sostenitore;
+import org.corallosmart.models.modelsUtente.Utente;
 import org.corallosmart.models.modelsVoucher.Voucher;
 //import org.json.simple.JSONObject;
 
@@ -21,8 +22,9 @@ public class CheckSostieniciAction implements ActionStrategy {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
         try{
-            Sostenitore sos=(Sostenitore) request.getSession().getAttribute("utente");
-            if(sos != null && sos.isTipo() == false){
+            Utente utente=(Utente) request.getSession().getAttribute("utente");
+
+            if(utente != null && utente.isTipo() == false){
                 HashMap<Double, String> map=new HashMap<>();
 
                 VoucherManager voucherManager= new TableVoucherManager(this.getSource(request));
