@@ -9,6 +9,7 @@ import org.corallosmart.models.modelsUtente.Utente;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -66,6 +67,16 @@ public class CheckModificaProfiloAction implements ActionStrategy {
             return view("500");
         }
 
-        return view("modificaProfilo");
+        HttpSession session = request.getSession();
+        Utente u = (Utente) session.getAttribute("utente");
+
+        if(u.isTipo() == true)
+        {
+            return view("mioProfiloARPA");
+        }
+        else
+        {
+            return view("mioProfilo");
+        }
     }
 }

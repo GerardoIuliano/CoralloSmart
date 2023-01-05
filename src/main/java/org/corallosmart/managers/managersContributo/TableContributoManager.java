@@ -34,8 +34,8 @@ public class TableContributoManager extends TableManager implements ContributoMa
         return (List<Contributo>) lista;
     }
 
-    public List cercaContributiVoucher() throws SQLException{
-        List lista= runner.query("SELECT * FROM Contributo JOIN Voucher ON Contributo.idVoucher2=Voucher.id",SOS_LIST_MAPPER );
+    public List cercaContributiVoucher(int id) throws SQLException{
+        List lista= runner.query("SELECT * FROM Contributo JOIN Voucher ON Contributo.idVoucher2=Voucher.id WHERE idUtente = ?",SOS_LIST_MAPPER, id);
         return lista;
     }
 

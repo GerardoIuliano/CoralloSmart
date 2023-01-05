@@ -32,6 +32,11 @@ public class TableVoucherManager extends TableManager implements VoucherManager{
         return lista;
     }
 
+    public Voucher cercaVoucherId(int id) throws SQLException {
+        Voucher v = runner.query("SELECT * FROM Voucher WHERE id = ?", VOU_MAPPER, id);
+        return v;
+    }
+
     @Override
     public void modificaVoucher(String descrizione, double importo, int id) throws SQLException {
         runner.update("UPDATE voucher SET descrizione=?, importo=? WHERE id=?",descrizione, importo, id);

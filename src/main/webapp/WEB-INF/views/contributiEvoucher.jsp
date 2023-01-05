@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="org.corallosmart.models.modelsVoucher.Voucher" %><%--
   Created by IntelliJ IDEA.
   User: attil
   Date: 1/3/2023
@@ -21,6 +22,7 @@
       <div>
         <table class="table align-middle mb-0 bg-white">
           <thead class="bg-light">
+
           <tr>
             <th>ID</th>
             <th>Data versamento</th>
@@ -29,50 +31,31 @@
           </tr>
           </thead>
           <tbody>
+          <c:forEach items="${contributi}" var="contributo">
+            <%
+              List<Voucher> vouchers = (List<Voucher>) session.getAttribute("vouchers");
+              int index = (int) session.getAttribute("index");
+              %>
           <tr>
             <td>
-              <p class="fw-normal mb-1">1546442</p>
+              <p class="fw-normal mb-1">${contributo.id}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">15/09/22</p>
+              <p class="fw-normal mb-1">${sdf.format(contributo.data)}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">1500€</p>
+              <p class="fw-normal mb-1">${contributo.importo}</p>
             </td>
             <td>
-              <p class="fw-normal mb-1">Giro in Barca</p>
+              <c:choose>
+                <c:when test="${contributo.idVoucher2 != 0}">
+                  <p class="fw-normal mb-1"><%= vouchers.get(index).getDescrizione()%></p>
+                  <%index++;%>
+                </c:when>
+              </c:choose>
             </td>
           </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">1546442</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/09/22</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">1500€</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Giro in Barca</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p class="fw-normal mb-1">1546442</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">15/09/22</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">1500€</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Giro in Barca</p>
-            </td>
-          </tr>
+          </c:forEach>
           </tbody>
         </table>
       </div>
