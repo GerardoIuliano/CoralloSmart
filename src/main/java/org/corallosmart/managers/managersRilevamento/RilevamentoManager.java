@@ -13,7 +13,7 @@ public interface RilevamentoManager {
     void inserisciRilevamento(Date dataRicezione,String latitudine, String longitudine, Double DissolvedOxygen, Double OxidationReductionPotential, Double pHTurbidity,Double TotalDissolvedSolids, Double turbidity,String temperatura) throws SQLException;
 
 
-    public List<Rilevamento> cercaRilevamentoData(Date data) throws SQLException;
+    public List<Rilevamento> cercaRilevamentoData(Date fromDate, Date toDate) throws SQLException;
 
     public List<Rilevamento> listaRilevamenti() throws SQLException;
 }

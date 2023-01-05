@@ -75,6 +75,8 @@ public class PageActionFactory implements ActionFactory {
         return new ContributiEVoucherAction();
       case"GoToIndexARPAAction":
         return new GoToIndexARPAAction();
+      case "RicercaDataAction":
+        return new RicercaDataAction();
       default:
         return new WelcomeAction();
     }
