@@ -47,8 +47,7 @@ public class OperazioneCompletataAction implements ActionStrategy {
                 Email emailConId = emailManager.cercaEmail(email);
                 int idEmail = emailConId.getId();
 
-                LocalDate todaysdate = LocalDate.now();
-                Date date = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
+                Date date = new Date(System.currentTimeMillis());
 
                 ContributoManager contributoManager = new TableContributoManager(this.getSource(request));
                 Contributo contributo = new Contributo(date, importo, idUtente, idEmail, idVoucher);
