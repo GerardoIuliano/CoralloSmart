@@ -72,7 +72,6 @@
                                                         <tr>
                                                             <td>
                                                                 <ul>
-                                                                    <!--TODO-->
                                                                     <c:choose>
                                                                         <c:when test="${isVoucher != null}">
                                                                             <c:choose>
