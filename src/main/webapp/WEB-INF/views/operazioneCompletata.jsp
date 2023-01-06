@@ -5,7 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <cs:layout title="Registration" admin="false">
-
+<cs:header></cs:header>
 
     <div class="operazione completata" align="center">
         <h1>Operazione Completata Con Successo</h1>
