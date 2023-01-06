@@ -34,25 +34,31 @@ public class OperazioneCompletataAction implements ActionStrategy {
                 Utente utente = (Utente) request.getSession().getAttribute("utente");
                 int idUtente = utente.getId();
 
-                //TODO
-                Voucher voucher = (Voucher) request.getSession().getAttribute("voucher");
-                int idVoucher = voucher.getId();
-
-                String oggetto = "voucher ottenuto";
-                String corpo = "è stato ottenuto il voucher " + voucher.getDescrizione();
-
-                EmailManager emailManager = new TableEmailManager(this.getSource(request));
-                Email email = new Email(oggetto, corpo, idUtente, idVoucher);
-                emailManager.createEmail(email);
-                Email emailConId = emailManager.cercaEmail(email);
-                int idEmail = emailConId.getId();
-
                 LocalDate todaysdate = LocalDate.now();
                 Date date = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
 
-                ContributoManager contributoManager = new TableContributoManager(this.getSource(request));
-                Contributo contributo = new Contributo(date, importo, idUtente, idEmail, idVoucher);
-                contributoManager.createContributo(contributo);
+                boolean isVoucher = (boolean) request.getSession().getAttribute("isVoucher");
+                if(isVoucher == true) {
+                    Voucher voucher = (Voucher) request.getSession().getAttribute("voucher");
+                    int idVoucher = voucher.getId();
+
+                    String oggetto = "voucher ottenuto";
+                    String corpo = "è stato ottenuto il voucher " + voucher.getDescrizione();
+
+                    EmailManager emailManager = new TableEmailManager(this.getSource(request));
+                    Email email = new Email(oggetto, corpo, idUtente, idVoucher);
+                    emailManager.createEmail(email);
+                    Email emailConId = emailManager.cercaEmail(email);
+                    int idEmail = emailConId.getId();
+
+                    ContributoManager contributoManager = new TableContributoManager(this.getSource(request));
+                    Contributo contributo = new Contributo(date, importo, idUtente, idEmail, idVoucher);
+                    contributoManager.createContributo(contributo);
+                }else{
+                    ContributoManager contributoManager = new TableContributoManager(this.getSource(request));
+                    Contributo contributo = new Contributo(date, importo, idUtente, 0, 0);
+                    contributoManager.createContributo(contributo);
+                }
 
                 return view("operazioneCompletata");
             }else{
