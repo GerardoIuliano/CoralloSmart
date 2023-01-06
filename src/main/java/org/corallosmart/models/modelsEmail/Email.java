@@ -21,4 +21,10 @@ public class Email {
         this.idUtente2 = idUtente2;
         this.idVoucher = idVoucher;
     }
+
+    public Email(String oggetto, String corpo, int idUtente2) {
+        this.oggetto = oggetto;
+        this.corpo = corpo;
+        this.idUtente2 = idUtente2;
+    }
 }

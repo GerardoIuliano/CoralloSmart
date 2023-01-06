@@ -9,8 +9,10 @@ public interface EmailManager {
 
     void createEmail(String oggetto, String corpo) throws SQLException;
     void createEmail(Email email) throws SQLException;
+    void createEmailNoVoucher(Email email) throws SQLException;
 
 
     Email cercaEmail(Email email) throws SQLException;
+    Email cercaEmailNoVoucher(Email email) throws SQLException;
 
 }

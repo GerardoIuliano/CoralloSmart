@@ -26,5 +26,12 @@ public class Contributo {
         this.idVoucher2 = idVoucher2;
 
     }
+
+    public Contributo(Date data, double importo,int idUtente, int idEmail) {
+        this.data = data;
+        this.importo = importo;
+        this.idUtente = idUtente;
+        this.idEmail = idEmail;
+    }
 }
 
