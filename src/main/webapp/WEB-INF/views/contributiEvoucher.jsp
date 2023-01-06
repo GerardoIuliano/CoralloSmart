@@ -31,11 +31,11 @@
           </tr>
           </thead>
           <tbody>
+          <%
+            List<Voucher> vouchers = (List<Voucher>) session.getAttribute("vouchers");
+            Integer index = (Integer) session.getAttribute("index");
+          %>
           <c:forEach items="${contributi}" var="contributo">
-            <%
-              List<Voucher> vouchers = (List<Voucher>) session.getAttribute("vouchers");
-              int index = (int) session.getAttribute("index");
-              %>
           <tr>
             <td>
               <p class="fw-normal mb-1">${contributo.id}</p>

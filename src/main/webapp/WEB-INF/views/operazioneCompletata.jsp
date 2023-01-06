@@ -12,7 +12,7 @@
 
     <div class="operazione completata" align="center">
         <h1>Operazione Completata Con Successo</h1>
-        <h2>L'eventuale voucher le verrà inviato all'indirizzo e-mail indicato in preccedenza</h2>
+        <h2>L'eventuale voucher le verrà inviato all'indirizzo e-mail indicato in precedenza</h2>
     </div>
             </div>
         </div>
