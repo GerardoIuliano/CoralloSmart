@@ -9,7 +9,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Contributo {
     private int id;
