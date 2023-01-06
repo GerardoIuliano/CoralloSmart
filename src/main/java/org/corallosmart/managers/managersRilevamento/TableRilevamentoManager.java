@@ -39,13 +39,13 @@ public class TableRilevamentoManager extends TableManager implements Rilevamento
 
     @Override
     public List<Rilevamento> cercaRilevamentoData(Date fromDate, Date toDate) throws SQLException {
-        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento where dataRicezione>=? AND dataRicezione <=?",SOS_LIST_MAPPER, fromDate, toDate);
+        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento where dataRicezione>=? AND dataRicezione <=? ORDER BY dataRicezione DESC",SOS_LIST_MAPPER, fromDate, toDate);
                 return lista;
     }
 
     @Override
     public List<Rilevamento> listaRilevamenti() throws SQLException {
-        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento",SOS_LIST_MAPPER);
+        List<Rilevamento> lista= runner.query("SELECT * FROM Rilevamento ORDER BY dataRicezione DESC",SOS_LIST_MAPPER);
         return lista;
     }
 }

@@ -29,7 +29,7 @@
 
           <div id = "in-toDate">
             <label for = "toDate">&nbsp;A</label>
-            <input type = "date" name = "toDate" id = "toDate" required>
+            <input type = "date" name = "toDate" id = "toDate">
           </div>
 
           <button type = "submit">Cerca</button>

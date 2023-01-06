@@ -1,6 +1,8 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<cs:layout title="Operazione completata" admin="false">
 
 
 <html lang="it">
@@ -29,6 +31,7 @@
     </script>
 </head>
 <body>
+
 <section>
     <!-- Logo -->
     <div class="col-xl-2 col-lg-2 col-md-1">
@@ -38,6 +41,11 @@
         </div>
     </div>
 </section>
+
+<section class="vh-100" style="height: 42%">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
 
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
@@ -107,25 +115,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <div style="text-align: center; width:100%;"><a style="width:100%;"
-                                                                                        data-toggle="collapse"
-                                                                                        data-parent="#accordion"
-                                                                                        href="#collapseTwo"
-                                                                                        class=" btn btn-success"
-                                                                                        onclick="$(this).fadeOut(); $('#payInfo').fadeIn();">Continua
-                                            con i dati di fatturazione»</a></div>
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
                                         <div style="text-align: center;"><a data-toggle="collapse"
                                                                             data-parent="#accordion"
                                                                             href="#collapseThree"
                                                                             class=" btn   btn-success" id="payInfo"
-                                                                            style="width:100%;display: none;" onclick="$(this).fadeOut();
-                   document.getElementById('collapseThree').scrollIntoView()">Enter Payment Information »</a>
+                                                                            style="width:100%;">Enter Payment Information</a>
                                         </div>
                                     </h4>
                                 </div>
@@ -175,10 +169,6 @@
 
 
                                                     <br/>
-                                                    <div><img class="pull-right"
-                                                              src="https://s3.amazonaws.com/hiresnetwork/imgs/cc.png"
-                                                              style="max-width: 250px; padding-bottom: 20px;">
-                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label" for="card-exp-month">Expiration
@@ -293,7 +283,12 @@
         </div>
     </div>
 </div>
+        </div>
+    </div>
+</section>
 </body>
-    <script type="text/javascript">
-    </script>
+<script type="text/javascript">
+</script>
 </html>
+
+</cs:layout>
