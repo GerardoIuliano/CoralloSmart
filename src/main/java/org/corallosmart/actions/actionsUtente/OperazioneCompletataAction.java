@@ -45,6 +45,8 @@ public class OperazioneCompletataAction implements ActionStrategy {
                     String oggetto = "voucher ottenuto";
                     String corpo = "è stato ottenuto il voucher " + voucher.getDescrizione();
 
+                Date date = new Date(System.currentTimeMillis());
+
                     EmailManager emailManager = new TableEmailManager(this.getSource(request));
                     Email email = new Email(oggetto, corpo, idUtente, idVoucher);
                     emailManager.createEmail(email);
