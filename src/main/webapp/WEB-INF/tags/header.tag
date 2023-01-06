@@ -31,16 +31,13 @@
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
       <div class="header-bottom  header-sticky">
         <div class="container">
           <div class="row align-items-center">
             <!-- Logo -->
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div style="padding: 5px">
-                <a href=""><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="120px" height="120px"
+                <a href="goToIndexARPA"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="120px" height="120px"
                                  alt=""></a>
               </div>
             </div>
@@ -49,27 +46,24 @@
               <div class="main-menu f-right d-none d-lg-block">
                 <nav>
                   <ul id="navigation">
-                    <li><a href=".">Home</a></li>
-                    <li><a href="info">Info</a></li>
+                    <li><a href="goToIndexARPA">Home</a></li>
                     <c:choose>
                       <c:when test="${utente != null}">
                                 <c:choose>
                                  <c:when test="${utente.isTipo() == false}">
-                                <li><a href="#">Account</a>
+                                <li> <a href="mioProfilo"> <i class="fas fa-fw fa-user fa-2x"></i> </a>
                                   <ul class="submenu">
-                                    <li><p>Benvenuto ${utente.username}</p></li>
-                                    <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
-                                    <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                                    <li><p>Benvenuto ${utente.getUsername()}</p></li>
+                                    <li><a href="mioProfilo">Il mio profilo</a></li>
                                     <li><a name="logout" href="logout">logout</a></li>
                                   </ul>
                                 </li>
                                  </c:when>
                                   <c:when test="${utente.isTipo() == true}">
-                                    <li><a href="#">Account</a>
+                                    <li><a href="mioProfiloARPA"> <i class="fas fa-fw fa-user fa-2x"></i> </a>
                                       <ul class="submenu">
                                         <li><p>Benvenuto ${utente.username}</p></li>
-                                        <li><a href="registrationResponsabileARPA">Registra un responsabile ARPA</a></li>
-                                        <li><a href="modificaProfilo">Modifica Profilo</a></li>
+                                        <li><a href="mioProfiloARPA">Il mio profilo</a></li>
                                         <li><a name="logout" href="logout">logout</a></li>
                                       </ul>
                                     </li>

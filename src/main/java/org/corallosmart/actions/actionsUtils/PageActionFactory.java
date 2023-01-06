@@ -2,6 +2,7 @@ package org.corallosmart.actions.actionsUtils;
 
 import org.corallosmart.actions.ProvaAction;
 import org.corallosmart.actions.actionsUtente.*;
+import org.corallosmart.actions.actionsVoucher.*;
 
 /**
  * @author theBoys
@@ -34,18 +35,48 @@ public class PageActionFactory implements ActionFactory {
         return new LogoutAction();
       case"CheckoutAction":
         return new CheckoutAction();
-      case"SostieniciAction":
-        return new SostieniciAction();
+      case"CheckSostieniciAction":
+        return new CheckSostieniciAction();
       case"RegistrationResponsabileARPAAction":
         return new RegistrationResponsabileARPAAction();
       case"CheckRegistrationResponsabileARPAAction":
         return new CheckRegistrationResponsabileARPAAction();
+      case"OperazioneCompletataAction":
+        return new OperazioneCompletataAction();
       case "InfoAction":
         return new InfoAction();
       case "MioProfiloAction":
         return new MioProfiloAction();
+      case "AggiungiVoucherAction":
+        return new AggiungiVoucherAction();
+      case "ClickAggiungiVoucherAction":
+        return new ClickAggiungiVoucherAction();
+      case "GestioneVoucherAction":
+        return new GestioneVoucherAction();
+      case "ModificaVoucherAction":
+        return new ModificaVoucherAction();
+      case "EliminaVoucherAction":
+        return new EliminaVoucherAction();
+      case "MioProfiloARPAAction":
+        return new MioProfiloARPAAction();
+      case "MonitoraggioAction":
+        return new MonitoraggioAction();
+      case "StatoDispositiviAction":
+        return new StatoDispositiviAction();
+      case "VisualizzaIncassiAction":
+        return new VisualizzaIncassiAction();
       case"ModificaProfiloAction":
         return new ModificaProfiloAction();
+      case"ModificaProfiloARPAAction":
+        return new ModificaProfiloARPAAction();
+      case"CheckModificaProfiloAction":
+        return new CheckModificaProfiloAction();
+      case"ContributiEVoucherAction":
+        return new ContributiEVoucherAction();
+      case"GoToIndexARPAAction":
+        return new GoToIndexARPAAction();
+      case "RicercaDataAction":
+        return new RicercaDataAction();
       default:
         return new WelcomeAction();
     }

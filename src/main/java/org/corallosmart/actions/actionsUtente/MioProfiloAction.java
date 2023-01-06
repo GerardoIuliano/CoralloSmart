@@ -1,9 +1,11 @@
 package org.corallosmart.actions.actionsUtente;
 
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
+import org.corallosmart.models.modelsUtente.Utente;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class MioProfiloAction implements ActionStrategy {
     @Override

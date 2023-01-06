@@ -1,10 +1,13 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/SorrentoMarina/">
-        <div class="sidebar-brand-text mx-3">Torna alla home</div>
-    </a>
+    <div class="sidebar-brand d-flex align-items-center justify-content-center" href="/CoralloSmart/" style="height: 120px">
+
+        <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="100px" height="100px"
+                             alt=""></a>
+    </div>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -25,22 +28,22 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="profilo">
+        <a class="nav-link" href="mioProfilo">
             <i class="fas fa-fw fa-user"></i>
             <span>Il Mio Profilo</span></a>
     </li>
 
-    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Modifica Profilo -->
     <li class="nav-item">
-        <a class="nav-link" href="mostraModificaLido">
-            <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="modificaProfilo">
+            <i class="fas fa-edit"></i>
             <span>Modifica Profilo</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="mostraDisponibilita">
-            <i class="fas fa-fw fa-umbrella-beach"></i>
+        <a class="nav-link" href="contributiEvoucher">
+            <i class="fas fa-gift"></i>
             <span>Contributi e Voucher</span></a>
     </li>
 

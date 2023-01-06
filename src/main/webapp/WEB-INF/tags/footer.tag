@@ -69,5 +69,7 @@
             </div>
         </div>
     </div>
+    <script src="<c:url value="/assets/js/progress.js"/>"></script>
+    <script src="<c:url value="/assets/js/validateInput.js"/>"></script>
     <!-- Footer End-->
 </footer>

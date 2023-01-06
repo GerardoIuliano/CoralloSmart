@@ -49,4 +49,9 @@ public class TableUtenteManager extends TableManager implements UtenteManager{
     public void updateUtente(Utente utente) throws SQLException {
         runner.update("UPDATE utente SET nome=?, cognome=?, codiceFiscale=?, username=?, email=?, telefono=?, tipo=?, password=? WHERE id=?", utente.getNome(), utente.getCognome(), utente.getCodiceFiscale(), utente.getUsername(), utente.getEmail(), utente.getTelefono(), utente.isTipo(), utente.getPassword(), utente.getId());
     }
+    @Override
+    public Optional<Utente> retrieveById(int id) throws SQLException {
+        Utente utente = runner.query("SELECT * FROM Utente WHERE id = ?",SOS_MAPPER, id);
+        return Optional.ofNullable(utente);
+    }
 }

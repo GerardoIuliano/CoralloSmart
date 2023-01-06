@@ -1,0 +1,81 @@
+.voucher-box{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+}
+
+.voucher-info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.info input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.voucher-box input{
+    width: 500px;
+    height: 40px;
+    font-size: small;
+}
+
+.campo-importo input{
+    width: 60px;
+    height: 30px;
+}
+
+.sub-info {
+    width: 300px;
+}
+
+.delete{
+    margin: 0 0 0 auto;
+    align-self: center;
+}
+
+.sub-info button{
+    margin-left: auto;
+    height: 40px;
+}
+
+.info{
+ width: auto;
+}
+
+.voucher-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+}
+
+.trash {
+    margin: 0 15px;
+    padding: 0;
+    border: none;
+    color: gray;
+    background-color: white;
+}
+
+.id-voucher{
+    font-weight: bold;
+}

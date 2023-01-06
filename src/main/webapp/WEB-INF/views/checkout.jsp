@@ -1,8 +1,51 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<cs:layout title="checkout" admin="false">
-    <cs:header/>
+<cs:layout title="Operazione completata" admin="false">
+
+
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
+            else $('head > link').filter(':first').replaceWith(defaultCSS);
+        }
+        $( document ).ready(function() {
+            var iframe_height = parseInt($('html').height());
+            window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+
+<section>
+    <!-- Logo -->
+    <div class="col-xl-2 col-lg-2 col-md-1">
+        <div style="padding: 15px">
+            <a href="index"><img src="<c:url value="/images/logoCoralloSmart.png"/>" width="120px" height="120px"
+                                 alt=""></a>
+        </div>
+    </div>
+</section>
+
+<section class="vh-100" style="height: 42%">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
 
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
@@ -10,13 +53,17 @@
             <div id='mainContentWrapper'>
                 <div class="col-md-8 col-md-offset-2">
                     <h2 style="text-align: center;">
-                        Review Your Order & Complete Checkout
+                        RIVEDI LE INFORMAZIONI INSERITE E COMPLETA IL CHECKOUT
                     </h2>
-                    <hr/>
-                    <a href="#" class="btn btn-info" style="width: 100%;">Add More Products & Services</a>
-                    <hr/>
+
                     <div class="shopping_cart">
-                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+
+
+                        <!--form-->
+                        <form class="form-horizontal" role="form" action="operazioneCompletata" method="post" id="payment-form">
+
+
+
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -31,31 +78,32 @@
                                                 <div class="col-md-9">
                                                     <table class="table table-striped">
                                                         <tr>
-                                                            <td colspan="2">
-                                                                <a class="btn btn-warning btn-sm pull-right"
-                                                                   href="http://www.startajobboard.com/"
-                                                                   title="Remove Item">X</a>
-                                                                <b>
-                                                                    Premium Posting</b></td>
-                                                        </tr>
-                                                        <tr>
                                                             <td>
                                                                 <ul>
-                                                                    <li>ciao</li>
-                                                                    <li>Job Distribution*</li>
-                                                                    <li>Social Media Distribution</li>
+                                                                    <c:choose>
+                                                                        <c:when test="${isVoucher != null}">
+                                                                            <c:choose>
+                                                                                <c:when test="${isVoucher == true}">
+                                                                                    <li>VOUCHER:</li>
+                                                                                    <li>${voucher.getImporto()}</li>
+                                                                                    <li>${voucher.getDescrizione()}</li>
+                                                                                </c:when>
+                                                                            </c:choose>
+                                                                        </c:when>
+                                                                    </c:choose>
+
                                                                 </ul>
                                                             </td>
                                                             <td>
-                                                                <b>${}</b>
+                                                                <b></b>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
-                                                        <h3>Order Total</h3>
-                                                        <h3><span style="color:green;">$147.00</span></h3>
+                                                        <h3>Contributo da versare</h3>
+                                                        <h3><span style="color:green;">importo: ${importo} €</span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,165 +115,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <div style="text-align: center; width:100%;"><a style="width:100%;"
-                                                                                        data-toggle="collapse"
-                                                                                        data-parent="#accordion"
-                                                                                        href="#collapseTwo"
-                                                                                        class=" btn btn-success"
-                                                                                        onclick="$(this).fadeOut(); $('#payInfo').fadeIn();">Continue
-                                            to Billing Information»</a></div>
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Contact
-                                            and Billing Information</a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <b>Help us keep your account safe and secure, please verify your billing
-                                            information.</b>
-                                        <br/><br/>
-                                        <table class="table table-striped" style="font-weight: bold;">
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_email">Best Email:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_email" name="email"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_first_name">First name:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_first_name" name="first_name"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_last_name">Last name:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_last_name" name="last_name"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_address_line_1">Address:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_address_line_1"
-                                                           name="address_line_1" required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_address_line_2">Unit / Suite #:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_address_line_2"
-                                                           name="address_line_2" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_city">City:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_city" name="city"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_state">State:</label></td>
-                                                <td>
-                                                    <select class="form-control" id="id_state" name="state">
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="AR">Arkansas</option>
-                                                        <option value="CA">California</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="CT">Connecticut</option>
-                                                        <option value="DE">Delaware</option>
-                                                        <option value="FL">Florida</option>
-                                                        <option value="GA">Georgia</option>
-                                                        <option value="HI">Hawaii</option>
-                                                        <option value="ID">Idaho</option>
-                                                        <option value="IL">Illinois</option>
-                                                        <option value="IN">Indiana</option>
-                                                        <option value="IA">Iowa</option>
-                                                        <option value="KS">Kansas</option>
-                                                        <option value="KY">Kentucky</option>
-                                                        <option value="LA">Louisiana</option>
-                                                        <option value="ME">Maine</option>
-                                                        <option value="MD">Maryland</option>
-                                                        <option value="MA">Massachusetts</option>
-                                                        <option value="MI">Michigan</option>
-                                                        <option value="MN">Minnesota</option>
-                                                        <option value="MS">Mississippi</option>
-                                                        <option value="MO">Missouri</option>
-                                                        <option value="MT">Montana</option>
-                                                        <option value="NE">Nebraska</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="NH">New Hampshire</option>
-                                                        <option value="NJ">New Jersey</option>
-                                                        <option value="NM">New Mexico</option>
-                                                        <option value="NY">New York</option>
-                                                        <option value="NC">North Carolina</option>
-                                                        <option value="ND">North Dakota</option>
-                                                        <option value="OH">Ohio</option>
-                                                        <option value="OK">Oklahoma</option>
-                                                        <option value="OR">Oregon</option>
-                                                        <option value="PA">Pennsylvania</option>
-                                                        <option value="RI">Rhode Island</option>
-                                                        <option value="SC">South Carolina</option>
-                                                        <option value="SD">South Dakota</option>
-                                                        <option value="TN">Tennessee</option>
-                                                        <option value="TX">Texas</option>
-                                                        <option value="UT">Utah</option>
-                                                        <option value="VT">Vermont</option>
-                                                        <option value="VA">Virginia</option>
-                                                        <option value="WA">Washington</option>
-                                                        <option value="DC">Washington D.C.</option>
-                                                        <option value="WV">West Virginia</option>
-                                                        <option value="WI">Wisconsin</option>
-                                                        <option value="WY">Wyoming</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_postalcode">Postalcode:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_postalcode" name="postalcode"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_phone">Phone:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_phone" name="phone" type="text"/>
-                                                </td>
-                                            </tr>
-
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
                                         <div style="text-align: center;"><a data-toggle="collapse"
                                                                             data-parent="#accordion"
                                                                             href="#collapseThree"
                                                                             class=" btn   btn-success" id="payInfo"
-                                                                            style="width:100%;display: none;" onclick="$(this).fadeOut();
-                   document.getElementById('collapseThree').scrollIntoView()">Enter Payment Information »</a>
+                                                                            style="width:100%;">Enter Payment Information</a>
                                         </div>
                                     </h4>
                                 </div>
@@ -242,36 +136,54 @@
                                     <div class="panel-body">
                                         <span class='payment-errors'></span>
                                         <fieldset>
-                                            <legend>What method would you like to pay with today?</legend>
+                                            <legend>Quale metodo di pagamneto scegli?</legend>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label" for="card-holder-name">Name on
+                                                <label class="col-sm-3 control-label" for="name-on-card">Name on
                                                     Card</label>
                                                 <div class="col-sm-9">
+
+
+
+                                                    <!--Name on Card-->
                                                     <input type="text" class="form-control" stripe-data="name"
-                                                           id="name-on-card" placeholder="Card Holder's Name">
+                                                           id="name-on-card" placeholder="Card Holder's Name" required name="name-on-card">
+
+
+
+
+
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label" for="card-number">Card
                                                     Number</label>
                                                 <div class="col-sm-9">
+
+
+
+                                                    <!--Card Number-->
                                                     <input type="text" class="form-control" stripe-data="number"
-                                                           id="card-number" placeholder="Debit/Credit Card Number">
+                                                           id="card-number" placeholder="Debit/Credit Card Number" required name="card-number">
+
+
+
+
                                                     <br/>
-                                                    <div><img class="pull-right"
-                                                              src="https://s3.amazonaws.com/hiresnetwork/imgs/cc.png"
-                                                              style="max-width: 250px; padding-bottom: 20px;">
-                                                    </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" for="expiry-month">Expiration
+                                                    <label class="col-sm-3 control-label" for="card-exp-month">Expiration
                                                         Date</label>
                                                     <div class="col-sm-9">
                                                         <div class="row">
                                                             <div class="col-xs-3">
+
+
+
+
+                                                                <!--Expiration Date-->
                                                                 <select class="form-control col-sm-2"
                                                                         data-stripe="exp-month" id="card-exp-month"
-                                                                        style="margin-left:5px;">
+                                                                        style="margin-left:5px;" required name="expMonth">
                                                                     <option>Month</option>
                                                                     <option value="01">Jan (01)</option>
                                                                     <option value="02">Feb (02)</option>
@@ -286,38 +198,72 @@
                                                                     <option value="11">Nov (11)</option>
                                                                     <option value="12">Dec (12)</option>
                                                                 </select>
+
+
+
+
+
+
                                                             </div>
                                                             <div class="col-xs-3">
+
+
+
+
+                                                                <!--Expiration Date-->
                                                                 <select class="form-control" data-stripe="exp-year"
-                                                                        id="card-exp-year">
-                                                                    <option value="2016">2016</option>
-                                                                    <option value="2017">2017</option>
-                                                                    <option value="2018">2018</option>
-                                                                    <option value="2019">2019</option>
-                                                                    <option value="2020">2020</option>
-                                                                    <option value="2021">2021</option>
-                                                                    <option value="2022">2022</option>
+                                                                        id="card-exp-year" required name="expYear">
                                                                     <option value="2023">2023</option>
                                                                     <option value="2024">2024</option>
+                                                                    <option value="2025">2025</option>
+                                                                    <option value="2026">2026</option>
+                                                                    <option value="2027">2027</option>
+                                                                    <option value="2028">2028</option>
+                                                                    <option value="2029">2029</option>
+                                                                    <option value="2030">2030</option>
+                                                                    <option value="2031">2031</option>
                                                                 </select>
+
+
+
+
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" for="cvv">Card CVC</label>
+                                                    <label class="col-sm-3 control-label" for="card-cvc">Card CVC</label>
                                                     <div class="col-sm-3">
+
+
+
+
+
+
+
+                                                        <!--Card CVC-->
                                                         <input type="text" class="form-control" stripe-data="cvc"
-                                                               id="card-cvc" placeholder="Security Code">
+                                                               id="card-cvc" placeholder="Security Code" required name="card-cvc">
+
+
+
+
+
+
+
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-9">
                                                     </div>
                                                 </div>
+                                            </div>
                                         </fieldset>
-                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Pay
-                                            Now
+
+                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Paga
+                                            Ora
                                         </button>
                                         <br/>
                                         <div style="text-align: left;"><br/>
@@ -329,11 +275,20 @@
                                     </div>
                                 </div>
                             </div>
+                        </form>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
     </div>
-        <cs:footer/>
+</div>
+        </div>
+    </div>
+</section>
+</body>
+<script type="text/javascript">
+</script>
+</html>
+
 </cs:layout>

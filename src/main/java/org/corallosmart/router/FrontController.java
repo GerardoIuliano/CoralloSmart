@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 @WebServlet(name = "FrontController", urlPatterns = {"/CoralloSmart/*"})
@@ -40,13 +41,28 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/registrazione", PAF.create("RegistrationAction"));
     ROUTER.post("/checkRegistration", PAF.create("CheckRegistrationAction"));
     ROUTER.get("/logout", PAF.create("LogoutAction"));
-    ROUTER.get("/sostienici", PAF.create("SostieniciAction"));
+    ROUTER.get("/sostienici", PAF.create("CheckSostieniciAction"));
     ROUTER.get("/checkout", PAF.create("CheckoutAction"));
     ROUTER.get("/registrationResponsabileARPA", PAF.create("RegistrationResponsabileARPAAction"));
     ROUTER.post("/checkRegistrationResponsabileARPA", PAF.create("CheckRegistrationResponsabileARPAAction"));
+    ROUTER.post("/operazioneCompletata", PAF.create("OperazioneCompletataAction"));
     ROUTER.get("/info", PAF.create("InfoAction"));
     ROUTER.get("/mioProfilo", PAF.create("MioProfiloAction"));
+    ROUTER.get("/aggiungiVoucher", PAF.create("AggiungiVoucherAction"));
+    ROUTER.post("/clickAggiungiVoucher", PAF.create("ClickAggiungiVoucherAction"));
+    ROUTER.get("/gestioneVoucher", PAF.create("GestioneVoucherAction"));
+    ROUTER.post("/modificaVoucher", PAF.create("ModificaVoucherAction"));
+    ROUTER.get("/eliminaVoucher", PAF.create("EliminaVoucherAction"));
+    ROUTER.get("/mioProfiloARPA", PAF.create("MioProfiloARPAAction"));
+    ROUTER.get("/monitoraggio", PAF.create("MonitoraggioAction"));
+    ROUTER.get("/statoDispositivi", PAF.create("StatoDispositiviAction"));
+    ROUTER.get("/visualizzaIncassi", PAF.create("VisualizzaIncassiAction"));
     ROUTER.get("/modificaProfilo", PAF.create("ModificaProfiloAction"));
+    ROUTER.get("/modificaProfiloARPA", PAF.create("ModificaProfiloARPAAction"));
+    ROUTER.get("/contributiEvoucher", PAF.create("ContributiEVoucherAction"));
+    ROUTER.post("/checkModificaProfilo", PAF.create("CheckModificaProfiloAction"));
+    ROUTER.get("/goToIndexARPA", PAF.create("GoToIndexARPAAction"));
+    ROUTER.post("/ricercaData", PAF.create("RicercaDataAction"));
   }
 
   /**
@@ -59,7 +75,11 @@ public class FrontController extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    processRequest(HttpMethod.GET, request, response);
+    try {
+      processRequest(HttpMethod.GET, request, response);
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -72,7 +92,11 @@ public class FrontController extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    processRequest(HttpMethod.POST, request, response);
+    try {
+      processRequest(HttpMethod.POST, request, response);
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -84,7 +108,7 @@ public class FrontController extends HttpServlet {
    * @throws IOException
    */
   private void processRequest(HttpMethod method, HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException {
+          throws ServletException, IOException, SQLException {
     ActionStrategy actionStrategy = (ActionStrategy) ROUTER.handleRoute(method, req.getPathInfo());
     String result = actionStrategy.execute(req, res);
 
