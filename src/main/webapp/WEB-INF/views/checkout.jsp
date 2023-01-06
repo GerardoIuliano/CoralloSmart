@@ -73,9 +73,17 @@
                                                             <td>
                                                                 <ul>
                                                                     <!--TODO-->
-                                                                    <li>VOUCHER:</li>
-                                                                    <li>nome</li>
-                                                                    <li>voucher</li>
+                                                                    <c:choose>
+                                                                        <c:when test="${isVoucher != null}">
+                                                                            <c:choose>
+                                                                                <c:when test="${isVoucher == true}">
+                                                                                    <li>VOUCHER:</li>
+                                                                                    <li>${voucher.getImporto()}</li>
+                                                                                    <li>${voucher.getDescrizione()}</li>
+                                                                                </c:when>
+                                                                            </c:choose>
+                                                                        </c:when>
+                                                                    </c:choose>
 
                                                                 </ul>
                                                             </td>
