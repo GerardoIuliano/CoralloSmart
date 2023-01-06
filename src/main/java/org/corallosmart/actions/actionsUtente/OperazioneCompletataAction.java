@@ -34,8 +34,7 @@ public class OperazioneCompletataAction implements ActionStrategy {
                 Utente utente = (Utente) request.getSession().getAttribute("utente");
                 int idUtente = utente.getId();
 
-                LocalDate todaysdate = LocalDate.now();
-                Date date = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
+                Date date = new Date(System.currentTimeMillis());
 
                 boolean isVoucher = (boolean) request.getSession().getAttribute("isVoucher");
                 if(isVoucher == true) {
@@ -44,8 +43,6 @@ public class OperazioneCompletataAction implements ActionStrategy {
 
                     String oggetto = "voucher ottenuto";
                     String corpo = "è stato ottenuto il voucher " + voucher.getDescrizione();
-
-                Date date = new Date(System.currentTimeMillis());
 
                     EmailManager emailManager = new TableEmailManager(this.getSource(request));
                     Email email = new Email(oggetto, corpo, idUtente, idVoucher);
