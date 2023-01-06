@@ -14,7 +14,7 @@
                         <div class="container">
                             <div class="row justify-content-lg-center">
                                 <div class="col-xl-9 col-lg-9 col-md-9 center">
-                                    <a href="sostienici" class="btn-block genric-btn warning radius btn-lg">Sostienici!</a>
+                                    <a href="sostienici" class="btn-block genric-btn warning radius btn-lg" name="sostieniciBtn">Sostienici!</a>
                                 </div>
                             </div>
                         </div>

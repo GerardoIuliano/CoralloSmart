@@ -3,14 +3,19 @@ const progress = document.querySelector('.barlife');
 
 // Set the progress bar's value based off the top input
 const numerator = (e, listaGson) => {
-    progress.value = e.target.value;
-    console.log(e.target.value);
+    importo = e.target.value;
+    console.log(importo);
+
+    progress.value = importo;
+
     voucherSelezionato = document.getElementById("voucherSelezionato");
-    for(var voucher in listaGson){
-        if(voucher.importo >= e.target.value){
+    console.log("lista voucher: " + listaGson);
+    /*for(var voucher in listaGson){
+        console.log("voucher: " + voucher);
+        if(voucher.importo >= importo){
             voucherSelezionato.innerHTML = voucher.importo;
         }
-    }
+    }*/
 }
 
 // Set the progress bars max value based off the bottom input
