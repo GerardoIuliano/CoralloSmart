@@ -1,4 +1,4 @@
-package theboys.sorrentomarina.e2e;
+package org.corallosmart.e2e;
 
 
 import io.github.bonigarcia.wdm.config.DriverManagerType;
@@ -10,15 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import theboys.sorrentomarina.actions.ActionSetupDB;
-import theboys.sorrentomarina.utils.MockConnection;
+
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
-/**
- *@author theboys
- */
+
 public class SystemTestCase  {
 
   protected static WebDriver driver;
