@@ -54,9 +54,18 @@ public class OperazioneCompletataAction implements ActionStrategy {
                     Contributo contributo = new Contributo(date, importo, idUtente, idEmail, idVoucher);
                     contributoManager.createContributo(contributo);
                 }else{
+                    String oggetto = "Nessun voucher";
+                    String corpo = "Non è stato sbloccato nessun voucher";
+
+                    EmailManager emailManager = new TableEmailManager(this.getSource(request));
+                    Email email = new Email(oggetto, corpo, idUtente);
+                    emailManager.createEmailNoVoucher(email);
+                    Email emailConId = emailManager.cercaEmailNoVoucher(email);
+                    int idEmail = emailConId.getId();
+
                     ContributoManager contributoManager = new TableContributoManager(this.getSource(request));
-                    Contributo contributo = new Contributo(date, importo, idUtente, 0, 0);
-                    contributoManager.createContributo(contributo);
+                    Contributo contributo = new Contributo(date, importo, idUtente, idEmail);
+                    contributoManager.createContributoNoVoucher(contributo);
                 }
 
                 return view("operazioneCompletata");
