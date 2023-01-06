@@ -34,8 +34,7 @@ public class OperazioneCompletataAction implements ActionStrategy {
                 Utente utente = (Utente) request.getSession().getAttribute("utente");
                 int idUtente = utente.getId();
 
-                LocalDate todaysdate = LocalDate.now();
-                Date date = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
+                Date date = new Date(System.currentTimeMillis());
 
                 boolean isVoucher = (boolean) request.getSession().getAttribute("isVoucher");
                 if(isVoucher == true) {
