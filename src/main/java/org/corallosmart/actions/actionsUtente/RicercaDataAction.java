@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RicercaDataAction implements ActionStrategy {
@@ -18,10 +20,23 @@ public class RicercaDataAction implements ActionStrategy {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         try{
             Date fromDate = Date.valueOf(request.getParameter("fromDate"));
-            Date toDate = Date.valueOf(request.getParameter("toDate"));
-            System.out.println("aooo");
+            String strDate = request.getParameter("toDate");
+
+            Date toDate;
+
             RilevamentoManager rm = new TableRilevamentoManager(this.getSource(request));
+
+            if(strDate == null || strDate == "")
+            {
+                LocalDate todaysdate = LocalDate.now();
+                toDate = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
+            }
+            else
+            {
+                toDate = Date.valueOf(strDate);
+            }
             List<Rilevamento> rilevamenti = rm.cercaRilevamentoData(fromDate, toDate);
+
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
