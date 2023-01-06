@@ -28,18 +28,13 @@ public class CheckSostieniciAction implements ActionStrategy {
                 List<Voucher> listaVoucher= voucherManager.cercaVoucher();
 
                 HttpSession session= request.getSession();
-                //JSONObject jsonMap = new JSONObject(map);
                 session.setAttribute("listaVoucher", listaVoucher);
 
-
-
-
+                //conversione in Gson di un array
                 List<Voucher> list = (List<Voucher>) request.getSession().getAttribute("listaVoucher");
                 String listaGson = new Gson().toJson(list);
                 request.getSession().setAttribute("listaGson", listaGson);
-
-
-
+                System.out.println("\n"+listaGson);
 
                 return view("sostienici");
             }else{
