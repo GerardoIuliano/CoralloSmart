@@ -121,13 +121,13 @@ function chekUpdateForm(form) {
         submitBtn.type = "submit";
 
         var message = document.forms[form]['message'];
-        message.value = '';
+        message.innerHTML = '';
     } else {
         var submitBtn = document.forms[form]['submit'];
         submitBtn.type = "button";
 
-        var message = document.forms[form]['message'];
-        message.value = '*Verifica che tutti i campi siano correttamente compilati*';
+        var message = document.querySelector('.message');;
+        message.innerHTML = 'Verifica che tutti i campi siano correttamente compilati';
     }
 }
 

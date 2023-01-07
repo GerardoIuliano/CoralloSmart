@@ -35,7 +35,7 @@
                     <form action="checkModificaProfilo" name="registrationForm" id="registrationForm" method="post">
 
                       <!-- messaggio -->
-                      <p name="message" class="font-italic text-muted mb-1">${messaggio}</p>
+                      <p class="message" name="message" class="font-italic text-muted mb-1">${messaggio}</p>
 
                       <input type="hidden" id="idUtente" name="idUtente" value=${utente.getId()}>
 
