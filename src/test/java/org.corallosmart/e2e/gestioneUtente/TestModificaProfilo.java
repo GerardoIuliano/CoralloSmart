@@ -40,4 +40,29 @@ public class TestModificaProfilo extends SystemTestCase {
 
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/checkModificaProfilo");
     }
+
+    @Test
+    public void testModificaProfiloUsernameNotOk(){
+        driver.get("http://localhost:8080/CoralloSmart/login");
+
+        WebElement emailField = driver.findElement(By.name("email"));
+        emailField.sendKeys("giu.adi@gmail.com");
+
+        WebElement passwordField = driver.findElement(By.name("password"));
+        passwordField.sendKeys("root");
+
+        WebElement formLogin = driver.findElement(By.name("loginForm"));
+        formLogin.submit();
+
+        driver.get("http://localhost:8080/CoralloSmart/modificaProfilo");
+
+        WebElement usernameField = driver.findElement(By.name("username"));
+        usernameField.sendKeys("b");
+
+        WebElement submitBtn = driver.findElement(By.name("submit"));
+        submitBtn.click();
+
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
+    }
 }
