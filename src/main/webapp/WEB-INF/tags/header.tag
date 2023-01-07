@@ -51,7 +51,7 @@
                       <c:when test="${utente != null}">
                                 <c:choose>
                                  <c:when test="${utente.isTipo() == false}">
-                                <li> <a href="mioProfilo"> <i class="fas fa-fw fa-user fa-2x"></i> </a>
+                                <li> <a href="mioProfilo" name="mioProfiloBtn"> <i class="fas fa-fw fa-user fa-2x"></i> </a>
                                   <ul class="submenu">
                                     <li><p>Benvenuto ${utente.getUsername()}</p></li>
                                     <li><a href="mioProfilo">Il mio profilo</a></li>
