@@ -14,12 +14,22 @@
     <!-- Main Content -->
     <div class=section-top-border">
       <h3>Gestione Voucher</h3>
+
+      <p class="font-italic text-muted mb-1">${erroreImporto}</p>
+      <% session.removeAttribute("erroreImporto");%>
+      <p class="font-italic text-muted mb-1">${erroreDescrizioneLunga}</p>
+      <% session.removeAttribute("erroreDescrizioneLunga");%>
+      <p class="font-italic text-muted mb-1">${erroreDescrizioneCorta}</p>
+      <% session.removeAttribute("erroreDescrizioneCorta");%>
+      <p class="font-italic text-muted mb-1">${Successo}</p>
+      <% session.removeAttribute("Successo");%>
+
       <div class="voucher-list">
         <c:forEach items="${listaVoucher}" var="vou">
           <div class="voucher-box column">
             <h3 class="id-voucher"> VOUCHER CON ID: ${vou.id} </h3>
             <div class="voucher-info row">
-              <form  class="info column" method="post" action="modificaVoucher" id="modifica">
+              <form  class="info column" method="post" action="modificaVoucher" id="modifica" name="modificaForm${vou.id}">
                 <label for="descrizione">DESCRIZIONE</label>
                 <input type="text" id="descrizione" name="descrizione" value="${vou.descrizione}">
                 <div class="sub-info row">
