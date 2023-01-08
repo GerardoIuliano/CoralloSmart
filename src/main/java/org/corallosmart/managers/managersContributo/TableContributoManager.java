@@ -29,13 +29,17 @@ public class TableContributoManager extends TableManager implements ContributoMa
     }
 
     @Override
+    public void createContributoNoVoucher(Contributo contributo) throws SQLException {
+        runner.update("INSERT INTO Contributo(data, importo, idUtente, idEmail) VALUES(?, ?, ?, ?)", contributo.getData(), contributo.getImporto(), contributo.getIdUtente(), contributo.getIdEmail());
+    }
+
+    @Override
     public List<Contributo> cercaContributo(int id) throws SQLException {
        Contributo lista= runner.query("SELECT * FROM Contributo WHERE id = ?",SOS_MAPPER, id);
         return (List<Contributo>) lista;
     }
-
     public List cercaContributiVoucher(int id) throws SQLException{
-        List lista= runner.query("SELECT * FROM Contributo JOIN Voucher ON Contributo.idVoucher2=Voucher.id WHERE idUtente = ?",SOS_LIST_MAPPER, id);
+        List lista= runner.query("SELECT * FROM Contributo WHERE idUtente = ?",SOS_LIST_MAPPER, id);
         return lista;
     }
 
