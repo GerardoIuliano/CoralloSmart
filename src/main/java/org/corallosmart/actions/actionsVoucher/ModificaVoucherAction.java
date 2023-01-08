@@ -17,7 +17,8 @@ public class ModificaVoucherAction implements ActionStrategy {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
         try {
-            double importo = Double.parseDouble(request.getParameter("importo"));
+            int id = Integer.parseInt(request.getParameter("id"));
+            double importo = Double.parseDouble(request.getParameter("importo"+id));
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
@@ -26,9 +27,11 @@ public class ModificaVoucherAction implements ActionStrategy {
         }
 
         try {
-            String descrizione = request.getParameter("descrizione");
-            double importo = Double.parseDouble(request.getParameter("importo"));
             int id = Integer.parseInt(request.getParameter("id"));
+            System.out.println(id);
+
+            String descrizione = request.getParameter("descrizione"+id);
+            double importo = Double.parseDouble(request.getParameter("importo"+id));
 
             try {
                 if (Double.valueOf(descrizione) != null || Integer.valueOf(descrizione) != null) {
