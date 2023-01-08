@@ -19,29 +19,51 @@ public class RicercaDataAction implements ActionStrategy {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         try{
-            Date fromDate = Date.valueOf(request.getParameter("fromDate"));
-            String strDate = request.getParameter("toDate");
+            String strIDate = request.getParameter("fromDate");
+            String strFDate = request.getParameter("toDate");
 
+            Date fromDate;
             Date toDate;
 
             RilevamentoManager rm = new TableRilevamentoManager(this.getSource(request));
 
-            if(strDate == null || strDate == "")
+            if(strIDate == null || strIDate == "")
             {
-                LocalDate todaysdate = LocalDate.now();
-                toDate = new Date(todaysdate.getYear(), todaysdate.getMonthValue(), todaysdate.getDayOfMonth());
+                fromDate = new Date(0, 01, 01);
             }
             else
             {
-                toDate = Date.valueOf(strDate);
+                fromDate = Date.valueOf(strIDate);
             }
-            List<Rilevamento> rilevamenti = rm.cercaRilevamentoData(fromDate, toDate);
 
-
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            if(strFDate == null || strFDate == "")
+            {
+                toDate = new Date(System.currentTimeMillis());
+            }
+            else
+            {
+                toDate = Date.valueOf(strFDate);
+            }
 
             HttpSession session = request.getSession();
+
+            if((strIDate == null || strIDate == "") && (strFDate == null || strFDate == ""))
+            {
+                session.setAttribute("esitoRicerca", "Non sono state selezionate date, verranno mostrati tutti i rilevamenti");
+            }
+            else if(fromDate.compareTo(toDate) <= 0)
+            {
+                session.setAttribute("esitoRicerca", "Ricerca effettuata con successo!");
+            }
+            else
+            {
+                session.setAttribute("esitoRicerca", "Errore! E' stata inserita data iniziale > data finale");
+            }
+
+            List<Rilevamento> rilevamenti = rm.cercaRilevamentoData(fromDate, toDate);
             session.setAttribute("rilevamenti", rilevamenti);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             session.setAttribute("sdf", sdf);
 
             return view("monitoraggio");

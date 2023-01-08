@@ -19,13 +19,15 @@
     <!-- Main Content -->
     <div class=section-top-border">
       <h3>Monitoraggio</h3>
+      <h3>${esitoRicerca}</h3>
+      <%session.removeAttribute("esitoRicerca");%>
       <div>
         <div class = "order-filter">
         <form action = "ricercaData" method = "post" id = "search-date">
 
           <label for = "fromDate">Ricerca per data</label><br>
           <label for = "fromDate">Da</label>
-          <input type = "date" name = "fromDate" id = "fromDate" required>
+          <input type = "date" name = "fromDate" id = "fromDate">
 
           <div id = "in-toDate">
             <label for = "toDate">&nbsp;A</label>
