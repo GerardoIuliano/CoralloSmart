@@ -3,6 +3,7 @@ package org.corallosmart.actions.actionsUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 /**
  * @author theboys
@@ -17,7 +18,7 @@ public interface ActionStrategy {
      * @param response the response
      * @return can return a URL or a view name
      */
-    String execute(HttpServletRequest request, HttpServletResponse response);
+    String execute(HttpServletRequest request, HttpServletResponse response) throws SQLException;
 
 
     default String view(String viewName) {
