@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 public class SystemTestCase  {
 
-  protected static WebDriver driver;
+  public static WebDriver driver;
 
   /**
    * Setup  della classe di testing
@@ -28,14 +28,15 @@ public class SystemTestCase  {
    */
   @BeforeClass
   public static void setupClass() throws FileNotFoundException, SQLException {
+
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.addArguments("--headless"); // per non lanciare gui
     ChromeDriverManager .getInstance(DriverManagerType.CHROME).setup();
     driver = new ChromeDriver(chromeOptions);
   }
 
-  /*
-  @AfterAll
+
+ /* @AfterAll
   public static void tearDown() {
     driver.close();
   }

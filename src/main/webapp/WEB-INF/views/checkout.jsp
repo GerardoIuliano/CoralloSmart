@@ -2,7 +2,7 @@
 <%@ taglib prefix="cs" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<cs:layout title="Operazione completata" admin="false">
+<cs:layout title="Checkout" admin="false">
 
 
 <html lang="it">
@@ -15,20 +15,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <style type="text/css">
     </style>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        window.alert = function(){};
-        var defaultCSS = document.getElementById('bootstrap-css');
-        function changeCSS(css){
-            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
-            else $('head > link').filter(':first').replaceWith(defaultCSS);
-        }
-        $( document ).ready(function() {
-            var iframe_height = parseInt($('html').height());
-            window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
-        });
-    </script>
+
 </head>
 <body>
 
@@ -60,7 +47,7 @@
 
 
                         <!--form-->
-                        <form class="form-horizontal" role="form" action="operazioneCompletata" method="post" id="payment-form">
+                        <form class="form-horizontal" role="form" action="operazioneCompletata" method="post" id="payment-form" name="formPagamento">
 
 
 
@@ -103,7 +90,7 @@
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Contributo da versare</h3>
-                                                        <h3><span style="color:green;">importo: ${importo} €</span></h3>
+                                                        <h4><span style="color:green;">importo: ${importo} €</span></h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,27 +99,15 @@
 
                                 </div>
                             </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <div style="text-align: center;"><a data-toggle="collapse"
-                                                                            data-parent="#accordion"
-                                                                            href="#collapseThree"
-                                                                            class=" btn   btn-success" id="payInfo"
-                                                                            style="width:100%;">Enter Payment Information</a>
-                                        </div>
-                                    </h4>
-                                </div>
+
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                            <b>Payment Information</b>
-                                        </a>
+
                                     </h4>
                                 </div>
-                                <div id="collapseThree" class="panel-collapse collapse">
+
                                     <div class="panel-body">
                                         <span class='payment-errors'></span>
                                         <fieldset>
@@ -145,8 +120,8 @@
 
 
                                                     <!--Name on Card-->
-                                                    <input type="text" class="form-control" stripe-data="name"
-                                                           id="name-on-card" placeholder="Card Holder's Name" required name="name-on-card">
+                                                    <input type="text" class="form-control" stripe-data="name" name="nome"
+                                                           id="nome" placeholder="Card Holder's Name" required name="nome">
 
 
 
@@ -273,7 +248,7 @@
                                             before placing this order.
                                         </div>
                                     </div>
-                                </div>
+
                             </div>
                         </form>
                     </div>
@@ -287,8 +262,7 @@
     </div>
 </section>
 </body>
-<script type="text/javascript">
-</script>
+
 </html>
 
 </cs:layout>
