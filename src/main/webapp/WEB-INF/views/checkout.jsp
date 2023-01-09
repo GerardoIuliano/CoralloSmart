@@ -13,8 +13,7 @@
     <title>Checkout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <style type="text/css">
-    </style>
+
 
 </head>
 <body>
@@ -120,7 +119,7 @@
 
 
                                                     <!--Name on Card-->
-                                                    <input type="text" class="form-control" stripe-data="name" name="nome"
+                                                    <input type="text" class="form-control" stripe-data="name" name="nome" oninput="validaCardName('formPagamento')"
                                                            id="nome" placeholder="Card Holder's Name" required name="nome">
 
 
@@ -137,7 +136,7 @@
 
 
                                                     <!--Card Number-->
-                                                    <input type="text" class="form-control" stripe-data="number"
+                                                    <input type="text" class="form-control" stripe-data="number" oninput="validaNumeroCarta('formPagamento')"
                                                            id="card-number" placeholder="Debit/Credit Card Number" required name="card-number">
 
 
@@ -156,7 +155,7 @@
 
 
                                                                 <!--Expiration Date-->
-                                                                <select class="form-control col-sm-2"
+                                                                <select class="form-control col-sm-2" oninput="validaExpMonth('formPagamento')"
                                                                         data-stripe="exp-month" id="card-exp-month"
                                                                         style="margin-left:5px;" required name="expMonth">
                                                                     <option>Month</option>
@@ -186,7 +185,7 @@
 
 
                                                                 <!--Expiration Date-->
-                                                                <select class="form-control" data-stripe="exp-year"
+                                                                <select class="form-control" data-stripe="exp-year" oninput="validaExpYear('formPagamento')"
                                                                         id="card-exp-year" required name="expYear">
                                                                     <option value="2023">2023</option>
                                                                     <option value="2024">2024</option>
@@ -218,7 +217,7 @@
 
 
                                                         <!--Card CVC-->
-                                                        <input type="text" class="form-control" stripe-data="cvc"
+                                                        <input type="text" class="form-control" stripe-data="cvc" oninput="validaCVV('formPagamento')"
                                                                id="card-cvc" placeholder="Security Code" required name="card-cvc">
 
 
@@ -237,7 +236,7 @@
                                             </div>
                                         </fieldset>
 
-                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Paga
+                                        <button type="button" class="btn btn-success btn-lg" style="width:100%;" name="pagaBtn" onclick="checkPaymentForm('formPagamento')">Paga
                                             Ora
                                         </button>
                                         <br/>

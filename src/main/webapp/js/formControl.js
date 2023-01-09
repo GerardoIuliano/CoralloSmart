@@ -14,6 +14,7 @@ var cognomeOk = statoCampo.START;
 var codiceFiscaleOk = statoCampo.START;
 var telefonoOk = statoCampo.START;
 
+
 function validaUsername(form) {
     var input = document.forms[form]['username'];
     if (input.value.length >= 6 && input.value.match(/^[0-9a-zA-Z]+$/)) {
@@ -194,4 +195,7 @@ function validaOldPassword() {
     } else {
         input.style.border = borderNo;
     }
+
+
+
 }
