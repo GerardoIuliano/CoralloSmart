@@ -22,7 +22,10 @@ public interface ActionStrategy {
 
 
     default String view(String viewName) {
-        return VIEW_PATH.concat(viewName).concat(".jsp");
+        if(viewName != null)
+            return VIEW_PATH.concat(viewName).concat(".jsp");
+        else
+            return null;
     }
 
     default DataSource getSource(HttpServletRequest req) {
@@ -30,7 +33,10 @@ public interface ActionStrategy {
     }
 
     default String redirect(String url) {
-        return "redirect:".concat(url);
+        if(url != null)
+            return "redirect:".concat(url);
+        else
+            return null;
     }
 
 }
