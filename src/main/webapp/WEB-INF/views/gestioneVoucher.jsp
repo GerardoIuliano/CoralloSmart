@@ -35,11 +35,11 @@
             <div class="voucher-info row">
               <form  class="info column" method="post" action="modificaVoucher" id="modifica" name="modificaForm${vou.id}">
                 <label for="descrizione">DESCRIZIONE</label>
-                <input type="text" id="descrizione" name="descrizione" value="${vou.descrizione}">
+                <input type="text" id="descrizione" name="descrizione${vou.id}" value="${vou.descrizione}">
                 <div class="sub-info row">
                   <div class="campo-importo column">
                     <label for="importo">IMPORTO PER SBLOCCARLO</label>
-                    <input type="text" id="importo" class="input-field inactive" name="importo" value="${vou.importo}">
+                    <input type="text" id="importo" class="input-field inactive" name="importo${vou.id}" value="${vou.importo}">
                   </div>
                   <button type="submit" class="btn btn-primary" name="id" value="${vou.id}">Modifica</button>
                 </div>

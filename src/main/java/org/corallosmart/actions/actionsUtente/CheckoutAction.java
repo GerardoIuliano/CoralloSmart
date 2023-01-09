@@ -44,6 +44,7 @@ public class CheckoutAction implements ActionStrategy {
 
 
 
+
                 return view("checkout");
             }else{
                 return view("login");

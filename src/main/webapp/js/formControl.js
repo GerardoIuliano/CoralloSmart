@@ -1,14 +1,18 @@
 //Funzioni javascript per validare i campi del form di registrazione turista
-
+const statoCampo = {
+    START: 2,
+    TRUE: true,
+    FALSE: false,
+};
 var borderOk = '2px solid #070';
 var borderNo = '2px solid #f00';
-var usernameOk = false;
-var passwordOk = false;
-var nomeOk = false;
-var emailOk = false;
-var cognomeOk = false;
-var codiceFiscaleOk = false;
-var telefonoOk = false;
+var usernameOk = statoCampo.START;
+var passwordOk = statoCampo.START;
+var nomeOk = statoCampo.START;
+var emailOk = statoCampo.START;
+var cognomeOk = statoCampo.START;
+var codiceFiscaleOk = statoCampo.START;
+var telefonoOk = statoCampo.START;
 
 function validaUsername(form) {
     var input = document.forms[form]['username'];
@@ -117,16 +121,18 @@ function chekRegistrationForm(form) {
 
 function chekUpdateForm(form) {
     if (emailOk || passwordOk || usernameOk || nomeOk || cognomeOk || codiceFiscaleOk || telefonoOk) {
-        var submitBtn = document.forms[form]['submit'];
-        submitBtn.type = "submit";
+        if(emailOk!=false && passwordOk!=false && usernameOk!=false && nomeOk!=false && cognomeOk!=false && codiceFiscaleOk!=false && telefonoOk!=false){
+            var submitBtn = document.forms[form]['submit'];
+            submitBtn.type = "submit";
 
-        var message = document.forms[form]['message'];
-        message.innerHTML = '';
+            var message = document.forms[form]['message'];
+            message.innerHTML = '';
+        }
     } else {
         var submitBtn = document.forms[form]['submit'];
         submitBtn.type = "button";
 
-        var message = document.querySelector('.message');;
+        var message = document.querySelector('.message');
         message.innerHTML = 'Verifica che tutti i campi siano correttamente compilati';
     }
 }
