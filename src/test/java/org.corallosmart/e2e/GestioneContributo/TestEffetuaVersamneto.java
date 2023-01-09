@@ -3,14 +3,12 @@ package org.corallosmart.e2e.GestioneContributo;
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-public class TestEffettuaVersamento extends SystemTestCase {
-
+public class TestEffetuaVersamneto extends SystemTestCase {
 
     private static WebDriver driver;
 
@@ -19,8 +17,9 @@ public class TestEffettuaVersamento extends SystemTestCase {
         driver = SystemTestCase.driver;
     }
 
-@Test
-public void testEffettuaVersamento(){
+
+    @Test
+public void testEffettuaVersamento() throws InterruptedException {
 
 
 
@@ -31,11 +30,10 @@ public void testEffettuaVersamento(){
     passwordField.sendKeys("root");
     WebElement form = driver.findElement(By.name("loginForm"));
     form.submit();
-    String url = driver.getCurrentUrl();
-    Assert.assertEquals(url,"http://localhost:8080/CoralloSmart/");
 
 
-   /* driver.get("http://localhost:8080/CoralloSmart/index");
+
+    driver.get("http://localhost:8080/CoralloSmart/index");
     WebElement sostieniciBtn=driver.findElement(By.name("sostieniciBtn"));
     sostieniciBtn.click();
     WebElement importoField = driver.findElement(By.name("importo"));
@@ -44,8 +42,11 @@ public void testEffettuaVersamento(){
     formSostienici.submit();
 
 
-    driver.get("http://localhost:8080/CoralloSmart/checkout");
-    WebElement nameCard=driver.findElement(By.name("name-on-card"));
+
+
+    driver.get("http://localhost:8080/CoralloSmart/checkout?importo=20");
+
+    WebElement nameCard=driver.findElement(By.name("nome"));
     nameCard.sendKeys("Graziano Giuseffi");
     WebElement cardNumber= driver.findElement(By.name("card-number"));
     cardNumber.sendKeys("5333171083897454");
@@ -55,11 +56,13 @@ public void testEffettuaVersamento(){
     expYear.sendKeys("2024");
     WebElement cvv= driver.findElement(By.name("card-cvc"));
     cvv.sendKeys("584");
-    WebElement paymentForm= driver.findElement(By.id("payment-Form"));
+    WebElement paymentForm= driver.findElement(By.name("formPagamento"));
     paymentForm.submit();
 
     Boolean isOk= driver.getPageSource().contains("Operazione Completata Con Successo");
-    Assert.assertTrue(isOk); */
+    Assert.assertTrue(isOk);
+
+
 }
 
 }
