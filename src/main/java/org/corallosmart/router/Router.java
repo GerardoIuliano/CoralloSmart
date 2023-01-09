@@ -30,11 +30,14 @@ class Router {
    * @return
    */
   public Router addRoute(HttpMethod method, String url, ActionStrategy actionStrategy) {
-    if (!actionMap.containsKey(method)) {
-      actionMap.put(method, new HashMap<>());
-    }
-    actionMap.get(method).put(url, actionStrategy);
-    return this;
+    if(url != null && url.startsWith("/")) {
+      if (!actionMap.containsKey(method)) {
+        actionMap.put(method, new HashMap<>());
+      }
+      actionMap.get(method).put(url, actionStrategy);
+      return this;
+    }else
+      return null;
   }
 
   /**
