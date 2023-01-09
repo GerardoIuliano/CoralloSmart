@@ -7,6 +7,7 @@
 <cs:layout title="Sostienici" admin="false">
     <cs:header/>
 
+
     <section class="vh-100" style="height: 42%">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -35,9 +36,8 @@
                        <input hidden oninput="denominator(event)" type="number" class="totallife" max="100" min="0" value="100">
                    </div>
                    <div class="lifebar">
-                       <progress value="0" max="100" class="barlife"> </progress>
+                       <progress value="0" max="100" class="barlife" > </progress>
                    </div>
-
                    <button type="button" class="btn btn-primary btn-lg" name="confermaInput" onclick="validateInput()"
                            style="padding-left: 2.5rem; padding-right: 2.5rem; color: white">Conferma</button>
 
