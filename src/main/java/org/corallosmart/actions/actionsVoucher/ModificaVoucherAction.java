@@ -15,50 +15,35 @@ public class ModificaVoucherAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
-
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            double importo = Double.parseDouble(request.getParameter("importo"+id));
+            String importo = request.getParameter("importo" + id);
+            String descrizione = request.getParameter("descrizione" + id);
 
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            request.getSession().setAttribute("erroreImporto", "Importo non corretto, inserisci un numero!");
-            return redirect("/CoralloSmart/gestioneVoucher");
-        }
-
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            System.out.println(id);
-
-            String descrizione = request.getParameter("descrizione"+id);
-            double importo = Double.parseDouble(request.getParameter("importo"+id));
-
-            try {
-                if (Double.valueOf(descrizione) != null || Integer.valueOf(descrizione) != null) {
-                    request.getSession().setAttribute("erroreDescrizione", "Descrizione non corretta, inserisci una stringa!");
-                    return redirect("/CoralloSmart/gestioneVoucher");
-                }
-            } catch (NumberFormatException e) {
-
-                if (descrizione.length() >= 10 && descrizione.length() < 50 && importo <= 150) {
-                    VoucherManager voucherManager = new TableVoucherManager(this.getSource(request));
-                    voucherManager.modificaVoucher(descrizione, importo, id);
-                    request.getSession().setAttribute("Successo", "Modifica effettuata con successo");
-                    return redirect("/CoralloSmart/gestioneVoucher");
-                }else if(descrizione.length() >= 10 && descrizione.length() < 50 && importo>150) {
-                    request.getSession().setAttribute("erroreImportoFuoriRange", "Errore, l'importo deve essere massimo di 150 euro");
-                    return redirect("/CoralloSmart/gestioneVoucher");
-                }else if (descrizione.length() > 50) {
-                    request.getSession().setAttribute("erroreDescrizioneLunga", "Errore, la descrizione deve essere minore di 50 caratteri!");
-                    return redirect("/CoralloSmart/gestioneVoucher");
+            if (descrizione.matches("^([^0-9]*)$") == false) {
+                request.getSession().setAttribute("erroreDescrizione", "Errore, la descrizione non puo contenere numeri!");
+            } else {
+                if (importo.matches("^[0-9]+(\\.[0-9]+)?$") == false) {
+                    request.getSession().setAttribute("erroreImporto", "Importo non corretto, inserisci un numero!");
                 } else {
-                    request.getSession().setAttribute("erroreDescrizioneCorta", "Errore, la descrizione deve essere almeno di 10 caratteri!");
-                    return redirect("/CoralloSmart/gestioneVoucher");
+                    Double importo2 = Double.parseDouble(request.getParameter("importo" + id));
+
+                    if (descrizione.length() >= 10 && descrizione.length() < 50 && importo2 <= 150) {
+                        VoucherManager voucherManager = new TableVoucherManager(this.getSource(request));
+                        voucherManager.modificaVoucher(descrizione, importo2, id);
+                        request.getSession().setAttribute("Successo", "Modifica effettuata con successo");
+                    } else if (descrizione.length() >= 10 && descrizione.length() < 50 && importo2 > 150) {
+                        request.getSession().setAttribute("erroreImportoFuoriRange", "Errore, l'importo deve essere massimo di 150 euro");
+                    } else if (descrizione.length() > 50) {
+                        request.getSession().setAttribute("erroreDescrizioneLunga", "Errore, la descrizione deve essere minore di 50 caratteri!");
+                    } else {
+                        request.getSession().setAttribute("erroreDescrizioneCorta", "Errore, la descrizione deve essere almeno di 10 caratteri!");
+                    }
                 }
             }
-        } catch (SQLException e) {
-            return redirect("/CoralloSmart/gestioneVoucher");
+            return redirect("gestioneVoucher");
+        } catch (NumberFormatException e) {
+            return view("500");
         }
-        return view("500");
     }
 }
