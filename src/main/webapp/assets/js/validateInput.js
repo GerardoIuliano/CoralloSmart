@@ -5,9 +5,9 @@ function validateInput(){
         submitBtn.type = "submit";}
     else{
 
-        alert ( "L'importo deve essere maggiore di 0 €" );
+        alert ( "L'importo deve essere maggiore di 0" );
         imp.focus();
-        console.log("ciao");
+
 
 
 

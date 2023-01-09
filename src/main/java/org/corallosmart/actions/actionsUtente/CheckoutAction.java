@@ -12,6 +12,9 @@ import org.corallosmart.models.modelsVoucher.Voucher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -38,10 +41,6 @@ public class CheckoutAction implements ActionStrategy {
                 }else{
                     request.getSession().setAttribute("isVoucher", false);
                 }
-
-
-
-
 
 
 
