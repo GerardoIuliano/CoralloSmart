@@ -2,7 +2,6 @@ package org.corallosmart.utils;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.h2.tools.RunScript;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -29,7 +28,7 @@ public class MockConnection extends BasicDataSource {
         if(mockConnection == null){
             mockConnection = new MockConnection();
             mockConnection.setDriverClassName("org.h2.Driver");
-            mockConnection.setUrl("jdbc:h2:./sorrentoTest;MODE=MYSQL;DATABASE_TO_UPPER=false;");
+            mockConnection.setUrl("jdbc:h2:./coralloTest;MODE=MYSQL;DATABASE_TO_UPPER=false;");
             mockConnection.setUsername("root");
             mockConnection.setPassword("root");
             mockConnection.setMaxTotal(512);
@@ -45,7 +44,8 @@ public class MockConnection extends BasicDataSource {
      * @throws FileNotFoundException
      */
     public void initeDb() throws SQLException, FileNotFoundException {
-        mockConnection.getConnection().createStatement().execute("drop all objects delete files");
+        //todo drop all objects
+        mockConnection.getConnection().createStatement().execute(" ");
         Path path = Paths.get("src", "test", "resources", "backup.sql");
         String absolutePath = String.valueOf(path.toAbsolutePath());
         File file = new File(absolutePath);
@@ -58,7 +58,8 @@ public class MockConnection extends BasicDataSource {
      * @throws SQLException
      */
     public void clearDb() throws SQLException {
-        mockConnection.getConnection().createStatement().execute("drop all objects delete files");
+        //todo drop all objects
+        mockConnection.getConnection().createStatement().execute(" ");
     }
 
 }
