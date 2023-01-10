@@ -29,14 +29,12 @@ public class TestModificaVoucher extends SystemTestCase {
         form.submit();
 
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
-        WebElement descrizione=driver.findElement(By.name("descrizione11"));
+        WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
-        WebElement importo=driver.findElement(By.name("importo11"));
+        WebElement importo=driver.findElement(By.name("importo2"));
         importo.sendKeys("Cinquanta euro");
-        WebElement modificaForm = driver.findElement(By.name("modificaForm11"));
+        WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
-
-        System.out.println(driver.getPageSource());
 
         Boolean isOk= driver.getPageSource().contains("Importo non corretto, inserisci un numero!");
         System.out.println(isOk);
@@ -58,18 +56,13 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
         WebElement importo=driver.findElement(By.name("importo2"));
-        importo.sendKeys("70");
+        importo.sendKeys("70.0");
         WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
-
-        System.out.println(driver.getPageSource());
-        /*
 
         Boolean isOk= driver.getPageSource().contains("Modifica effettuata con successo");
         System.out.println(isOk);
         Assert.assertTrue(isOk);
-
-         */
     }
 
 
@@ -88,7 +81,7 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("12345");
         WebElement importo=driver.findElement(By.name("importo2"));
-        importo.sendKeys("100");
+        importo.sendKeys("100.0");
         WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
 
@@ -112,7 +105,7 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca piu cena a domicilio con annesso spettacolo di parkour in strada");
         WebElement importo=driver.findElement(By.name("importo2"));
-        importo.sendKeys("45");
+        importo.sendKeys("45.0");
         WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
 
@@ -137,7 +130,7 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Barca");
         WebElement importo=driver.findElement(By.name("importo2"));
-        importo.sendKeys("100");
+        importo.sendKeys("100.0");
         WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
 
@@ -161,7 +154,7 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
         WebElement importo=driver.findElement(By.name("importo2"));
-        importo.sendKeys("200");
+        importo.sendKeys("200.0");
         WebElement modificaForm = driver.findElement(By.name("modificaForm2"));
         modificaForm.submit();
 

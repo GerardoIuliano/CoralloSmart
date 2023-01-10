@@ -17,8 +17,8 @@ public class ModificaVoucherAction implements ActionStrategy {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            String importo = request.getParameter("importo" + id);
-            String descrizione = request.getParameter("descrizione" + id);
+            String importo = request.getParameter("importo"+id);;
+            String descrizione = request.getParameter("descrizione"+id);
 
             if (descrizione.matches("^([^0-9]*)$") == false) {
                 request.getSession().setAttribute("erroreDescrizione", "Errore, la descrizione non puo contenere numeri!");
@@ -26,7 +26,8 @@ public class ModificaVoucherAction implements ActionStrategy {
                 if (importo.matches("^[0-9]+(\\.[0-9]+)?$") == false) {
                     request.getSession().setAttribute("erroreImporto", "Importo non corretto, inserisci un numero!");
                 } else {
-                    Double importo2 = Double.parseDouble(request.getParameter("importo" + id));
+
+                    Double importo2=Double.parseDouble(importo);
 
                     if (descrizione.length() >= 10 && descrizione.length() < 50 && importo2 <= 150) {
                         VoucherManager voucherManager = new TableVoucherManager(this.getSource(request));
