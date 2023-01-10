@@ -11,18 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RouterTest {
 
     /**
-     * Test -   Metodo GET, Url no Match, Action not null
+     * Test -   Metodo GET, Url valid, Action not null
      *
      */
-
-
-    @Test
-    public void testAddRouteWithNoRoutes() {
-        Router router = new Router(new HashMap<>());
-        Router result = router.addRoute(HttpMethod.GET, "kjgug2324", Mockito.mock(WelcomeAction.class));
-        assertNull(result);
-    }
-
     @Test
     public void testAddRouteOk() {
         Router router = new Router(new HashMap<>());
@@ -33,6 +24,10 @@ public class RouterTest {
         result.printMap();
     }
 
+    /**
+     * Test -   Metodo null, Url valid, Action not null
+     *
+     */
     @Test
     public void testAddRouteWithWrongMethod() {
         Router router = new Router(new HashMap<>());
@@ -40,6 +35,10 @@ public class RouterTest {
         assertNull(result);
     }
 
+    /**
+     * Test -   Metodo GET, Url wrong, Action not null
+     *
+     */
     @Test
     public void testAddRouteWithWrongUrl() {
         Router router = new Router(new HashMap<>());
@@ -47,6 +46,10 @@ public class RouterTest {
         assertNull(result);
     }
 
+    /**
+     * Test -   Metodo GET, Url valid, Action null
+     *
+     */
     @Test
     public void testAddRouteWithWrongAction() {
         Router router = new Router(new HashMap<>());
