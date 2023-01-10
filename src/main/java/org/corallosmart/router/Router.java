@@ -30,7 +30,7 @@ class Router {
    * @return
    */
   public Router addRoute(HttpMethod method, String url, ActionStrategy actionStrategy) {
-    if(url != null && url.startsWith("/")) {
+    if(url != null && method != null && actionStrategy != null && url.startsWith("/")) {
       if (!actionMap.containsKey(method)) {
         actionMap.put(method, new HashMap<>());
       }
@@ -86,4 +86,20 @@ class Router {
   public Map<HttpMethod, HashMap<Object, Object>> getActionMap() {
     return actionMap;
   }
+
+  public void printMap(){
+    try {
+      for (HttpMethod method : actionMap.keySet()) {
+        System.out.println(method.toString());
+        for (Object url : actionMap.get(method).keySet()) {
+          System.out.println(url);
+          System.out.println(actionMap.get(method).get(url).toString());
+        }
+      }
+    }catch (NullPointerException e){
+      System.out.println("\nqualcosa è null nel router!");
+      e.printStackTrace();
+    }
+  }
+
 }
