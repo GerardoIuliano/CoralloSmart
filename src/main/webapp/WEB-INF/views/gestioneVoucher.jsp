@@ -34,14 +34,15 @@
             <h3 class="id-voucher"> VOUCHER CON ID: ${vou.id} </h3>
             <div class="voucher-info row">
               <form  class="info column" method="post" action="modificaVoucher" id="modifica" name="modificaForm${vou.id}">
+                <input type="hidden" name="id" value="${vou.id}">
                 <label for="descrizione">DESCRIZIONE</label>
-                <input type="text" id="descrizione" name="descrizione${vou.id}" value="${vou.descrizione}">
+                <input type="text" id="descrizione" name="descrizione${vou.id}" placeholder="${vou.descrizione}">
                 <div class="sub-info row">
                   <div class="campo-importo column">
                     <label for="importo">IMPORTO PER SBLOCCARLO</label>
-                    <input type="text" id="importo" class="input-field inactive" name="importo${vou.id}" value="${vou.importo}">
+                    <input type="text" id="importo" class="input-field inactive" name="importo${vou.id}" placeholder="${vou.importo}">
                   </div>
-                  <button type="submit" class="btn btn-primary" name="id" value="${vou.id}">Modifica</button>
+                  <button type="submit" class="btn btn-primary">Modifica</button>
                 </div>
               </form>
               <form class="delete column" method="get" action="eliminaVoucher">
