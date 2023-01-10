@@ -14,6 +14,7 @@ public interface VoucherManager {
     Optional<Voucher> cercaVoucherImporto(double importo) throws SQLException;
     Voucher cercaVoucherId(int id) throws SQLException;
     void modificaVoucher(String descrizione, double importo, int id) throws SQLException;
-
+    void modificaDescVoucher(String descrizione,int id) throws SQLException;
+    void modificaImpVoucher(double importo, int id) throws SQLException;
     void eliminaVoucher(int id) throws SQLException;
 }
