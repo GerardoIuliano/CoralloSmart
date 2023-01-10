@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RouterTest {
+public class AddRouteTest {
 
     /**
      * Test -   Metodo GET, Url valid, Action not null
