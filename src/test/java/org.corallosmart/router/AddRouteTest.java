@@ -19,9 +19,6 @@ public class AddRouteTest {
         Router router = new Router(new HashMap<>());
         Router result = router.addRoute(HttpMethod.GET, "/something", Mockito.mock(WelcomeAction.class));
         assertNotNull(result);
-
-        System.out.println("size: " + result.getActionMap().size());
-        result.printMap();
     }
 
     /**
