@@ -16,7 +16,8 @@ import java.util.List;
 
 public class RicercaDataAction implements ActionStrategy {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response)
+    {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         try{
             String strIDate = request.getParameter("fromDate");
@@ -24,10 +25,10 @@ public class RicercaDataAction implements ActionStrategy {
 
             Date fromDate;
             Date toDate;
-
+            
             RilevamentoManager rm = new TableRilevamentoManager(this.getSource(request));
 
-            if(strIDate == null || strIDate == "")
+            if(strIDate == null || strIDate.equals(""))
             {
                 fromDate = new Date(0, 01, 01);
             }
@@ -36,7 +37,7 @@ public class RicercaDataAction implements ActionStrategy {
                 fromDate = Date.valueOf(strIDate);
             }
 
-            if(strFDate == null || strFDate == "")
+            if(strFDate == null || strFDate.equals(""))
             {
                 toDate = new Date(System.currentTimeMillis());
             }
@@ -47,7 +48,7 @@ public class RicercaDataAction implements ActionStrategy {
 
             HttpSession session = request.getSession();
 
-            if((strIDate == null || strIDate == "") && (strFDate == null || strFDate == ""))
+            if((strIDate == null || strIDate.equals("")) && (strFDate == null || strFDate.equals("")))
             {
                 session.setAttribute("esitoRicerca", "Non sono state selezionate date, verranno mostrati tutti i rilevamenti");
             }
