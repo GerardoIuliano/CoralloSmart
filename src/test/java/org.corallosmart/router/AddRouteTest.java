@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RouterTest {
+public class AddRouteTest {
 
     /**
      * Test -   Metodo GET, Url valid, Action not null
@@ -19,9 +19,6 @@ public class RouterTest {
         Router router = new Router(new HashMap<>());
         Router result = router.addRoute(HttpMethod.GET, "/something", Mockito.mock(WelcomeAction.class));
         assertNotNull(result);
-
-        System.out.println("size: " + result.getActionMap().size());
-        result.printMap();
     }
 
     /**

@@ -25,7 +25,7 @@ public class ClickAggiungiVoucherAction implements ActionStrategy {
             String importo = request.getParameter("importo");
             HttpSession session = request.getSession();
 
-            Pattern pattern = Pattern.compile("^[a-zA-Z]+(.|\\s)*$");
+            Pattern pattern = Pattern.compile("^([^0-9]*)$");
             Matcher matcher1 = pattern.matcher(descrizione);
             pattern = Pattern.compile("^[0-9]+(\\.[0-9]+)?$");
             Matcher matcher2 = pattern.matcher(importo);
@@ -46,7 +46,7 @@ public class ClickAggiungiVoucherAction implements ActionStrategy {
             else if (!matcher1.find())
             {
                 session.setAttribute("esitoInserimentoV", "Descrizione inserita non valida! " +
-                        "Non inserire caratteri speciali");
+                        "Non inserire numeri solo lettere");
             }
             else if (!matcher2.find())
             {
