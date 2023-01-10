@@ -11,6 +11,9 @@
         <!-- Main Content -->
         <div class=section-top-border">
             <h3>Aggiungi Voucher</h3>
+            <h3>Monitoraggio</h3>
+            <h3>${esitoInserimentoV}</h3>
+            <%session.removeAttribute("esitoInserimentoV");%>
             <div>
                 <form action="clickAggiungiVoucher" name="VoucherForm" id="VoucherForm" method="post">
                     <div class="form-group">
