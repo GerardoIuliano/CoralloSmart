@@ -15,6 +15,8 @@
     <div class=section-top-border">
       <h3>Gestione Voucher</h3>
 
+      <p class="font-italic text-muted mb-1">${erroreCampiVuoti}</p>
+      <% session.removeAttribute("erroreCampiVuoti");%>
       <p class="font-italic text-muted mb-1">${erroreImportoFuoriRange}</p>
       <% session.removeAttribute("erroreImportoFuoriRange");%>
       <p class="font-italic text-muted mb-1">${erroreImporto}</p>

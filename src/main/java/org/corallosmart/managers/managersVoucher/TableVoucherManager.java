@@ -54,6 +54,14 @@ public class TableVoucherManager extends TableManager implements VoucherManager{
         runner.update("UPDATE voucher SET descrizione=?, importo=? WHERE id=?",descrizione, importo, id);
     }
 
+    public void modificaDescVoucher(String descrizione,int id) throws SQLException {
+        runner.update("UPDATE voucher SET descrizione=? WHERE id=?",descrizione, id);
+    }
+
+    public void modificaImpVoucher(double importo, int id) throws SQLException {
+        runner.update("UPDATE voucher SET importo=? WHERE id=?",importo, id);
+    }
+
     @Override
     public void eliminaVoucher(int id) throws SQLException {
         runner.update("DELETE Voucher FROM voucher WHERE id=?",id);
