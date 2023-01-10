@@ -22,9 +22,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherErrorImportFormat(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
@@ -45,9 +45,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherSuccess(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
@@ -70,9 +70,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherErrorDescriptionFormat(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
@@ -94,9 +94,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherDescriptionTooLong(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
@@ -119,9 +119,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherDescriptionTooSmall(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
@@ -143,9 +143,9 @@ public class TestModificaVoucher extends SystemTestCase {
     public void testModificaVoucherErrorImportRange(){
         driver.get("http://localhost:8080/CoralloSmart/login");
         WebElement userField = driver.findElement(By.name("email"));
-        userField.sendKeys("giu.adi@gmail.com");
+        userField.sendKeys("ersi.petre@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("milan");
+        passwordField.sendKeys("root");
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
