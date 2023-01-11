@@ -27,7 +27,5 @@ public class getTest {
         Router router = new Router(new HashMap<>());
         Router result= router.get("/something", Mockito.mock(WelcomeAction.class));
         assertNotNull(result);
-
-        result.printMap();
     }
 }
