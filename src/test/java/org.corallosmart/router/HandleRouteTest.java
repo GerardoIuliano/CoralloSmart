@@ -12,19 +12,7 @@ import java.util.HashMap;
 public class HandleRouteTest
 {
     @Test
-    public void testHandleRouteOk()
-    {
-        Router router = new Router(new HashMap<>());
-        router.get("/something", Mockito.mock(WelcomeAction.class));
-
-        ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(HttpMethod.GET, "/something");
-        boolean isOk = actionStrategy.getClass().equals(Mockito.mock(WelcomeAction.class).getClass());
-        System.out.println(actionStrategy.getClass().toString());
-        Assert.assertTrue(isOk);
-    }
-
-    @Test
-    public void testHandleRouteWrongMethod()
+    public void test_TC_U_HR_1_0()
     {
         Router router = new Router(new HashMap<>());
         router.get("/something", Mockito.mock(WelcomeAction.class));
@@ -36,13 +24,25 @@ public class HandleRouteTest
     }
 
     @Test
-    public void testHandleRouteWrongURL()
+    public void test_TC_U_HR_1_1()
     {
         Router router = new Router(new HashMap<>());
         router.get("/something", Mockito.mock(WelcomeAction.class));
 
         ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(HttpMethod.GET, "something");
         boolean isOk = actionStrategy.getClass().equals(NotFoundAction.class);
+        System.out.println(actionStrategy.getClass().toString());
+        Assert.assertTrue(isOk);
+    }
+
+    @Test
+    public void test_TC_U_HR_1_2()
+    {
+        Router router = new Router(new HashMap<>());
+        router.get("/something", Mockito.mock(WelcomeAction.class));
+
+        ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(HttpMethod.GET, "/something");
+        boolean isOk = actionStrategy.getClass().equals(Mockito.mock(WelcomeAction.class).getClass());
         System.out.println(actionStrategy.getClass().toString());
         Assert.assertTrue(isOk);
     }
