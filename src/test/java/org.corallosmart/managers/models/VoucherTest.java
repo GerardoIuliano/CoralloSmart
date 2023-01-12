@@ -1,4 +1,4 @@
-package org.corallosmart.models;
+package org.corallosmart.managers.models;
 
 import org.corallosmart.models.modelsVoucher.Voucher;
 import org.junit.jupiter.api.BeforeEach;

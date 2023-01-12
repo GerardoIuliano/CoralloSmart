@@ -38,7 +38,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
         voucherForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Importo inserito non valido! Inserire un importo maggiore o uguale a 5 e minore o uguale di 150");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -63,7 +62,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
         voucherForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Importo inserito non valido! Inserire un importo maggiore o uguale a 5 e minore o uguale di 150");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -89,7 +87,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
 
         Boolean isOk= driver.getPageSource().contains("Descrizione inserita non valida! " +
                 "Inserire una descrizione di lunghezza compresa tra i 10 e i 50 caratteri");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -116,7 +113,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
 
         Boolean isOk= driver.getPageSource().contains("Descrizione inserita non valida! " +
                 "Inserire una descrizione di lunghezza compresa tra i 10 e i 50 caratteri");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -141,7 +137,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
         voucherForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Importo inserito non valido! Non inserire caratteri ma solo una cifra compresa tra 5 e 150");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -166,7 +161,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
         voucherForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Descrizione inserita non valida! Non inserire numeri solo lettere");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -191,7 +185,6 @@ public class TestAggiuntaVoucher extends SystemTestCase
         voucherForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Voucher aggiunto correttamente");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 }

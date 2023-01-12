@@ -26,7 +26,6 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
-
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Barca");
@@ -34,7 +33,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Errore, la descrizione deve essere almeno di 10 caratteri!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -48,7 +46,6 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
-
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("12345678910");
@@ -56,7 +53,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Errore, la descrizione non puo contenere numeri!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -70,7 +66,6 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
-
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
@@ -78,7 +73,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Modifica effettuata con successo");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -101,7 +95,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Importo non corretto, inserisci un numero!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -115,7 +108,6 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
-
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
@@ -125,7 +117,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Errore, l'importo deve essere massimo di 150 euro");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -139,7 +130,6 @@ public class TestModificaVoucher extends SystemTestCase {
         WebElement form = driver.findElement(By.name("loginForm"));
         form.submit();
 
-
         driver.get("http://localhost:8080/CoralloSmart/gestioneVoucher");
         WebElement descrizione=driver.findElement(By.name("descrizione2"));
         descrizione.sendKeys("Giro in barca con immersione");
@@ -149,7 +139,6 @@ public class TestModificaVoucher extends SystemTestCase {
         modificaForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Modifica effettuata con successo");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 }

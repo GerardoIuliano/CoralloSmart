@@ -112,7 +112,7 @@ CREATE TABLE `supervisiona` (
   CONSTRAINT `utente3` FOREIGN KEY (`idUtente`) REFERENCES `utente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO `corallosmart`.`utente` (`nome`, `cognome`, `codiceFiscale`, `username`, `email`, `telefono`, `tipo`, `password`) VALUES ('giuseppe', 'adinolfi', 'DNLGPP01B05G813S', 'adi', 'giu.adi@gmail.com', '+39 3273734000', '0', 'root');
+INSERT INTO `corallosmart`.`utente` (`nome`, `cognome`, `codiceFiscale`, `username`, `email`, `telefono`, `tipo`, `password`) VALUES ('giuseppe', 'adinolfi', 'DNLGPP01B05G813S', 'adi', 'giu.adi@gmail.com', '+39 3273734000', '0', 'P4ssword');
 INSERT INTO `corallosmart`.`utente` (`nome`, `cognome`, `codiceFiscale`, `username`, `email`, `telefono`, `tipo`, `password`) VALUES ('graziano', 'giuseffi', 'DNRGGP02B05G823S', 'giuseffi', 'graziano.giu@gmail.com', '+39 3222222222', '0', 'root');
 INSERT INTO `corallosmart`.`utente` (`nome`, `cognome`, `codiceFiscale`, `username`, `email`, `tipo`, `password`) VALUES ('ersilio', 'petretta', 'DNRGGP01B02G813S', 'ersilio', 'ersi.petre@gmail.com', '1', 'root');
 

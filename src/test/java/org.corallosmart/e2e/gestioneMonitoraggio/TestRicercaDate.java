@@ -39,7 +39,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Ricerca effettuata con successo!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -64,7 +63,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Errore! E' stata inserita data iniziale &gt; data finale");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -84,7 +82,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Non sono state selezionate date, verranno mostrati tutti i rilevamenti");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -107,7 +104,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Ricerca effettuata con successo!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -130,7 +126,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Errore! E' stata inserita data iniziale &gt; data finale");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
@@ -153,7 +148,6 @@ public class TestRicercaDate extends SystemTestCase
         dateForm.submit();
 
         Boolean isOk= driver.getPageSource().contains("Ricerca effettuata con successo!");
-        System.out.println(isOk);
         Assert.assertTrue(isOk);
     }
 
