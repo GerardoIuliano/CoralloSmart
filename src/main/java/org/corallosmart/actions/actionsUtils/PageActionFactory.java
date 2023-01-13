@@ -2,6 +2,8 @@ package org.corallosmart.actions.actionsUtils;
 
 import org.corallosmart.actions.ProvaAction;
 import org.corallosmart.actions.actionsContributo.CheckSostieniciAction;
+import org.corallosmart.actions.actionsContributo.CheckoutAction;
+import org.corallosmart.actions.actionsContributo.OperazioneCompletataAction;
 import org.corallosmart.actions.actionsUtente.*;
 import org.corallosmart.actions.actionsVoucher.*;
 
