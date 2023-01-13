@@ -14,6 +14,10 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author Graziano Giuseffi, Ersilio Petretta
+ * Action che permette di visualizzare i voicher disponibili in base all'importo che si intede versare
+ */
 public class CheckSostieniciAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

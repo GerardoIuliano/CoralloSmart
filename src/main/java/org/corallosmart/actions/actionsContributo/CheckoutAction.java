@@ -1,4 +1,4 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsContributo;
 
 import com.google.gson.Gson;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
@@ -19,6 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Graziano Giuseffi, Ersilio Petretta
+ * Action che permette la visualizzazione della pagina di checkout
+ *
+ */
 public class CheckoutAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

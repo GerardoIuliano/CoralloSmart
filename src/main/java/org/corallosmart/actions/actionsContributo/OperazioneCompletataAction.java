@@ -1,4 +1,4 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsContributo;
 
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersContributo.ContributoManager;
@@ -18,6 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * @author Graziano Giuseffi, Ersilio Petretta
+ * Action che mostra la pagina OperazioneCompletata, genera un eventuale voucher, una mail
+ * e salva il contributo versato nel DB
+ */
 public class OperazioneCompletataAction implements ActionStrategy {
 
 
