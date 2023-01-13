@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.corallosmart.e2e.SystemTestCase;
 
-public class TestModificaProfilo extends SystemTestCase {
+public class ModificaProfiloTest extends SystemTestCase {
     private static WebDriver driver;
 
     @Before
@@ -17,32 +17,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaProfiloOk(){
-        driver.get("http://localhost:8080/CoralloSmart/login");
-
-        WebElement emailField = driver.findElement(By.name("email"));
-        emailField.sendKeys("giu.adi@gmail.com");
-
-        WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("P4ssword");
-
-        WebElement formLogin = driver.findElement(By.name("loginForm"));
-        formLogin.submit();
-
-        driver.get("http://localhost:8080/CoralloSmart/modificaProfilo");
-
-        WebElement usernameField = driver.findElement(By.name("username"));
-        usernameField.sendKeys("testUsername");
-
-        WebElement formModificaProfilo = driver.findElement(By.name("registrationForm"));
-        formModificaProfilo.submit();
-        String url = driver.getCurrentUrl();
-
-        Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/checkModificaProfilo");
-    }
-
-    @Test
-    public void testModificaProfiloUsernameNotOk(){
+    public void test_TC_GU_2_0(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -67,7 +42,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaProfiloPasswordNotOk(){
+    public void test_TC_GU_2_1(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -98,7 +73,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaProfiloPasswordNotEqual(){
+    public void test_TC_GU_2_2(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -129,7 +104,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaEmailNotOk(){
+    public void test_TC_GU_2_3(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -163,7 +138,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaNomeNotOk(){
+    public void test_TC_GU_2_4(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -200,7 +175,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaCognomeNotOk(){
+    public void test_TC_GU_2_5(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -240,7 +215,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaCodiceFiscaleNotOk(){
+    public void test_TC_GU_2_6(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -283,7 +258,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaTelefonoNotOk(){
+    public void test_TC_GU_2_7(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
@@ -329,7 +304,7 @@ public class TestModificaProfilo extends SystemTestCase {
     }
 
     @Test
-    public void testModificaAllOk(){
+    public void test_TC_GU_2_8(){
         driver.get("http://localhost:8080/CoralloSmart/login");
 
         WebElement emailField = driver.findElement(By.name("email"));
