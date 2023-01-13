@@ -6,7 +6,15 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Giuseppe Adinolfi
+ */
+
 public class ViewTest {
+
+    /**
+     * Controlla che passando null al metodo view, esso restituisce null
+     */
 
     @Test
     public void test_TC_U_V_1_0() {
@@ -14,6 +22,10 @@ public class ViewTest {
         String result = action.view(null);
         assertNull(result);
     }
+
+    /**
+     * Controlla che passando una stringa al metodo view, esso restituisce la stringa giusta
+     */
 
     @Test
     public void test_TC_U_V_1_1() {

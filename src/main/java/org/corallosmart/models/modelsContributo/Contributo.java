@@ -7,6 +7,10 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ *@author tutti
+ * Bean Contributo
+ */
 @Getter
 @Setter
 @NoArgsConstructor
