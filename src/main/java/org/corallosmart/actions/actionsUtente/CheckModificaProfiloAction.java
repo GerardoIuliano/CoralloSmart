@@ -13,6 +13,10 @@ import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.Optional;
 
+/**
+ * @author Ersilio
+ * aggiorna un utente nel db cambiando uno o più campi
+ */
 public class CheckModificaProfiloAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

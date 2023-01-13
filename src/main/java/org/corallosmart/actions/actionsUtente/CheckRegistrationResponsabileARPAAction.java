@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
+/**
+ * @author Ersilio
+ * Crea un nuovo Responsabile ARPA controllando prima che l'email non sia già in uso
+ */
 public class CheckRegistrationResponsabileARPAAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

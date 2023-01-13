@@ -19,6 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Ersilio
+ * Controlla se l'utente ha sbloccato o meno un Voucher nel caso lo salva in sessione
+ * per poi reindirizzarlo alla pagina di checkout
+ */
 public class CheckoutAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

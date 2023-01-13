@@ -18,6 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * @author Ersilio
+ * Recupera tutti i dati per creare un oggetto Contributo e ciò che ne consegue,
+ * controllando se sia stato ottenuto un Voucher o meno,
+ * per poi memorizzarlo nel DB e reindirizzare alla pagina di operazione completata
+ */
 public class OperazioneCompletataAction implements ActionStrategy {
 
 
