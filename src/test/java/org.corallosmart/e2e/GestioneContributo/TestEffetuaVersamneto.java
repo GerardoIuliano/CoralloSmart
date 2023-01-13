@@ -25,7 +25,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
      * Controlla che inserendo un nome intestatario troppo lungo, il pagamento non vada a buon fine
      */
     @Test
-    public void IR_GC_2_0() {
+    public void TC_GC_1_0() {
 
 
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -71,7 +71,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
      * Controlla che inserendo un numero di carta che non rispetta il formato, il pagamento non vada a buon fine
      */
     @Test
-    public void IR_GC_2_1()  {
+    public void TC_GC_1_1()  {
 
 
 
@@ -122,7 +122,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
      */
 
     @Test
-    public void IR_GC_2_3()  {
+    public void TC_GC_1_3()  {
 
 
 
@@ -171,7 +171,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
     /**
      * Controlla che inserendo un mese di scadenza errato, il pagamento non vada a buon fine
      * Il controllo sulla data è stato scisso in due parti per comoditá
-     * IR_GC_2.2
+     * TC_GC_1.2
      */
     @Test
     public void testEffettuaVersamentoMeseErrato() {
@@ -223,7 +223,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
     /**
      * Controlla che inserendo un anno di scadenza errato, il pagamento non vada a buon fine
      * Il controllo sulla data è stato scisso in due parti per comoditá
-     * IR_GC_2.2
+     * TC_GC_1.2
      *
      */
 
@@ -278,7 +278,7 @@ public class TestEffetuaVersamneto extends SystemTestCase {
      * Controlla che il versamento vada a buon fine
      */
     @Test
-    public void testEffettuaVersamento()  {
+    public void TC_1_5()  {
 
 
 
