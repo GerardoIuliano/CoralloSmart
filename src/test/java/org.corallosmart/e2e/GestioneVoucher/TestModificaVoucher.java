@@ -1,4 +1,4 @@
-package org.corallosmart.e2e.gestioneVoucher;
+package org.corallosmart.e2e.GestioneVoucher;
 
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;
@@ -8,6 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * @author Giuseppe Adinolfi
+ */
+
 public class TestModificaVoucher extends SystemTestCase {
 
     private static WebDriver driver;
@@ -16,6 +20,11 @@ public class TestModificaVoucher extends SystemTestCase {
     public void setup(){
         driver = SystemTestCase.driver;
     }
+
+    /**
+     * Controlla che inserendo una descrizione minore di 10 caratteri generi il messaggio di errore corretto
+     */
+
     @Test
     public void test_TC_GV_M_1_0(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -35,6 +44,10 @@ public class TestModificaVoucher extends SystemTestCase {
         Boolean isOk= driver.getPageSource().contains("Errore, la descrizione deve essere almeno di 10 caratteri!");
         Assert.assertTrue(isOk);
     }
+
+    /**
+     * Controlla che inserendo numeri nella descrizione generi il messaggio di errore corretto
+     */
 
     @Test
     public void test_TC_GV_M_1_1(){
@@ -56,6 +69,10 @@ public class TestModificaVoucher extends SystemTestCase {
         Assert.assertTrue(isOk);
     }
 
+    /**
+     * Controlla che inserendo una descrizione corretta la modifica vada a buon fine
+     */
+
     @Test
     public void test_TC_GV_M_1_2(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -75,6 +92,10 @@ public class TestModificaVoucher extends SystemTestCase {
         Boolean isOk= driver.getPageSource().contains("Modifica effettuata con successo");
         Assert.assertTrue(isOk);
     }
+
+    /**
+     * Controlla che inserendo lettere nell'importo generi il messaggio di errore corretto
+     */
 
     @Test
     public void test_TC_GV_M_1_3(){
@@ -98,6 +119,10 @@ public class TestModificaVoucher extends SystemTestCase {
         Assert.assertTrue(isOk);
     }
 
+    /**
+     * Controlla che inserendo un importo maggiore di 150 generi il messaggio di errore corretto
+     */
+
     @Test
     public void test_TC_GV_M_1_4(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -119,6 +144,10 @@ public class TestModificaVoucher extends SystemTestCase {
         Boolean isOk= driver.getPageSource().contains("Errore, l'importo deve essere massimo di 150 euro");
         Assert.assertTrue(isOk);
     }
+
+    /**
+     * Controlla che inserendo una descrizione e un importo corretti la modifica vada a buon fine
+     */
 
     @Test
     public void test_TC_GV_M_1_5(){

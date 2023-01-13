@@ -1,4 +1,4 @@
-package org.corallosmart.e2e.gestioneContributo;
+package org.corallosmart.e2e.GestioneContributo;
 
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;

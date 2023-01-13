@@ -11,6 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Giuseppe Adinolfi
+ * Questa action permette di eliminare un voucher dal sistema
+ */
+
 public class EliminaVoucherAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response){

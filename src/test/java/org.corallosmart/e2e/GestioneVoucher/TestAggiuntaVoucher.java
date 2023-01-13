@@ -1,4 +1,4 @@
-package org.corallosmart.e2e.gestioneVoucher;
+package org.corallosmart.e2e.GestioneVoucher;
 
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;

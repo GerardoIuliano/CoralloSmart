@@ -4,6 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+/**
+ *@author tutti
+ * Bean Email
+ */
 @Getter
 @Setter
 @AllArgsConstructor
