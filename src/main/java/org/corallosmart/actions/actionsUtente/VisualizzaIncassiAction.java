@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Attilio Gismondi
+ * Questa action permette di recuperare la lista di tutti i contributi dal db e calcola l'incasso totale
+ */
 public class VisualizzaIncassiAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
