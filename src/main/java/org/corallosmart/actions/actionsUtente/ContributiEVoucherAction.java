@@ -16,6 +16,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Attilio Gismondi
+ * Questa action permette di recuperare la lista di tutti i contributi e i relativi voucher di un determinato utente dal db
+ */
 public class ContributiEVoucherAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

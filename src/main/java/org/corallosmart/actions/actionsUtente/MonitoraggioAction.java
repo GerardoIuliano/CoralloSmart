@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Attilio Gismondi
+ * Questa action permette di recuperare la lista di tutti i rilevamenti dal db
+ */
 public class MonitoraggioAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

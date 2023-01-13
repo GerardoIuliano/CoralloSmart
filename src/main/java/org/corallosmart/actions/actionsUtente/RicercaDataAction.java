@@ -14,6 +14,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Attilio Gismondi
+ * Questa action permette di ricercare i rilevamenti inserendo una data iniziale e una data finale
+ */
 public class RicercaDataAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -51,6 +55,10 @@ public class RicercaDataAction implements ActionStrategy {
             if((strIDate == null || strIDate.equals("")) && (strFDate == null || strFDate.equals("")))
             {
                 session.setAttribute("esitoRicerca", "Non sono state selezionate date, verranno mostrati tutti i rilevamenti");
+            }
+            else if((strIDate != null && !strIDate.equals("")) && (strFDate == null || strFDate.equals("")) && fromDate.compareTo(toDate) > 0)
+            {
+                session.setAttribute("esitoRicerca", "Errore! E' stata inserita data iniziale > data odierna");
             }
             else if(fromDate.compareTo(toDate) <= 0)
             {
