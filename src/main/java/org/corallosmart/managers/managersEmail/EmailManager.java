@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EmailManager {
 
-    void createEmail(String oggetto, String corpo) throws SQLException;
+
     void createEmail(Email email) throws SQLException;
     void createEmailNoVoucher(Email email) throws SQLException;
 

@@ -23,21 +23,32 @@ public class TableEmailManager extends TableManager implements EmailManager{
         super(dataSource);
     }
 
-    @Override
-    public void createEmail(String oggetto, String corpo) throws SQLException {
-        runner.update("INSERT INTO Email(oggetto, corpo) VALUES(?, ?)", oggetto, corpo);
-    }
-
+    /**
+     * Query che permette la creazione di una nuova email
+     * @param email
+     * @throws SQLException
+     */
     @Override
     public void createEmail(Email email) throws SQLException {
         runner.update("INSERT INTO Email(oggetto, corpo, idUtente2, idVoucher) VALUES(?, ?, ?, ?)", email.getOggetto(), email.getCorpo(), email.getIdUtente2(), email.getIdVoucher());
     }
 
+    /**
+     * Query che permette la creazione di una email senza un voucher associato
+     * @param email
+     * @throws SQLException
+     */
     @Override
     public void createEmailNoVoucher(Email email) throws SQLException {
         runner.update("INSERT INTO Email(oggetto, corpo, idUtente2) VALUES(?, ?, ?)", email.getOggetto(), email.getCorpo(), email.getIdUtente2());
     }
 
+    /**
+     * Query per la ricerca si una specifica email
+     * @param email
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Email cercaEmail(Email email) throws SQLException {
         List<Email> lista= runner.query("SELECT * FROM Email WHERE oggetto=? AND corpo=? AND idUtente2=? AND idVoucher=?",SOS_LIST_MAPPER, email.getOggetto(), email.getCorpo(), email.getIdUtente2(), email.getIdVoucher());
@@ -48,6 +59,12 @@ public class TableEmailManager extends TableManager implements EmailManager{
         }
     }
 
+    /**
+     * Query per la ricerca si una specifica email senza voucher associato
+     * @param email
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Email cercaEmailNoVoucher(Email email) throws SQLException {
         List<Email> lista= runner.query("SELECT * FROM Email WHERE oggetto=? AND corpo=? AND idUtente2=?",SOS_LIST_MAPPER, email.getOggetto(), email.getCorpo(), email.getIdUtente2());

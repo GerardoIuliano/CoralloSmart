@@ -23,12 +23,23 @@ public class TableDispositivoManager extends TableManager implements Dispositivo
         super(dataSource);
     }
 
+    /**
+     * Query per la ricerca si un dispositivo tramite ID
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Dispositivo> cercaDispositivo(int id) throws SQLException {
         Dispositivo lista= runner.query("SELECT * FROM Dispositivo WHERE id = ?",SOS_MAPPER, id);
         return (List<Dispositivo>) lista;
     }
 
+    /**
+     * Query per la ricerca di tutti i dispostivi
+     * @return
+     * @throws SQLException
+     */
     public List<Dispositivo> listaDispositivi() throws SQLException
     {
         List<Dispositivo> lista = runner.query("SELECT * FROM Dispositivo", SOS_LIST_MAPPER);
