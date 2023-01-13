@@ -25,7 +25,7 @@ public class GetTest {
     }
 
     /**
-     * (Test di unità) Controlla che il metodo get, se viene passata una actionStrategy null, restituisce null
+     * (Test di unità) Controlla che il metodo get, se viene passata una action null, restituisce null
      */
 
     @Test
@@ -58,7 +58,7 @@ public class GetTest {
     }
 
     /**
-     * (Test di integrazione) Controlla che il metodo get, se viene passata una actionStrategy null, restituisce null
+     * (Test di integrazione) Controlla che il metodo get, se viene passata una action null, restituisce null
      */
 
     @Test
