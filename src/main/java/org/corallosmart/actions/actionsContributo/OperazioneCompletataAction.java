@@ -19,7 +19,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 /**
- * @author Ersilio
+ * @author Graziano Giuseffi, Ersilio Petretta
  * Recupera tutti i dati per creare un oggetto Contributo e ciò che ne consegue,
  * controllando se sia stato ottenuto un Voucher o meno,
  * per poi memorizzarlo nel DB e reindirizzare alla pagina di operazione completata

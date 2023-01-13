@@ -3,13 +3,15 @@ package org.corallosmart.actions.actionsVoucher;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
-import org.corallosmart.models.modelsVoucher.Voucher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
+/**
+ * @author Giuseppe Adinolfi
+ * Questa action permette di effettuare le modifiche di descrizione e/o importo ad un determinato voucher
+ */
 
 public class ModificaVoucherAction implements ActionStrategy {
     @Override

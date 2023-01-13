@@ -5,14 +5,13 @@ import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersVoucher.TableVoucherManager;
 import org.corallosmart.managers.managersVoucher.VoucherManager;
 
-import org.corallosmart.models.modelsVoucher.Voucher;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 public class ClickAggiungiVoucherAction implements ActionStrategy {
     @Override

@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Giuseppe Adinolfi
+ * Questa action permette di aggiornare la lista dei voucher presenti all'interno del sistema
+ */
+
 public class GestioneVoucherAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

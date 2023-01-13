@@ -1,4 +1,4 @@
-package org.corallosmart.e2e.gestioneMonitoraggio;
+package org.corallosmart.e2e.GestioneMonitoraggio;
 
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;

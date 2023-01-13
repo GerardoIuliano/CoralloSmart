@@ -6,6 +6,11 @@ import org.corallosmart.models.modelsUtente.Sostenitore;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author Giuseppe Adinolfi
+ * Questa action mostra la pagina di aggiunta dei voucher
+ */
+
 public class AggiungiVoucherAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

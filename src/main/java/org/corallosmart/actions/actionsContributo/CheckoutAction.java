@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Ersilio
+ * @author Graziano Giuseffi, Ersilio Petretta
  * Controlla se l'utente ha sbloccato o meno un Voucher nel caso lo salva in sessione
  * per poi reindirizzarlo alla pagina di checkout
  */

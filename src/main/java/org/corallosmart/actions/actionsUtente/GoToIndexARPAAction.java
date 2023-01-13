@@ -6,13 +6,12 @@ import org.corallosmart.models.modelsUtente.Utente;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author Giuseppe Adinolfi
+ * Questa action mostra la homepage
+ */
+
 public class GoToIndexARPAAction implements ActionStrategy {
-    /**
-     * Questo metodo mostra la homepage
-     * @param request the request
-     * @param response the response
-     * @return ritorna alla index
-     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
