@@ -12,10 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.Optional;
 
-/*
-classe che controlla se l'utente è registrato e
-verifica se si tratta di un sostenitore o responsabile ARPA
-*/
+/**
+ * @author Ersilio
+ * classe che controlla se l'utente è registrato e
+ * verifica se si tratta di un sostenitore o responsabile ARPA
+ */
 public class CheckLoginAction implements ActionStrategy {
 
     @Override

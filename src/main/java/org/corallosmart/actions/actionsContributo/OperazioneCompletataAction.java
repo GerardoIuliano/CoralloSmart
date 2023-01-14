@@ -20,8 +20,9 @@ import java.util.Date;
 
 /**
  * @author Graziano Giuseffi, Ersilio Petretta
- * Action che mostra la pagina OperazioneCompletata, genera un eventuale voucher, una mail
- * e salva il contributo versato nel DB
+ * Recupera tutti i dati per creare un oggetto Contributo e ciò che ne consegue,
+ * controllando se sia stato ottenuto un Voucher o meno,
+ * per poi memorizzarlo nel DB e reindirizzare alla pagina di operazione completata
  */
 public class OperazioneCompletataAction implements ActionStrategy {
 
