@@ -1,4 +1,4 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsContributo;
 
 import com.google.gson.Gson;
 import org.corallosmart.actions.actionsUtils.ActionStrategy;

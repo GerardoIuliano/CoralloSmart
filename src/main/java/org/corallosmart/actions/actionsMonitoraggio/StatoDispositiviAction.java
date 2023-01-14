@@ -1,9 +1,9 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsMonitoraggio;
 
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
-import org.corallosmart.managers.managersRilevamento.RilevamentoManager;
-import org.corallosmart.managers.managersRilevamento.TableRilevamentoManager;
-import org.corallosmart.models.modelsRilevamento.Rilevamento;
+import org.corallosmart.managers.managersDispositivo.DispositivoManager;
+import org.corallosmart.managers.managersDispositivo.TableDispositivoManager;
+import org.corallosmart.models.modelsDispositivo.Dispositivo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,23 +15,23 @@ import java.util.List;
 
 /**
  * @author Attilio Gismondi
- * Questa action permette di recuperare la lista di tutti i rilevamenti dal db
+ * Questa action permette di recuperare la lista di tutti i dispositivi installati dal db
  */
-public class MonitoraggioAction implements ActionStrategy {
+public class StatoDispositiviAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         try{
-            RilevamentoManager rm = new TableRilevamentoManager(this.getSource(request));
-            List<Rilevamento> rilevamenti = rm.listaRilevamenti();
+            DispositivoManager dm = new TableDispositivoManager(this.getSource(request));
+            List<Dispositivo> dispositivi = dm.listaDispositivi();
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
             HttpSession session = request.getSession();
-            session.setAttribute("rilevamenti", rilevamenti);
+            session.setAttribute("dispositivi", dispositivi);
             session.setAttribute("sdf", sdf);
 
-            return view("monitoraggio");
+            return view("statoDispositivi");
         } catch (Exception e) {
             e.printStackTrace();
             return view("500");

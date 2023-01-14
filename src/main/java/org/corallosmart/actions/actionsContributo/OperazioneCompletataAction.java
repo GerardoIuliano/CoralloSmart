@@ -1,4 +1,4 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsContributo;
 
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersContributo.ContributoManager;

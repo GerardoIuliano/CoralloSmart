@@ -1,4 +1,4 @@
-package org.corallosmart.actions.actionsUtente;
+package org.corallosmart.actions.actionsMonitoraggio;
 
 import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import org.corallosmart.managers.managersRilevamento.RilevamentoManager;

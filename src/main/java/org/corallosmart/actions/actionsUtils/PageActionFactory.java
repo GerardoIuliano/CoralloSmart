@@ -4,6 +4,9 @@ import org.corallosmart.actions.ProvaAction;
 import org.corallosmart.actions.actionsContributo.CheckSostieniciAction;
 import org.corallosmart.actions.actionsContributo.CheckoutAction;
 import org.corallosmart.actions.actionsContributo.OperazioneCompletataAction;
+import org.corallosmart.actions.actionsMonitoraggio.MonitoraggioAction;
+import org.corallosmart.actions.actionsMonitoraggio.RicercaDataAction;
+import org.corallosmart.actions.actionsMonitoraggio.StatoDispositiviAction;
 import org.corallosmart.actions.actionsUtente.*;
 import org.corallosmart.actions.actionsVoucher.*;
 
