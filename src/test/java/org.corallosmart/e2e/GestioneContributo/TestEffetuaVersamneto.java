@@ -8,6 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * @author GrazianoGiuseffi
+ */
 public class TestEffetuaVersamneto extends SystemTestCase {
 
     private static WebDriver driver;
@@ -18,55 +21,11 @@ public class TestEffetuaVersamneto extends SystemTestCase {
     }
 
 
+    /**
+     * Controlla che inserendo un nome intestatario troppo lungo, il pagamento non vada a buon fine
+     */
     @Test
-public void testEffettuaVersamento() throws InterruptedException {
-
-
-
-    driver.get("http://localhost:8080/CoralloSmart/login");
-    WebElement userField = driver.findElement(By.name("email"));
-    userField.sendKeys("graziano.giu@gmail.com");
-    WebElement passwordField = driver.findElement(By.name("password"));
-    passwordField.sendKeys("root");
-    WebElement form = driver.findElement(By.name("loginForm"));
-    form.submit();
-
-
-
-    driver.get("http://localhost:8080/CoralloSmart/index");
-    WebElement sostieniciBtn=driver.findElement(By.name("sostieniciBtn"));
-    sostieniciBtn.click();
-    WebElement importoField = driver.findElement(By.name("importo"));
-    importoField.sendKeys( "20");
-    WebElement formSostienici= driver.findElement(By.name("sostieniciform"));
-    formSostienici.submit();
-
-
-
-
-    driver.get("http://localhost:8080/CoralloSmart/checkout?importo=20");
-
-    WebElement nameCard=driver.findElement(By.name("nome"));
-    nameCard.sendKeys("Graziano Giuseffi");
-    WebElement cardNumber= driver.findElement(By.name("card-number"));
-    cardNumber.sendKeys("5333171083897454");
-    WebElement expMonth= driver.findElement(By.name("expMonth"));
-    expMonth.sendKeys("July (07)");
-    WebElement expYear= driver.findElement(By.name("expYear"));
-    expYear.sendKeys("2024");
-    WebElement cvv= driver.findElement(By.name("card-cvc"));
-    cvv.sendKeys("584");
-    WebElement paymentForm= driver.findElement(By.name("formPagamento"));
-    paymentForm.submit();
-
-    Boolean isOk= driver.getPageSource().contains("Operazione Completata Con Successo");
-    Assert.assertTrue(isOk);
-
-
-}
-
-    @Test
-    public void testEffettuaVersamentoNomeErrato() throws InterruptedException {
+    public void TC_GC_1_0() {
 
 
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -108,9 +67,11 @@ public void testEffettuaVersamento() throws InterruptedException {
 
     }
 
-
+    /**
+     * Controlla che inserendo un numero di carta che non rispetta il formato, il pagamento non vada a buon fine
+     */
     @Test
-    public void testEffettuaVersamentoCardNumberErrato() throws InterruptedException {
+    public void TC_GC_1_1()  {
 
 
 
@@ -156,8 +117,12 @@ public void testEffettuaVersamento() throws InterruptedException {
 
     }
 
+    /**
+     * Controlla che inserendo un CVV con formato errato, il pagamento non vada a buon fine
+     */
+
     @Test
-    public void testEffettuaVersamentoCVVErrato() throws InterruptedException {
+    public void TC_GC_1_3()  {
 
 
 
@@ -203,8 +168,13 @@ public void testEffettuaVersamento() throws InterruptedException {
 
     }
 
+    /**
+     * Controlla che inserendo un mese di scadenza errato, il pagamento non vada a buon fine
+     * Il controllo sulla data è stato scisso in due parti per comoditá
+     * TC_GC_1.2
+     */
     @Test
-    public void testEffettuaVersamentoMeseErrato() throws InterruptedException {
+    public void testEffettuaVersamentoMeseErrato() {
 
 
 
@@ -250,9 +220,15 @@ public void testEffettuaVersamento() throws InterruptedException {
 
     }
 
+    /**
+     * Controlla che inserendo un anno di scadenza errato, il pagamento non vada a buon fine
+     * Il controllo sulla data è stato scisso in due parti per comoditá
+     * TC_GC_1.2
+     *
+     */
 
     @Test
-    public void testEffettuaVersamentoAnnoErrato() throws InterruptedException {
+    public void testEffettuaVersamentoAnnoErrato() {
 
 
 
@@ -298,4 +274,57 @@ public void testEffettuaVersamento() throws InterruptedException {
 
     }
 
+    /**
+     * Controlla che il versamento vada a buon fine
+     */
+    @Test
+    public void TC_1_5()  {
+
+
+
+        driver.get("http://localhost:8080/CoralloSmart/login");
+        WebElement userField = driver.findElement(By.name("email"));
+        userField.sendKeys("graziano.giu@gmail.com");
+        WebElement passwordField = driver.findElement(By.name("password"));
+        passwordField.sendKeys("root");
+        WebElement form = driver.findElement(By.name("loginForm"));
+        form.submit();
+
+
+
+        driver.get("http://localhost:8080/CoralloSmart/index");
+        WebElement sostieniciBtn=driver.findElement(By.name("sostieniciBtn"));
+        sostieniciBtn.click();
+        WebElement importoField = driver.findElement(By.name("importo"));
+        importoField.sendKeys( "20");
+        WebElement formSostienici= driver.findElement(By.name("sostieniciform"));
+        formSostienici.submit();
+
+
+
+
+        driver.get("http://localhost:8080/CoralloSmart/checkout?importo=20");
+
+        WebElement nameCard=driver.findElement(By.name("nome"));
+        nameCard.sendKeys("Graziano Giuseffi");
+        WebElement cardNumber= driver.findElement(By.name("card-number"));
+        cardNumber.sendKeys("5333171083897454");
+        WebElement expMonth= driver.findElement(By.name("expMonth"));
+        expMonth.sendKeys("July (07)");
+        WebElement expYear= driver.findElement(By.name("expYear"));
+        expYear.sendKeys("2024");
+        WebElement cvv= driver.findElement(By.name("card-cvc"));
+        cvv.sendKeys("584");
+        WebElement paymentForm= driver.findElement(By.name("formPagamento"));
+        paymentForm.submit();
+
+        Boolean isOk= driver.getPageSource().contains("Operazione Completata Con Successo");
+        Assert.assertTrue(isOk);
+
+
+    }
+
+
+
 }
+
