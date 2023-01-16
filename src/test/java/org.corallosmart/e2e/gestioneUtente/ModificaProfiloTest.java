@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.corallosmart.e2e.SystemTestCase;
 
+/**
+ * @author Ersilio
+ */
 public class ModificaProfiloTest extends SystemTestCase {
     private static WebDriver driver;
 
@@ -16,6 +19,11 @@ public class ModificaProfiloTest extends SystemTestCase {
         driver = SystemTestCase.driver;
     }
 
+    /**
+     * inserisce
+     * un username sbagliato
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_0(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -41,6 +49,13 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password sbagliata
+     * una password ripetuta corretta
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_1(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -72,6 +87,13 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta sbagliata
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_2(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -103,6 +125,14 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email sbagliata
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_3(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -137,6 +167,15 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email corretta
+     * un nome vuoto
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_4(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -174,6 +213,16 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email corretta
+     * un nome corretto
+     * un cognome vuoto
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_5(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -214,6 +263,17 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email corretta
+     * un nome corretto
+     * un cognome corretto
+     * un codice fiscale errato
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_6(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -257,6 +317,18 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email corretta
+     * un nome corretto
+     * un cognome corretto
+     * un codice fiscale corretto
+     * un numero di telefono errato
+     * e verifica se i controlli impediscono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_7(){
         driver.get("http://localhost:8080/CoralloSmart/login");
@@ -303,6 +375,18 @@ public class ModificaProfiloTest extends SystemTestCase {
         Assert.assertEquals(url, "http://localhost:8080/CoralloSmart/modificaProfilo");
     }
 
+    /**
+     * inserisce
+     * un username corretto
+     * una password corretta
+     * una password ripetuta corretta
+     * una email corretta
+     * un nome corretto
+     * un cognome corretto
+     * un codice fiscale corretto
+     * un numero di telefono corretto
+     * e verifica se i controlli permettono di proseguire con l'operazione
+     */
     @Test
     public void test_TC_GU_2_8(){
         driver.get("http://localhost:8080/CoralloSmart/login");
