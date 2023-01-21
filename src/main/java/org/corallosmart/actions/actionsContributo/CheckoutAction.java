@@ -21,8 +21,8 @@ import java.util.Optional;
 
 /**
  * @author Graziano Giuseffi, Ersilio Petretta
- * Action che permette la visualizzazione della pagina di checkout
- *
+ * Controlla se l'utente ha sbloccato o meno un Voucher nel caso lo salva in sessione
+ * per poi reindirizzarlo alla pagina di checkout
  */
 public class CheckoutAction implements ActionStrategy {
     @Override

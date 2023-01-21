@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.Optional;
 
+/**
+ * @author Ersilio
+ * Crea un nuovo Sostenitore controllando prima che l'email non sia già in uso
+ */
 public class CheckRegistrationAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

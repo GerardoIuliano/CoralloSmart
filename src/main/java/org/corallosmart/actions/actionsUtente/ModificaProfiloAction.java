@@ -7,6 +7,10 @@ import org.corallosmart.models.modelsUtente.Utente;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author Ersilio
+ * Reindirizza l'utente alla pagina per modificare il profilo
+ */
 public class ModificaProfiloAction implements ActionStrategy {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {

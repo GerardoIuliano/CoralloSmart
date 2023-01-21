@@ -5,12 +5,11 @@ import org.corallosmart.actions.actionsUtils.ActionStrategy;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author Ersilio
+ * Rimuove dalla sessione l'utente cancellando le traccie del suo login
+ */
 public class LogoutAction implements ActionStrategy {
-    //TODO funziona il logout ma quando si torna indietro con la pagina
-    // si torna alla schermata da "loggati" ma non lo si è veramente quindi
-    // non si possono fare la operazioni come tale e quindi
-    // dovrebbe andare bene
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);

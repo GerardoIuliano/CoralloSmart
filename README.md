@@ -2,6 +2,8 @@
 <img src="src/main/webapp/images/logoCoralloSmart.png" width="200" height="200" alt="Logo">
 
 [![Build Status](https://app.travis-ci.com/GerardoIuliano/CoralloSmart.svg?branch=main)](https://app.travis-ci.com/GerardoIuliano/CoralloSmart)
+![Build](https://github.com/GerardoIuliano/CoralloSmart/actions/workflows/maven.yml/badge.svg?branch=master)
+
 
 </div>
 <div align = "center">
