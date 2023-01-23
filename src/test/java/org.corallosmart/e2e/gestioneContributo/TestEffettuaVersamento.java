@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 /**
  * @author GrazianoGiuseffi
  */
-public class TestEffetuaVersamneto extends SystemTestCase {
+public class TestEffettuaVersamento extends SystemTestCase {
 
     private static WebDriver driver;
 

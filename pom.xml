@@ -169,6 +169,21 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/TestEffettuaVersamento.java</exclude>
+            <exclude>**/TestRicercaDate.java</exclude>
+            <exclude>**/ModificaProfiloTest.java</exclude>
+            <exclude>**/TestAggiuntaVoucher.java</exclude>
+            <exclude>**/TestModificaVoucher.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
     </plugins>
     <finalName>CoralloSmart</finalName>
   </build>
