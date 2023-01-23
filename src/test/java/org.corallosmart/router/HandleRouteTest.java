@@ -19,7 +19,6 @@ public class HandleRouteTest
 
         ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(null, "/something");
         boolean isOk = actionStrategy.getClass().equals(NotFoundAction.class);
-        System.out.println(actionStrategy.getClass().toString());
         Assert.assertTrue(isOk);
     }
 
@@ -31,7 +30,6 @@ public class HandleRouteTest
 
         ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(HttpMethod.GET, "something");
         boolean isOk = actionStrategy.getClass().equals(NotFoundAction.class);
-        System.out.println(actionStrategy.getClass().toString());
         Assert.assertTrue(isOk);
     }
 
@@ -43,7 +41,6 @@ public class HandleRouteTest
 
         ActionStrategy actionStrategy = (ActionStrategy) router.handleRoute(HttpMethod.GET, "/something");
         boolean isOk = actionStrategy.getClass().equals(Mockito.mock(WelcomeAction.class).getClass());
-        System.out.println(actionStrategy.getClass().toString());
         Assert.assertTrue(isOk);
     }
 }

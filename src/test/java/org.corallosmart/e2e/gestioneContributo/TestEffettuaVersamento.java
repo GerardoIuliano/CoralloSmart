@@ -1,4 +1,4 @@
-package org.corallosmart.e2e.GestioneContributo;
+package org.corallosmart.e2e.gestioneContributo;
 
 import org.corallosmart.e2e.SystemTestCase;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 /**
  * @author GrazianoGiuseffi
  */
-public class TestEffetuaVersamneto extends SystemTestCase {
+public class TestEffettuaVersamento extends SystemTestCase {
 
     private static WebDriver driver;
 
