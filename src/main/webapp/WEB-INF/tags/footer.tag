@@ -13,7 +13,7 @@
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Scrivere qualcosa di interessante</p>
+                                    <p>CoralloSmart</p>
                                 </div>
                             </div>
                         </div>
@@ -27,18 +27,6 @@
                                 <li><a href="/CoralloSmart/">Home</a></li>
                                 <li><a href="info">Info</a></li>
                                 <li><a href="info">Contattaci</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                    <div class="single-footer-caption mb-50">
-                        <div class="footer-tittle">
-                            <h4>Cosa puoi fare</h4>
-                            <ul>
-                                <li><a href="login">Login</a></li>
-                                <li><a href="registrazione">Registrati</a></li>
-                                <li><a href="profilo">Profilo</a></li>
                             </ul>
                         </div>
                     </div>

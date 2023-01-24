@@ -9,8 +9,14 @@ import org.mockito.Mockito;
 
 import java.util.HashMap;
 
+/**
+ * @author Attilio Gismondi
+ */
 public class HandleRouteTest
 {
+    /**
+     * Test -   Metodo null, Url valid
+     */
     @Test
     public void test_TC_U_HR_1_0()
     {
@@ -22,6 +28,9 @@ public class HandleRouteTest
         Assert.assertTrue(isOk);
     }
 
+    /**
+     * Test -   Metodo valid, Url wrong
+     */
     @Test
     public void test_TC_U_HR_1_1()
     {
@@ -33,6 +42,9 @@ public class HandleRouteTest
         Assert.assertTrue(isOk);
     }
 
+    /**
+     * Test -   Metodo valid, Url valid
+     */
     @Test
     public void test_TC_U_HR_1_2()
     {
