@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author Gerardo Iuliano
+ * @author team
  * Reindirizza un utente alla pagina di login
  */
 public class LoginAction implements ActionStrategy {

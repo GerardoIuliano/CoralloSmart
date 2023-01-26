@@ -1,7 +1,7 @@
 package org.corallosmart.models.modelsUtente;
 
 /**
- * @author tutti
+ * @author teeam
  * Bean Responsabile ARPA
  */
 

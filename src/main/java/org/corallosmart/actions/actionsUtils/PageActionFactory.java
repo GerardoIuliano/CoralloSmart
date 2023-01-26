@@ -11,7 +11,7 @@ import org.corallosmart.actions.actionsUtente.*;
 import org.corallosmart.actions.actionsVoucher.*;
 
 /**
- * @author theBoys
+ * @author team
  */
 public class PageActionFactory implements ActionFactory {
 

@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * @author theboys
+ * @author team
  */
 public interface ActionStrategy {
 
