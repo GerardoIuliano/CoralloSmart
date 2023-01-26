@@ -22,7 +22,7 @@
             <div class="support-location-img mb-50">
               <img src="<c:url value="/images/fondalemarino.jpg"/>" alt="">
               <div class="support-img-cap">
-                <span>nnsochedire</span>
+                <span>Dispositivi IoT</span>
               </div>
             </div>
           </div>
@@ -30,11 +30,10 @@
             <div class="right-caption">
               <!-- Section Tittle -->
               <div class="section-tittle section-tittle2">
-                <span>Scrivere qualcosa se utile</span>
-                <h2>120Km di costa salvati</h2>
+                <h2>${numDispositivi} dispositivi installati</h2>
               </div>
               <div class="support-caption">
-                <p>Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso</p>
+                <p>Il numero di dispositivi IoT che l'ARPA ha comprato e installato lungo la costa grazie al contributo dei sostenitori</p>
               </div>
             </div>
           </div>
@@ -51,11 +50,10 @@
             <div class="right-caption">
               <!-- Section Tittle -->
               <div class="section-tittle section-tittle2">
-                <span>Scrivere qualcosa se utile</span>
-                <h2>120Km di costa salvati</h2>
+                <h2>${kmBarriera} km di costa monitorati</h2>
               </div>
               <div class="support-caption">
-                <p>Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso</p>
+                <p>Questi sono i km di barriera corallina, situata lungo la costa, monitorati e protetti dall'ARPA grazie ai suoi dispositivi IoT</p>
               </div>
             </div>
           </div>
@@ -63,7 +61,7 @@
             <div class="support-location-img mb-50">
               <img src="<c:url value="/images/fondalemarino.jpg"/>" alt="">
               <div class="support-img-cap">
-                <span>nnsochedire</span>
+                <span>Monitoraggio</span>
               </div>
             </div>
           </div>
@@ -80,7 +78,7 @@
             <div class="support-location-img mb-50">
               <img src="<c:url value="/images/fondalemarino.jpg"/>" alt="">
               <div class="support-img-cap">
-                <span>nnsochedire</span>
+                <span>Pesci Salvati</span>
               </div>
             </div>
           </div>
@@ -88,11 +86,10 @@
             <div class="right-caption">
               <!-- Section Tittle -->
               <div class="section-tittle section-tittle2">
-                <span>Scrivere qualcosa se utile</span>
-                <h2>120Km di costa salvati</h2>
+                <h2>${numPesci} pesci salvati</h2>
               </div>
               <div class="support-caption">
-                <p>Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso Scrivere cose belle a caso</p>
+                <p>Questi sono i pesci monitorati e protetti dall'ARPA grazie ai suoi dispositivi IoT</p>
               </div>
             </div>
           </div>

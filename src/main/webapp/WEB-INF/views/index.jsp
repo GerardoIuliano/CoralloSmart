@@ -39,7 +39,6 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>Scrivere qualcosa se utile</span>
                                 <h2>${numDispositivi} dispositivi installati</h2>
                             </div>
                             <div class="support-caption">
@@ -60,7 +59,6 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>Scrivere qualcosa se utile</span>
                                 <h2>${kmBarriera} km di costa monitorati</h2>
                             </div>
                             <div class="support-caption">
@@ -97,7 +95,6 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>Scrivere qualcosa se utile</span>
                                 <h2>${numPesci} pesci salvati</h2>
                             </div>
                             <div class="support-caption">
