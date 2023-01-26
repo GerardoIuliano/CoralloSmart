@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.Date;
 
 /**
- *@author tutti
+ *@author team
  * Bean Rilevamento
  */
 

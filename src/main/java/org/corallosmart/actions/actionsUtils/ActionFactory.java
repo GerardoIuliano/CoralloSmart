@@ -1,7 +1,7 @@
 package org.corallosmart.actions.actionsUtils;
 
 /**
- *  @author theboys
+ *  @author team
  */
 public interface ActionFactory {
   ActionStrategy create(String type);

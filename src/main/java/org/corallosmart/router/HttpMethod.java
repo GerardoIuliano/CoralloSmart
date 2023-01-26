@@ -1,7 +1,7 @@
 package org.corallosmart.router;
 
 /**
- * @author theboys
+ * @author team
  */
 enum HttpMethod {
   GET, POST
