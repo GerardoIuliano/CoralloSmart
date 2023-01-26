@@ -14,7 +14,7 @@ var cvvOk= statoField.START;
 
 function validaCardName(form) {
     var input = document.forms[form]['nome'];
-    if (input.value.length > 0 && input.value.length <= 60 && input.value.match(/^[A-Za-z][a-zA-Z]*$/)) {
+    if (input.value.length > 7 && input.value.length <= 60 && input.value.match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/)) {
         input.style.border = borderOk;
         nomeCartaOK = true;
     } else {
